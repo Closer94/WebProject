@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            도킹잡 마이페이지
+        </title>        
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+        
+        <style>
+            .positionHead{
+                max-width: 1200px;
+                min-width: 1200px;
+                margin:0 auto;
+                margin-top: -15px;
+            }
+            .positionBody{
+                max-width: 1200px;
+                margin:0 auto;
+                margin-top: 110px;
+            }
+            #up {
+                display: inline-block;
+                transition: .3s;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                text-decoration: none;
+                color: #000000;
+            }
+            #up:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                text-decoration: underline;
+
+            }
+            #menuUp {
+                text-decoration:none;
+                color: black;
+            }    
+            #menuUp:hover{
+                color: #4a94f2;
+            }
+            #defaultUp{
+                text-decoration:none;
+                color: black;
+            }
+            #defaultUp:hover{
+                text-decoration:underline;
+            }
+            #btn{
+                background-color: #5892f9;
+                width: 100px;
+                height: 50px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+            }
+            #addressbtn{
+                background-color: #edf1f8;
+                width: 100px;
+                height: 25px;
+                border: 1px solid darkgray;
+                outline: none; 
+            }
+
+            #addressbtn:hover{
+                text-decoration:none;
+                background: gray;
+                color: white;
+            }
+        </style>
+        <script>
+            var n = 1
+            function check_all() {
+                if(n == 1){
+                    n--;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                            my_form.mycheck[i].checked = true;
+                    }                    
+                }
+                else{
+                    n++;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                    my_form.mycheck[i].checked = false;
+                    }
+                }
+            }
+
+            function changeEmail(){
+                var target = document.getElementById("selectEmail");
+                var inputEmail = document.getElementById("email2");
+
+                inputEmail.value = target.options[target.selectedIndex].text;
+            }
+
+            function completeModify(){
+                alert('정보수정이 완료되었습니다.')
+            }
+        </script>
+    </head>
+    <body style="background:#edf1f8;" class = positionBody> 
+        <div class = positionHead>
+                <table style="margin-top:-120px;">
+                    <tr>
+                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                        <td width="600"></td>
+                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="logIn.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="createId.html" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+        </div>
+        <div class = positionHead>
+                <table style=" margin-top:-40px; margin-left:80px;">
+                    <tr>
+                        <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">마이페이지</td>
+                        <td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="나의 활동 페이지 이동" href="myPage_myActive1.html" >나의 활동</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="개인정보수정 페이지 이동" href="modifyProfile.html" >개인정보수정</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="비밀번호 변경 페이지 이동" href="modifyPassword.html" >비밀번호 변경</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="회원 탈퇴 페이지 이동" href="" >회원 탈퇴</a></td>
+                    </tr>
+                </table>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="margin-top:-40px; width:1025px; margin-left:81px;"">
+            <hr style="border: solid 1.5px black;">
+        </div>
+        <table style="margin-left:80px; border-collapse: collapse;">
+                <tr><td style="font-size:30px; padding:5px;">회원정보수정</td></tr>
+            <tr><td colspan="2" style="padding:5px;"><span style="font-size:20px">이갑성</span><span style="color:gray;">님의 회원가입 시 입력한 정보를 수정하실 수 있습니다.</span></td></tr>  
+            <tr><td>&nbsp;</td></tr>
+            <tr>
+                <td style="text-align:center; background-color:#f9f9f9;padding:10px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">이름</td>
+                <td style="border-top:1px solid black;border-bottom:1px solid #d3d3d3; width:835px;"><input type="text" name="name" value="이갑성" style="width:60px; height:20px; margin-left:20px;padding-left:10px;"></td></tr>
+            <tr>
+                <td style="text-align:center; background-color:#f9f9f9;padding:10px; border-bottom:1px solid #d3d3d3;">생년월일</td>
+                <td style="border-bottom:1px solid #d3d3d3;">
+                <select name="year" style="width:60px; height:25px; margin-left:20px;">
+                        <option value="0">년도</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option selected value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                        <option value="1990">1900</option>
+                </select>
+                <span>년도 </span> 
+                <select name="month" style="width:40px; height:25px; margin-left:5px;">
+                        <option value="0">월</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option selected value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                </select>
+                <span>월 </span>     
+                <select name="day" style="width:40px; height:25px; margin-left:5px;">
+                        <option value="0">일</option>
+                        <option value="01">01</option>
+                        <option selected value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                </select>
+                <span>일 </span>
+            </tr>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">성별</td><td style="padding-left:20px; border-bottom:1px solid #d3d3d3;">남</td></tr>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">닉네임</td><td style="border-bottom:1px solid #d3d3d3;"><input type="text" name="nickname" value="가브송" style="width:100px; height:20px; margin-left:20px;padding-left:10px;"></td></tr>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">아이디</td><td style="padding-left:20px; border-bottom:1px solid #d3d3d3;">kabsung3</td></tr>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">관심 분야</td>
+                <td style="border-bottom:1px solid #d3d3d3;">
+                    <select name="interest" id="interest" style="width:120px; height:25px; margin-left:20px;">
+                        <option selected value="1">웹</option>
+                        <option value="2">앱</option>
+                        <option value="3">네트워크</option>
+                        <option value="4">정보보안</option>
+                        <option value="5">데이터베이스</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">이메일 주소</td>
+                <td style="border-bottom:1px solid #d3d3d3;">
+                    <input type="text" name = "email1" value="kabsung3" style="width:120px; height:20px; margin-left:20px;padding-left:10px;">
+                    <span>@</span>
+                    <input type="text" name = "email2" id = "email2" value="naver.com" style="width:120px; height:20px; margin-left:3px;padding-left:10px;">    
+                    <select name="selectEmail" id = "selectEmail" onchange=changeEmail() style="width:180px; height:25px; margin-left:10px;">
+                        <option selected value="1">직접입력</option>
+                        <option value="2">daum.net</option>
+                        <option value="3">naver.com</option>
+                        <option value="4">hotmail.com</option>
+                        <option value="5">gmail.com</option>
+                        <option value="6">empal.com</option>
+                        <option value="7">dreamwiz.com</option>
+                        <option value="8">korea.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="2" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">이메일 수신여부</td>
+                <td style="padding-left:20px;">
+                    <input type="radio" checked name="smsReception">수신동의<span style="font-size:12px; color:gray"> (광고성 정보에 대한 동의 포함)</span>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left:20px; border-bottom:1px solid #d3d3d3;">
+                    <input type="radio" name="smsReception">수신하지 않음<span style="font-size:12px; color:gray"> (교육정보, 박람회 정보, 채용정보, 지원정책정보 등 중요한 정보를 받으실 수 있습니다.)</span>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">주소</td>
+                <td><input type="text" name="nickname" value="13012" style="width:80px; height:20px; margin: 5px 0px 0px 20px; padding-left:10px;">&nbsp;&nbsp;&nbsp;<input type="button" id="addressbtn" value="우편번호 검색"></td>
+            </tr>
+            <tr>
+                    <td><input type="text" name="nickname" value="경기 하남시 위례대로 220 (학암동)" style="width:350px; height:20px; margin: 5px 0px 0px 20px; padding-left:10px;"></td>
+            </tr>
+            <tr>
+                    <td style="border-bottom:1px solid #d3d3d3;"><input type="text" name="nickname" value="123동 4567호" style="width:350px; height:20px; margin: 5px 0px 5px 20px; padding-left:10px;"><span style="font-size:10px; color:gray;"> (상세주소)</span></td></tr>
+            </tr>
+            <tr>
+                <tr><td colspan="2" style="border-bottom:1px solid #d3d3d3; padding: 10px 0px 10px 0px;">
+                    <bold style="font-size:13px; font-weight: bold;">* 이메일주소가 잘못 기재되어 있으면 도킹잡의 업데이트 정보를 받을 수 없으니 기재하신 회원정보를 반드시 확인하시기 바랍니다.</bold>
+               </td></tr>
+            </tr>
+        </table>
+        <div style="margin-top:20px;margin-left:480px;">
+            <input type="button" id="btn" value="수정하기" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="취소">
+        </div>
+        
+        <footer class="positionBody" >
+            <hr>
+            <p style="font-size:15px;color:gray;">
+                <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
+                <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
+            </p>
+        </footer>  
+
+    </body>
+</html> 

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="full-page-scroll.css">
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<style type="text/css">
+
+	body{
+		min-height: 600px;
+		
+	}
+	/*각 section내 div 가운데 정렬*/
+	.scroll-container section{
+		text-align: center;
+	}
+
+	.section1 {
+		background-image: url("./image/0.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section2 {
+		background-image: url("./image/1.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section3 {
+		background-image: url("./image/2.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section4 {
+		background-image: url("./image/3.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section5 {
+		background-image: url("./image/4.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+	
+	/* 각 section 내 들어갈 공간 .header.height : 100px */
+	section>div {
+		font-family: 'Open Sans';
+		font-style: normal;
+		text-align: center;
+		position: relative;
+		/* 왜있는지 모르겟다.
+		top: 50%; 
+		transform: translateY(-50%);
+		*/
+		border:3px red solid;
+		color : white;
+		height: 100%;
+		width:100%;
+		background-color:rgba(0,0,0,0.3);
+	}
+
+	</style>	
+
+</head>
+<body>
+	<div class="header">
+		<div class="wrapper">
+			<div class="logo">
+				도킹잡
+			</div>
+			<div class="login-section">
+				<a href="#">로그인</a>
+				<a href="#">회원가입</a>
+				<a href="#">로그아웃</a>
+			</div>
+		</div>
+	</div>
+	
+	<div id="main" class="scroll-container">
+		<section class="section1">
+			<div>
+				<div class="section-wrapper">
+					<div class="section-title">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
+					<div class="section-subtitle">
+						<p>미생에서 완생으로<br>
+							인생의 나침반이 <br>
+							되어드립니다.
+						</p>
+						<button class="btn-2">See more > </button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section2">
+			<div>
+				<div class="section-wrapper">
+					<div class="section-title">당신의<br>직업적성을<br>분석합니다.</div>
+					<div class="section-subtitle">
+						<p>미생에서 완생으로<br>
+							인생의 나침반이 <br>
+							되어드립니다.
+						</p>
+						<button class="btn-2">자세히 > </button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section3">
+			<div>
+				<span>취업교육 프로그램</span>				
+			</div>
+		</section>
+		<section class="section4">
+			<div>
+				<span>취업박랍회</span>				
+			</div>
+		</section>
+		<section class="section5">
+			<div>
+				<span>성공후기</span>				
+			</div>
+		</section>
+	</div>
+	<script src="full-page-scroll.js"></script>
+	<script type="text/javascript">
+		new fullScroll({
+			displayDots: true,
+			dotsPosition: 'left',
+			animateTime: 0.7,
+			animateFunction: 'ease'
+		});
+	</script>
+</body>
+</html>
