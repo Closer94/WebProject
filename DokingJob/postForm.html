@@ -69,6 +69,43 @@
             top: 0px;
             }
             /*사이드 메뉴 소스*/
+
+            #btn{
+                border-radius:30px;
+                background-color: #5892f9;
+                width: 90px;
+                height: 35px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: red;
+                color: white;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+            #writeCommentBtn{
+                background-color: #5892f9;
+                width: 90px;
+                height: 80px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 5px;
+                
+            }
+            #writeCommentBtn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
         </style>
         <script>
             //사이드 메뉴 소스
@@ -103,7 +140,47 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //사이드 메뉴 소스  
+            //사이드 메뉴 소스 
+
+            var count1=0;
+            var checkMul1=0;
+            var count2=0;
+            var checkMul2=0;
+            function changeBackground1(obj){        
+                if (count1 == 0){
+                    if(checkMul2 == 1){
+                    alert('하나만 선택가능합니다.');
+                    }
+                    else{
+                        obj.style.background = "red";
+                        count1=1;        
+                        checkMul1=1;
+                    }
+                }
+                else{
+                    obj.style.background = "#5892f9";
+                    count1=0;
+                    checkMul1=0;
+                }
+            } 
+
+            function changeBackground2(obj){        
+                if (count2 == 0){
+                    if(checkMul1 == 1){
+                    alert('하나만 선택가능합니다.');
+                    }
+                    else{
+                        obj.style.background = "red";
+                        count2=1;        
+                        checkMul2=1;
+                    }
+                }
+                else{
+                    obj.style.background = "#5892f9";
+                    count2=0;
+                    checkMul2=0;
+                }
+            } 
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
@@ -131,46 +208,52 @@
                     <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
                 </ul>
         </nav>
-        <section class = positionBody>
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>신규등록된</strong></span> 취업박람회 일정</p>
-                    
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair01.GIF" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair02.png" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair03.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair04.png" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
-                <div style="margin-left:10%;">
-                        <p style="font-size:30px;"><span style="color:blueviolet"><strong>서울지역</strong></span> 취업박람회 일정</p>
-                        
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey; border-spacing: 30px;">
-                        
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair05.gif" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair06.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair07.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair08.jpg" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
-                <div style="margin-left:10%;">
-                        <p style="font-size:30px;"><span style="color:blueviolet"><strong>경기지역</strong></span> 취업박람회 일정</p>
-                        
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey; border-spacing: 30px;">
-                        
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair09.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair10.png" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair11.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair12.png" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
-        </section>      
+        <div style="margin-left:290px; border: 1px solid white; width:937px; background: white">
+            <table>
+                <tr><td style="font-size:30px; font-weight: bold; color:#3493ff;">커뮤니티</td></tr>
+                <tr><td style="height:30px;">&nbsp;</td></tr>
+                <tr><td style="font-weight: bold; font-size:25px;">웹 개발자가 되기 위한 서적 추천</td></tr>
+                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;웹고인물<span style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회수: 12회</span>&nbsp;&nbsp;<span style="font-size:13px;">2019.10.29 15:18</span></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr name = "contents">
+                    <td>
+                        웹은 책보다 구글링해보고 유튜브 보고 따라쳐보는게 더 낫다. ㅇㅈ? ㅇㅇㅈ~
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+            </table> 
+
+            <div style="margin-top:20px;margin-left:345px;">
+                <input type="button" id="btn" value="추천" onclick="changeBackground1(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="비추천" onclick="changeBackground2(this)">
+            </div> 
+            <div style="height:40px;">&nbsp;</div>
+            <hr style="border: solid 0.5px gray; width:900px;">
+            <div style="font-size: 20px; margin:30px;">댓글 <span style="color:#04b4ae;">2</div>
+
+            <table style="margin:30px;">
+                <tr>
+                    <td>
+                        <textarea cols="90" rows="5" onclick="this.value=''">댓글을 남겨주세요.</textarea>
+                    </td>
+                    <td><input type="submit" value="댓글남기기" id="writeCommentBtn"></td>
+                </tr>
+            </table>
+            
+            <table style="margin:18px; width:900px;">
+                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">지나가던웹개발자</td></tr>
+                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">웹고인물의 명언이네요.</td></tr>
+                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">구글신입사원</td></tr>
+                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">갓구글</td></tr>
+            </table>
+        </div>
+
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
