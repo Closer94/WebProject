@@ -50,23 +50,58 @@
 	}
 	
 	/* 각 section 내 들어갈 공간 .header.height : 100px */
+/*
 	section>div {
 		font-family: 'Open Sans';
 		font-style: normal;
 		text-align: center;
 		position: relative;
-		/* 왜있는지 모르겟다.
+		
 		top: 50%; 
 		transform: translateY(-50%);
-		*/
+		
+	
 		border:3px red solid;
 		color : white;
 		height: 100%;
 		width:100%;
-		background-color:rgba(0,0,0,0.3);
+	}
+*/
+	.section-wrap{
+		font-family: '배달의민족 도현', 'Open Sans';
+		font-style: normal;
+		color:white;
+		background : rgba(255,0,0,0.4);
+		position: relative;
+		margin:auto;
+		width:80%;
+		top : 100px;
+		border : 3px solid red;
+		text-shadow: 6px 6px 10px black;
+		text-align: left;
 	}
 
 	</style>	
+
+	<script>
+	//section 내의 seciton-wrap 반응형
+	setInterval(
+	function sectionDivResize(){
+		var sectionWrap = document.querySelectorAll(".section-wrap");
+		var section = document.querySelector("section");
+		for (var i = 0; i < sectionWrap.length; i++){
+			var item = sectionWrap.item(i);
+			item.style.height = section.offsetHeight - 100 + "px";
+		}
+	}
+	, 100);
+	
+	window.onload = function(){
+		window.onresize = sectionDivResize();
+	};
+	
+	</script>
+
 
 </head>
 <body>
@@ -85,32 +120,30 @@
 	
 	<div id="main" class="scroll-container">
 		<section class="section1">
-			<div>
-				<div class="section-wrapper">
-					<div class="section-title">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
-					<div class="section-subtitle">
-						<p>미생에서 완생으로<br>
-							인생의 나침반이 <br>
-							되어드립니다.
-						</p>
-						<button class="btn-2">See more > </button>
-					</div>
+			<div class="section-wrap">
+				<div class="section-title">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
+				<div class="section-subtitle">
+					<p>미생에서 완생으로<br>
+						인생의 나침반이 <br>
+						되어드립니다.
+					</p>
+					<button class="btn-2">See more > </button>
 				</div>
 			</div>
+			<img src="./image/Lyon.png" alt="라이언이모티콘" style="position: absolute; top:100px; right:0px; height:60%; border:1px whitesmoke solid;">
 		</section>
 		<section class="section2">
-			<div>
-				<div class="section-wrapper">
-					<div class="section-title">당신의<br>직업적성을<br>분석합니다.</div>
-					<div class="section-subtitle">
-						<p>미생에서 완생으로<br>
-							인생의 나침반이 <br>
-							되어드립니다.
-						</p>
-						<button class="btn-2">자세히 > </button>
-					</div>
+			<div class="section-wrap">
+				<div class="section-title" style="text-align: right;">문과?<br>그게뭐야<br>너도 개발자가<br>될수있어!</div>
+				<div class="section-subtitle" style="text-align: right;">
+					<p>개발자 = 컴퓨터공학?<br>
+						대부분의 개발자는 컴공이 아니라는 사실!<br>
+						우리와 함께 차근차근 공부해보자구요!
+						<button class="btn-2" style="display:inline-block">See more > </button>
+					</p>
 				</div>
 			</div>
+			<img src="./image/Lyon.png" alt="라이언이모티콘" style="position: absolute; top:100px; left:0px; height:60%; border:1px whitesmoke solid;">
 		</section>
 		<section class="section3">
 			<div>

@@ -49,6 +49,19 @@
 }
 
 /*section*/
+section{
+	position: relative;
+	z-index:0;
+}
+/*section 배경흐리게*/
+section:before{
+	content: ' ';
+	position: absolute;
+	top: 0; left:0; right:0; bottom:0;
+	background: rgba(0,0,0,0.3);;
+	z-index:-1;
+}
+
 .section-wrapper {
 	margin:auto;
 	display:inline-flex;
@@ -64,30 +77,23 @@
 
 .section-title{
 	margin:0px;
-	display:inline-block;
+	display:block;
 	border:1px solid white;
-	font-size : 6vw;
-	text-shadow: 6px 6px 10px black;
+	font-size : 5vw;
 	text-align: left;
 }
 
 .section-subtitle{
-	display:inline-block;
+	display:block;
 	border:1px solid white;
 	font-size : 2vw;
-	text-shadow: 6px 6px 10px black;
-	width:60%;
 	text-align:left;
 }
-.section-button{
-	border : 1px solid white;
-}
-
 
 /*button*/
 button,
 button::after {
-	transition: all 0.3s;
+	transition: all 0.7s;
 }
 
 button {
@@ -128,3 +134,5 @@ button:hover {
 	width: 100%;
   }
 
+  /*img*/
+  

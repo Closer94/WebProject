@@ -8,66 +8,10 @@
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
-
+        <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
+        <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
         <style>
-            .positionHead{
-                max-width: 1200px;
-                min-width: 1200px;
-                margin:0 auto;
-                margin-top: -15px;
-            }
-            .positionBody{
-                max-width: 1200px;
-                margin:0 auto;
-                margin-top: 40px;
-            }
-            a {
-                display: inline-block;
-                transition: .3s;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                text-decoration: none;
-                color: #000000;
-            }
-            a:hover {
-                -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-                text-decoration: underline;
-            } 
-            #ulStyle{
-                margin-left: 100px;
-                padding: 10px;
-                width: 1300px;
-                height: 70px;
-            }
-            #liStyle{ 
-                font-family: 'Do Hyeon', sans-serif;
-                font-size: 25px;
-                list-style:none;
-                float: left;
-                padding:0px;
-            }
-            .jb-text {
-                padding: 5px 10px;
-                text-align: center;
-                position: absolute;
-            
-                transform: translate( -50%, -50% );
-                font-size: 50px;
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-            }
-               
-            
-            /*사이드 메뉴 소스*/
-            #STATICMENU { 
-            margin: 0pt; 
-            padding: 0pt;  
-            position: absolute; 
-            right: 0px; 
-            top: 0px;
-            }
-            /*사이드 메뉴 소스*/
+           
         </style>
         <script>
             //사이드 메뉴 소스
@@ -104,6 +48,7 @@
             }
             //사이드 메뉴 소스  
         </script>
+
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
         <!--사이드 메뉴-->
@@ -132,43 +77,76 @@
         </nav>
         <section class = positionBody>
                 <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>신규등록된</strong></span> 취업박람회 일정</p>
+                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>웹 개발자</strong></span>를 위한 취업박람회 일정</p> 
+                </div>
+
+                <!--silder 시작-->
+                <div id="slider">
+                    <ul id="sliderWrap">
+                        <li>
+                            <a href=""><img src="./image/jobFair01.GIF"></a>
+                            <a href=""><img src="./image/jobFair02.png"></a>
+                            <a href=""><img src="./image/jobFair03.jpg"></a>
+                            <a href=""><img src="./image/jobFair04.png"></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="./image/jobFair05.GIF"></a>
+                            <a href=""><img src="./image/jobFair06.jpg"></a>
+                            <a href=""><img src="./image/jobFair07.jpg"></a>
+                            <a href=""><img src="./image/jobFair08.jpg"></a>
+                        </li>
+                        <li>
+                            <a href=""><img src="./image/jobFair09.jpg"></a>
+                            <a href=""><img src="./image/jobFair10.png"></a>
+                            <a href=""><img src="./image/jobFair11.jpg"></a>
+                            <a href=""><img src="./image/jobFair12.png"></a>
+                        </li>  
+                    </ul>
+                    <a href="#" id="prev">&#8810;</a>
+                    <a href="#" id="next">&#8811;</a>
+                </div>
+                <!--slider 끝-->
+                <div style="margin-left:10%;">
+                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>웹 개발자</strong></span>를 위한 구직정보</p> 
+                </div>
+                
+                <div class="card">
+                    <div class="card-title" style="background:yellow">
+                        <h3>카카오</h3>
+                        <p>2019/10/1 ~ 2019/10/30</p>
+                        <!-- 화살표 백터기반 아이콘-->
+                        <svg viewbox="0 0 28 25">
+                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title" style="background:green">
+                        <h3>네이버</h3>
+                        <p>2019/9/1 ~ 2019/10/30</p>
+                        <!-- 화살표 백터기반 아이콘-->
+                        <svg viewbox="0 0 28 25">
+                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title" style="background:blue">
+                        <h3>다음</h3>
+                        <p>2019/11/12 ~ 2019/12/30</p>
+                        <!-- 화살표 백터기반 아이콘-->
+                        <svg viewbox="0 0 28 25">
+                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
+                        </svg>
+                    </div>
+                </div>
+
+ 
+
+
                     
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair01.GIF" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair02.png" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair03.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair04.png" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
-                <div style="margin-left:10%;">
-                        <p style="font-size:30px;"><span style="color:blueviolet"><strong>서울지역</strong></span> 취업박람회 일정</p>
-                        
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey; border-spacing: 30px;">
-                        
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair05.gif" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair06.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair07.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair08.jpg" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
-                <div style="margin-left:10%;">
-                        <p style="font-size:30px;"><span style="color:blueviolet"><strong>경기지역</strong></span> 취업박람회 일정</p>
-                        
-                </div>
-                <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey; border-spacing: 30px;">
-                        
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td><a href=""><img src="./image/jobFair09.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair10.png" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair11.jpg" style="width:250px;height:300px;"></a></td>
-                        <td><a href=""><img src="./image/jobFair12.png" style="width:250px;height:300px;"></a></td>
-                    </tr>
-                </table>
         </section>      
         <footer class="positionBody" >
             <hr>
@@ -179,4 +157,66 @@
         </footer>  
     </body>
 
+<!-- slider 시작-->
+    <script type="text/javascript">
+        var responsiveSlider = function(){
+            var slider = document.getElementById("slider"); 
+            alert(slider);
+            var sliderWidth = slider.offsetWidth;
+            var sliderList = document.getElementById("sliderWrap");
+            var count = 1;
+            var items = sliderList.querySelectorAll("li").length;
+            var prev = document.getElementById("prev");
+            var next = document.getElementById("next");
+            
+            var lists = sliderList.querySelectorAll("li");
+            for(var i = 0; i < items; i++){
+                var list = lists.item(i);
+                list.style.width = sliderWidth + "px";
+        }
+        
+        window.addEventListener('resize', function(){
+            sliderWidth = slider.offsetWidth;
+        });
+
+        var prevSlider = function(){
+            
+            if(count > 1){
+                count = count - 2;
+                sliderList.style.left= "-" + count*sliderWidth + "px";
+                count++;
+            }
+
+            else if(count == 1){
+                sliderList.style.left = "-" + ( items-1)*sliderWidth + "px";
+                count = items;
+            }
+            
+        };
+
+        var nextSlider = function(){
+            
+            if(count < items){
+                sliderList.style.left = "-" + count * sliderWidth + "px";
+                count++;
+            }
+            else if(count == items){
+                sliderList.style.left = "0px";
+                count = 1;
+            }
+            
+        };
+
+        next.addEventListener("click", function(){
+            nextSlider();
+        });
+
+        prev.addEventListener("click", function(){
+            prevSlider();
+        });
+    };
+
+    window.onload = responsiveSlider();
+    </script>
+<!-- slider 시작-->
 </html>
