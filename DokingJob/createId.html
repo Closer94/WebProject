@@ -60,13 +60,30 @@
             input[type=password]:focus{
                 background: #add8e6;
             }
+            #btn{
+                background-color: #5892f9;
+                width: 100px;
+                height: 50px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:underline;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
         </style>
 
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
         <div class="positionHead">
             <p style="width:300px;height:100px;font-size:50px; font-family:'Do Hyeon', sans-serif; margin-left:160px; margin-bottom:-40px;">도킹잡 회원가입</p>
-            <p style="font-size:20px; font-family:'Do Hyeon', sans-serif;margin-left:100px; margin-bottom:50px;">하나의 아이디로 도킹잡의 다양한 서비스를 이용해 보세요.</p>
+            <p style="font-size:20px; font-family:'Do Hyeon', sans-serif;margin-left:100px; margin-bottom:50px;">하나의 아이디로 도킹잡의 맞춤형 서비스를 이용해 보세요.</p>
 
 
             <div style="margin-left:17%;">
@@ -74,11 +91,45 @@
                     <table border="0">
                         <tr><td><input type="text" placeholder="  이름" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
+                        <tr>
+                            <td>
+                                <input type="text" placeholder="  년도" style="width:100px; height:40px; padding-left:10px; float:left;">년 
+                                <input type="text" placeholder="  월" style="width:100px; height:40px; padding-left:10px;">월
+                                <input type="text" placeholder="  일" style="width:100px; height:40px; padding-left:10px;">일
+                            </td>
+                        </tr>
+                        <tr><td style="height:10px;"></td></tr>
+                        <tr><td><input type="text" placeholder="  닉네임" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td style="height:10px;"></td></tr>
                         <tr><td><input type="text" placeholder="  이메일" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td><input type="password" placeholder="  비밀번호" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td><input type="password" placeholder="  비밀번호 확인" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td style="height:10px;"></td></tr>
+                        <tr>
+                            <td style="border-bottom:1px solid #d3d3d3;">
+                                <select name="interest" id="interest" style="width:403px; height:40px; padding-left:10px">
+                                    <option selected value="0">관심분야</option>
+                                    <option value="1">웹</option>
+                                    <option value="2">앱</option>
+                                    <option value="3">네트워크</option>
+                                    <option value="4">정보보안</option>
+                                    <option value="5">데이터베이스</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td style="height:10px;"></td></tr>
+                        <tr><td>
+                                <input type="text" placeholder="  우편번호" style="width:160px; height:40px; padding-left:10px; float:left;">&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="button"  value="우편번호 찾기" id="btn" style="width:140px; height:40px; outline:none; background:#4d87ef; color:whitesmoke; font-size:13px;">
+                            </td>
+                        </tr>
+                        <tr><td style="height:10px;"></td></tr>
+                        <tr><td><input type="text" placeholder="  주소" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td style="height:10px;"></td></tr>
+                        <tr><td><input type="text" placeholder="  상세주소" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td style="height:10px;"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">도킹잡 서비스에 대한 소식을 이메일로 받아봅니다.</label></td></tr>
                         <tr><td style="height:10px;"></td></tr>

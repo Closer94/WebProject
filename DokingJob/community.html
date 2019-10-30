@@ -15,13 +15,14 @@
                 min-width: 1200px;
                 margin:0 auto;
                 margin-top: -15px;
+                margin-left: 180px;
             }
             .positionBody{
                 max-width: 1200px;
                 margin:0 auto;
                 margin-top: 40px;
             }
-            a {
+            #titleMenu {
                 display: inline-block;
                 transition: .3s;
                 -webkit-transform: scale(1);
@@ -29,7 +30,7 @@
                 text-decoration: none;
                 color: #000000;
             }
-            a:hover {
+            #titleMenu:hover {
                 -webkit-transform: scale(1.1);
                 transform: scale(1.1);
                 text-decoration: underline;
@@ -57,8 +58,56 @@
                 color: white;
                 font-family: 'Noto Sans KR', sans-serif;
             }
-               
-            
+          
+            #up {
+                display: inline-block;
+                transition: .3s;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                text-decoration: none;
+                color: #000000;
+            }
+            #up:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                text-decoration: underline;
+
+            }
+            #menuUp {
+                text-decoration:none;
+                color: black;
+            }    
+            #menuUp:hover{
+                color: #4a94f2;
+            }
+            #defaultUp{
+                text-decoration:none;
+                color: black;
+            }
+            #defaultUp:hover{
+                text-decoration:underline;
+            }
+            #btn{
+                background-color: #5892f9;
+                width: 80px;
+                height: 40px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+
+            td{
+                padding:5px;
+            }
             /*사이드 메뉴 소스*/
             #STATICMENU { 
             margin: 0pt; 
@@ -71,6 +120,7 @@
             tr:nth-child(even) {
                 background : aliceblue;
             }
+           
         </style>
         <script>
             //사이드 메뉴 소스
@@ -118,101 +168,63 @@
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a  id = "titleMenu"  title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a href="logIn.html" title="로그인하기">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="createId.html" title="회원가입하기">회원가입</a>&nbsp;&nbsp;</td> 
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a  id = "titleMenu" href="logIn.html" title="로그인하기">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  id = "titleMenu" href="createId.html" title="회원가입하기">회원가입</a>&nbsp;&nbsp;</td> 
                 </tr>
             </table>
         </header>
         <nav class = positionHead> 
-                <ul id="ulStyle">
-                    <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a href="aptitudeTest.html">직업적성검사</a></li>
-                    <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a href="factInfo.html">직업별 솔직담백한 정보</a></li>
-                    <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a href="jobEducation.html">취업교육 프로그램</a></li>
-                    <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a href="jobFair.html">취업박람회</a></li>
-                    <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="success.html">성공후기</a></li>
+                <ul id="ulStyle" >
+                    <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a id = "titleMenu"  href="aptitudeTest.html">직업정보 및 테크트리</a></li>
+                    <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a id = "titleMenu"  href="jobEducation.html">지원교육정보</a></li>
+                    <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a id = "titleMenu"  href="supportPolicy.html">지원정책</a></li>
+                    <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a id = "titleMenu"  href="jobFair.html">박람회 및 채용정보</a></li>
+                    <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a id = "titleMenu"  href="community.html">커뮤니티</a></li>
                 </ul>
         </nav>
         <section class = positionBody>
-            <div style="margin-left:10%;">
-                <h1>BEST 취업후기<span style="color:gray;font-size:13px;">완생으로 거듭난 비법은?</span></h1>
-                
-            </div>
-            <table border="1" style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                
-                <tr height="50" style="color:darkslategrey;">     
-                    <td width="100">김신웅</td>
-                    <td width="650" style="text-align:left; padding-left:20px;"><a href="">도킹잡에서 나의 진정한 꿈을 찾았어요!!!!!</a></td>
-                    <td width="100">★★★★★</td>
-                    <td width="100">2019.04.23</td>
+            <form name='my_form'>
+            <table style="margin-left:30px; border-collapse: collapse;">
+                <tr>
+                    <th style="width:50px; padding:10px 17px 10px 17px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">번호</th>
+                    <th style="width:100px; padding:10px 200px 10px 315px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">제목</th>
+                    <th style="width:100px; padding:10px 17px 10px 17px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">작성자</th>
+                    <th style="width:100px; padding:10px 17px 10px 17px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">작성일</th>
+                    <th style="width:50px; padding:10px 17px 10px 17px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">조회수</th>
+                    <th style="width:50px; padding:10px 17px 10px 17px; border-top:1px solid black; border-bottom:1px solid #d3d3d3;">추천</th>
                 </tr>
-
-                <tr height="50" style="color:darkslategrey;">
-                    <td width="100">왕서현</td>
-                    <td width="650" style="text-align:left; padding-left:20px;"><a href="">사람들에게 피곤함 달래주고 달달함을 주는 바리스타가 되었어요!!</a></td>
-                    <td width="100">★★★★★</td>
-                    <td width="100">2019.03.31</td>
+                <tr style="border-bottom:1px solid #d3d3d3;">
+                    <td style="text-align:center; padding-left:-5px; width:68px">52543</td>
+                    <td><a id = "defaultUp" href="postForm.html">웹 개발자가 되기 위한 서적 추천</a></td>
+                    <td style="text-align:center;">웹고인물</td>
+                    <td style="text-align:center;">2019.10.29</td>
+                    <td style="text-align:center;">12</td>
+                    <td style="text-align:center;">24</td>
                 </tr>
-
-                <tr height="50" style="color:darkslategrey;">
-                    <td width="100">송도형</td>
-                    <td width="650" style="text-align:left; padding-left:20px;"><a href="">20년간 못찾던 목표를 여기서 세웠어요!!!</a></td>
-                    <td width="100">★★★★★</td>
-                    <td width="100">2019.02.21</td>
+                <tr style="border-bottom:1px solid #d3d3d3;">
+                    <td style="text-align:center; padding-left:-5px;">21523</td>
+                    <td><a id = "defaultUp" href="postForm.html">네트워크개발자가 되고싶은데 네트워크 개념을 잘 모르겠어요.ㅠ</a></td>
+                    <td style="text-align:center;">노베이스</td>
+                    <td style="text-align:center;">2019.07.15</td>
+                    <td style="text-align:center;">10</td>
+                    <td style="text-align:center;">7</td>
                 </tr>
-
-                <tr height="50" style="color:darkslategrey;">
-                    <td width="100">오성경</td>
-                    <td width="650" style="text-align:left; padding-left:20px;"><a href="">도킹잡 덕분에 일자리까지 구해서 첫 월급을 받아봤어요!!</a></td>
-                    <td width="100">★★★★★</td>
-                    <td width="100">2019.04.23</td>
-                </tr>
-                
-                <tr height="50" style="color:darkslategrey;">
-                    <td width="100">고경환</td>
-                    <td width="650" style="text-align:left; padding-left:20px;"><a href="">도킹잡을 알고 미생에서 완생이 되기까지 불과 1년밖에 걸리지 않았다...</a></td>
-                    <td width="100">★★★★★</td>
-                    <td width="100">2019.01.11</td>
+                <tr style="border-bottom:1px solid #d3d3d3;">
+                    <td style="text-align:center; padding-left:-5px;">04523</td>
+                    <td><a id = "defaultUp" href="postForm.html">개발자들 필수언어 자바자바 거리는데 자바가 뭐죠?</a></td>
+                    <td style="text-align:center;">무개념</td>
+                    <td style="text-align:center;">2019.03.11</td>
+                    <td style="text-align:center;">2</td>
+                    <td style="text-align:center;">37</td>
                 </tr>
             </table>
-            <p style="margin:8%">
-                <img src="image/sucess01.GIF" style="height:300px; width:980px;">
-            </p>
+        </form>
         </section>
-        <section class = positionBody>
-                <div style="margin-left:10%;">
-                    <h1>총 <span style="color:gray;font-size:30px;"><U>12,771개</U></span>의 성공후기
-                        <span style="margin-left:55%; font-size:15px;"><a href="" style="color:gray;">글쓰기</a></span></h1>
-                    
-                </div>
-                <table border="1" style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                    
-                    <tr height="50" style="color:darkslategrey;">     
-                        <td width="100">박찬성</td>
-                        <td width="650" style="text-align:left; padding-left:20px;"><a href="">사랑해요 도킹잡!!!!!!</a></td>
-                        <td width="100">★★★</td>
-                        <td width="100">2017.04.17</td>
-                    </tr>
-                    <tr height="50" style="color:darkslategrey;">     
-                            <td width="100">이정훈</td>
-                            <td width="650" style="text-align:left; padding-left:20px;"><a href="">드디에 내 인생에 빛이 보인다.</a></td>
-                            <td width="100">★★★★</td>
-                            <td width="100">2016.12.14</td>
-                    </tr>
-                    <tr height="50" style="color:darkslategrey;">     
-                            <td width="100">김현수</td>
-                            <td width="650" style="text-align:left; padding-left:20px;"><a href="">힘들었던 시절은 이제 물어가라!!!!!!</a></td>
-                            <td width="100">★★★</td>
-                            <td width="100">2017.04.17</td>
-                    </tr>
-                    <tr height="50" style="color:darkslategrey;">     
-                            <td width="100">엄수민</td>
-                            <td width="650" style="text-align:left; padding-left:20px;"><a href="">드디어 양복입고 출근한다!!!!!</a></td>
-                            <td width="100">★★★★★</td>
-                            <td width="100">2017.03.15</td>
-                    </tr>
-                </table>
-        </section>
+        <div style="margin-top:10px; margin-left:1245px;">
+           <input id = "btn" type="button" value="글쓰기"></td>
+        </div>
+
         <section class = positionBody>
                 <div style="margin-left: 35%;">
                     <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
@@ -224,6 +236,24 @@
                     </table>
                 </div>
         </section>
+
+        <table style="margin-left:954px; margin-top:10px;">
+            <tr>
+                <td>
+                    <select style="width:100px;height:30px ">
+                        <option value="1">제목+본문</option>
+                        <option value="2">제목만</option>
+                        <option value="3">작성자</option>
+                        <option value="4">코멘트내용</option>
+                        <option value="5">코멘트작성자</option>
+                    </select>
+                </td>
+                <td><input class="searchInput" type="text" placeholder="  검색" style="height:23px;"></td>
+                <td><input type="submit" id = 'btn' value ="검색" style="height:30px;"></td>
+            </tr>
+            <tr></tr>
+        </table>  
+
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">

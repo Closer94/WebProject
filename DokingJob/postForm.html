@@ -20,7 +20,7 @@
             .positionBody{
                 max-width: 1200px;
                 margin:0 auto;
-                margin-top: 30px;
+                margin-top: 40px;
             }
             a {
                 display: inline-block;
@@ -69,8 +69,42 @@
             top: 0px;
             }
             /*사이드 메뉴 소스*/
-            tr:nth-child(even) {
-                background : aliceblue;
+
+            #btn{
+                border-radius:30px;
+                background-color: #5892f9;
+                width: 90px;
+                height: 35px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: red;
+                color: white;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+            #writeCommentBtn{
+                background-color: #5892f9;
+                width: 90px;
+                height: 80px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                margin-bottom: 5px;
+                
+            }
+            #writeCommentBtn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
             }
         </style>
         <script>
@@ -106,7 +140,47 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //사이드 메뉴 소스  
+            //사이드 메뉴 소스 
+
+            var count1=0;
+            var checkMul1=0;
+            var count2=0;
+            var checkMul2=0;
+            function changeBackground1(obj){        
+                if (count1 == 0){
+                    if(checkMul2 == 1){
+                    alert('하나만 선택가능합니다.');
+                    }
+                    else{
+                        obj.style.background = "red";
+                        count1=1;        
+                        checkMul1=1;
+                    }
+                }
+                else{
+                    obj.style.background = "#5892f9";
+                    count1=0;
+                    checkMul1=0;
+                }
+            } 
+
+            function changeBackground2(obj){        
+                if (count2 == 0){
+                    if(checkMul1 == 1){
+                    alert('하나만 선택가능합니다.');
+                    }
+                    else{
+                        obj.style.background = "red";
+                        count2=1;        
+                        checkMul2=1;
+                    }
+                }
+                else{
+                    obj.style.background = "#5892f9";
+                    count2=0;
+                    checkMul2=0;
+                }
+            } 
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
@@ -134,105 +208,59 @@
                     <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
                 </ul>
         </nav>
-        <section class = positionBody>
-                <div style="margin-left:44%;">
-                    <h1>전체 과정 안내</h1>
-                    
-                </div>
-                <table border="1" style="margin-left: 20px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
-                    <tr style="color:black;background:#72bee0;"">
-                        <th><select style="width:100px;height:40px;">
-                                <option value="1">지점</option>
-                                <option value="2">서울</option>  
-                                <option value="3">경기</option>  
-                                <option value="4">강원</option>  
-                                <option value="5">충청</option>
-                                <option value="6">전라</option>   
-                                <option value="7">경상</option>                                  
-                                <option value="8">제주</option>  
-                        </select></th> 
-                        <th><select style="width:100px; height:40px; padding:0%;">
-                                <option value="1">대상</option>
-                                <option value="2">국가기간</option>
-                                <option value="3">구직자</option>
-                                <option value="4">재직자/유료</option>
-                                <option value="5">일반(유료)</option>
-                                <option value="6">청년취업아카데미</option>
-                        </select></th> 
-                        <th><select style="width:150px; height:40px; padding:0%;">
-                                <option value="1">분야</option>
-                                <option value="2">디자인/웹/설계</option>
-                                <option value="3">전기/태양광(신재생)</option>
-                                <option value="4">OA/세무회계/ERP</option>
-                                <option value="5">바리스타/제빵/요리</option>
-                                <option value="6">미용/패션</option>
-                        </select></th>     
-                        <th style="width:250px;">과정명</th>
-                        <th style="width:70px;">정원</th>
-                        <th style="width:150px;">수강료</th>
-                        <th><select style="width:200px; height:40px; padding:0%;">
-                                <option value="1">훈련기간</option>
-                                <option value="2">2019-11-01</option>
-                                <option value="3">2019-12-01</option>
-                                <option value="4">2020-01-01</option>
-                                <option value="5">2022-02-01</option>
-                                <option value="6">2022-03-01</option>
-                                <option value="7">2022-04-01</option>                                  
-                                <option value="8">2022-05-01</option> 
-                        </select></th> 
-                        <th style="width:100px"></th>
-                    </tr>
-                    <tr height="50">     
-                        <td>경기점</td>
-                        <td>국가기관</td>
-                        <td>전기/태양광(신재생)</td>
-                        <td>전기공사(내선 및 제어설계)</td>
-                        <td>30</td>
-                        <td>8,750,000원</td>
-                        <td>2019.10.01 ~ 2020.07.24</td>
-                        <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
-                    </tr>
-                    <tr height="50">     
-                        <td>서울점</td>
-                        <td>재직자/유료</td>
-                        <td>바리스타/제빵/요리</td>
-                        <td>제과기능사 자격증 취득과정</td>
-                        <td>20</td>
-                        <td>495,670원</td>
-                        <td>2019.10.01 ~ 2019.11.25</td>
-                        <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
-                    </tr>
-                    <tr height="50">     
-                            <td>강원점</td>
-                            <td>재직자/유료</td>
-                            <td>디자인/웹/설계</td>
-                            <td>시안 제작 심화 그래픽 Tool 응용</td>
-                            <td>15</td>
-                            <td>전액무료</td>
-                            <td>2019.10.01 ~ 2019.10.30</td>
-                            <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
-                        </tr>
-                </table>
-                
-            </section>
-            <section class = positionBody style="max-width:1200px">
-                    <div style="margin-left: 35%;">
-                        <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                            <tr>
-                                <td style="padding:5px;"><a herf="">&lt;&lt;</a></td><td style="padding:5px;"><a href="">&lt;</a></td>
-                                <td style="padding:5px;"><a herf="">1</a></td><td style="padding:5px;"><a herf="">2</a></td><td style="padding:5px;"><a herf="">3</a></td><td style="padding:5px;"><a herf="">4</a></td>
-                                <td style="padding:5px;"><a herf="">&gt;</a></td><td style="padding:5px;"><a herf="">&gt;&gt;</a></td>
-                            </tr>
-                        </table>
-                    </div>
-            </section>
+        <div style="margin-left:290px; border: 1px solid white; width:937px; background: white">
+            <table>
+                <tr><td style="font-size:30px; font-weight: bold; color:#3493ff;">커뮤니티</td></tr>
+                <tr><td style="height:30px;">&nbsp;</td></tr>
+                <tr><td style="font-weight: bold; font-size:25px;">웹 개발자가 되기 위한 서적 추천</td></tr>
+                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;웹고인물<span style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;조회수: 12회</span>&nbsp;&nbsp;<span style="font-size:13px;">2019.10.29 15:18</span></td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr name = "contents">
+                    <td>
+                        웹은 책보다 구글링해보고 유튜브 보고 따라쳐보는게 더 낫다. ㅇㅈ? ㅇㅇㅈ~
+                    </td>
+                </tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+                <tr><td>&nbsp;</td></tr>
+            </table> 
+
+            <div style="margin-top:20px;margin-left:345px;">
+                <input type="button" id="btn" value="추천" onclick="changeBackground1(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="비추천" onclick="changeBackground2(this)">
+            </div> 
+            <div style="height:40px;">&nbsp;</div>
+            <hr style="border: solid 0.5px gray; width:900px;">
+            <div style="font-size: 20px; margin:30px;">댓글 <span style="color:#04b4ae;">2</div>
+
+            <table style="margin:30px;">
+                <tr>
+                    <td>
+                        <textarea cols="90" rows="5" onclick="this.value=''">댓글을 남겨주세요.</textarea>
+                    </td>
+                    <td><input type="submit" value="댓글남기기" id="writeCommentBtn"></td>
+                </tr>
+            </table>
+            
+            <table style="margin:18px; width:900px;">
+                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">지나가던웹개발자</td></tr>
+                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">웹고인물의 명언이네요.</td></tr>
+                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">구글신입사원</td></tr>
+                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">갓구글</td></tr>
+            </table>
+        </div>
+
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">상호: (주)도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>  
     </body>
-    
+
 </html>

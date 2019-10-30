@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            도킹잡 마이페이지
+        </title>        
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+        
+        <style>
+            .positionHead{
+                max-width: 1200px;
+                min-width: 1200px;
+                margin:0 auto;
+                margin-top: -15px;
+                margin-left: 180px;
+            }
+            .positionBody{
+                max-width: 1200px;
+                margin:0 auto;
+                margin-top: 110px;
+            }
+            #up {
+                display: inline-block;
+                transition: .3s;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                text-decoration: none;
+                color: #000000;
+            }
+            #up:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                text-decoration: underline;
+
+            }
+            #menuUp {
+                text-decoration:none;
+                color: black;
+            }    
+            #menuUp:hover{
+                color: #4a94f2;
+            }
+            #defaultUp{
+                text-decoration:none;
+                color: black;
+            }
+            #defaultUp:hover{
+                text-decoration:underline;
+            }
+            #btn{
+                background-color: #5892f9;
+                width: 100px;
+                height: 50px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+
+
+        </style>
+        <script>
+            var n = 1
+            function check_all() {
+                if(n == 1){
+                    n--;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                            my_form.mycheck[i].checked = true;
+                    }                    
+                }
+                else{
+                    n++;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                    my_form.mycheck[i].checked = false;
+                    }
+                }
+            }
+
+            function agree() { 
+                var chkbox = document.getElementsByName('agree');
+                var chk = false; 
+                for(var i=0 ; i<chkbox.length ; i++){ 
+                    if(chkbox[i].checked) { chk = true; } 
+                    else { chk = false; } 
+                } 
+                if(chk) {
+                    alert("회원탈퇴 처리가 완료되었습니다.\n이용해주셔서 감사합니다."); 
+                    return false; 
+                }
+                else { 
+                    alert("모든 약관에 동의해 주세요.") 
+                } 
+            }
+        </script>
+    </head>
+    <body style="background:#edf1f8;" class = positionBody> 
+        <div class = positionHead>
+                <table style="margin-top:-120px;">
+                    <tr>
+                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                        <td width="600"></td>
+                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="logIn.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="createId.html" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+        </div>
+        <div class = positionHead>
+                <table style=" margin-top:-40px; margin-left:80px;">
+                    <tr>
+                        <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">마이페이지</td>
+                        <td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="나의 활동 페이지 이동" href="myPage_myActive1.html" >나의 활동</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="개인정보수정 페이지 이동" href="modifyProfile.html" >개인정보수정</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="비밀번호 변경 페이지 이동" href="modifyPassword.html" >비밀번호 변경</a></td>
+                        <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="회원 탈퇴 페이지 이동" href="deleteAccount.html">회원 탈퇴</a></td>
+                    </tr>
+                </table>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="margin-top:-40px; width:1025px; margin-left:81px;">
+            <hr style="border: solid 1.5px black;">
+        </div>
+        <table style="margin-top:40px; margin-left:160px; border-collapse: collapse;">
+                <tr><td rowspan="3"><img src="image/deleteAccount.jpg" style="width:100px; height:100px;"></td><td style="font-size:25px; font-weight: bold;">&nbsp;&nbsp;회원탈퇴에 앞서 <span style="color:#5297f2;">유의사항 및 안내</span>를 반드시 읽고 진행해 주세요!</td></tr>
+        </table>
+        <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
+            <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
+                <tr>
+                    <td style="font-weight:bold; padding:20px;">도킹잡 아이디는 재사용 및 복구 불가 안내</td>
+                    <td style="padding-left:340px;padding-right:40px;"><input id = "cb1" name="agree" type="checkbox" style="width:30px; height:30px;"></td>
+                    
+                </tr>                
+                <tr>
+                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;회원탈퇴 진행 시 본인을 포함한 타인 모두 <span style="color:red;">아이디 재사용이나 복구가 불가능합니다.</span></td>
+                    <td style="padding-left:342px;">동의</td>
+                </tr>
+                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;신중히 선택하신 후 결정해주세요.</td></tr>
+            </table>
+        </div>
+        
+        <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
+            <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
+                <tr>
+                    <td style="font-weight:bold; padding:20px;">내정보 및 개인형 서비스 이용 기록 삭제 안내</td>
+                    <td style="padding-left:312px; padding-right:40px;"><input id = "cb2" name="agree" type="checkbox" style="width:30px; height:30px;"></td>       
+                </tr>                
+                <tr>
+                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;내정보 및 개인형 서비스 이용기록이 모두 삭제되며, <span style="color:red;">삭제된 데이터는 복구되지 않습니다.</span></td>
+                    <td style="padding-left:315px;">동의</td>
+                </tr>
+                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;삭제되는 서비스를 확인하시고, 필요한 데이터는 미리 백업을 해주세요.</td></tr>
+            </table>
+        </div>
+
+        <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
+            <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
+                <tr>
+                    <td colspan="2" style="font-weight:bold; padding:20px;">게시판형 서비스에 등록한 게시글 삭제 불가 안내</td>
+                    <td style="padding-left:460px; padding-right:37px;"><input id = "cb3" name="agree" type="checkbox" style="width:30px; height:30px"></td>       
+                </tr>                
+                <tr>
+                    <td colspan="3" style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;삭제를 원하는 게시글이 있다면 반드시 회원탈퇴 전 비공개 처리하거나 삭제하시기 바랍니다.
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span style="padding-left:10px; font-size:17px">동의</span></td>
+                </tr>
+                <tr><td colspan="3" style="font-size:13px;padding-bottom:20px ;">&nbsp;&nbsp;&nbsp;&nbsp;탈퇴 후에는 회원정보가 삭제되어 본인 여부를 확인할 수 있는 방법이 없어, <span style="color:red;">게시글을 임의로 삭제해드릴 수 없습니다. </span></td></tr>
+            </table>
+        </div>
+
+        <div style="margin-top:20px;margin-left:480px;">
+            <input type="button" id="btn" value="회원 탈퇴" onclick='agree()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="탈퇴 취소">
+        </div>
+        <footer class="positionBody" >
+            <hr>
+            <p style="font-size:15px;color:gray;">
+                <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
+                <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
+            </p>
+        </footer>  
+    </body>
+</html> 
