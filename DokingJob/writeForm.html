@@ -1,191 +1,256 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'>
-<style>
-body{
-    padding: 0;
-    background-color: #edf1f8;
-}
+    <meta charset='utf-8'>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
 
-@font-face {
-  font-family: "주아체";
-  src: url("./font/주아체.ttf") format('truetype');
-}
-@font-face {
-  font-family: "도현체";
-  src: url("./font/도현체.ttf") format('truetype');
-}
-@font-face {
-  font-family: "한나체";
-  src: url("./font/한나체.ttf") format('truetype');
-}
-@font-face {
-  font-family: "연성체";
-  src: url("./font/연성체.ttf") format('truetype');
-}
+    <style>
+        body{
+            padding: 0;
+            background-color: #edf1f8;
+        }
 
-.font_jua{
-    font-family: "주아체";
-}
+        @font-face {
+            font-family: "주아체";
+            src: url("./font/주아체.ttf") format('truetype');
+        }
+        @font-face {
+            font-family: "도현체";
+            src: url("./font/도현체.ttf") format('truetype');
+        }
+        @font-face {
+            font-family: "한나체";
+            src: url("./font/한나체.ttf") format('truetype');
+        }
+        @font-face {
+            font-family: "연성체";
+            src: url("./font/연성체.ttf") format('truetype');
+        }
 
-.font_dohyun{
-    font-family: "도현체";
-}
+        .font_jua{
+            font-family: "주아체";
+        }
 
-.font_hanna{
-    font-family: "한나체";
-}
+        .font_dohyun{
+            font-family: "도현체";
+        }
 
-.font_yunsung{
-    font-family: "연성체";
-}
+        .font_hanna{
+            font-family: "한나체";
+        }
 
-.body{
-  text-align: center;
-  vertical-align: middle;
-  height: 100%;
-}
+        .font_yunsung{
+            font-family: "연성체";
+        }
 
-.body_border{
-  padding-top: 5px;
-  display: inline-block;
-  background-color: #d7eef1;
-  width: 800px;
-  height: 656px;
-}
+        .body{
+            text-align: center;
+            vertical-align: middle;
+            height: 100%;
+        }
 
-.form_div{
-  padding: 12px;
-  width: 95%;
-  display: inline-block;
-  background-color: white;
-}
-.title_line{
-  text-align: left;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-.main_line{
-  margin-bottom: 15px;
-}
+        .body_border{
+            padding-top: 5px;
+            display: inline-block;
+            background-color: #d7eef1;
+            width: 800px;
+            height: 656px;
+        }
 
-.final_line{
-  margin-top: 10px;
-}
+        .form_div{
+            padding: 12px;
+            width: 95%;
+            display: inline-block;
+            background-color: white;
+        }
+        .title_line{
+            text-align: left;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .main_line{
+            margin-bottom: 15px;
+        }
 
-.tag_line{
-    text-align: left;
-    margin : 5px 0px 20px 15px;
-}
+        .final_line{
+            margin-top: 10px;
+        }
 
-.file_line{
-    margin-top: 10px;
-    text-align: left;
-    margin-left: 15px;
-}
+        .tag_line{
+            text-align: left;
+            margin : 5px 0px 20px 15px;
+        }
 
-#h3{
-  text-align: left;
-  margin-left: 10px;
-}
+        .file_line{
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 15px;
+        }
+
+        #h3{
+            text-align: left;
+            margin-left: 10px;
+        }
 
 
-#title_text{
-  width: 365px;
-  margin-bottom: 5px;
-}
+        #title_text{
+            width: 365px;
+            margin-bottom: 5px;
+        }
 
-#main_text_word{
-  text-align: left;
-  margin-left: 10px;
-  margin-bottom: 10px;
-}
+        #main_text_word{
+            text-align: left;
+            margin-left: 10px;
+            margin-bottom: 10px;
+        }
 
-#main_text{
-  resize: none;
-  margin: 5px 10px 10px 10px;
-}
+        #main_text{
+            resize: none;
+            margin: 5px 10px 10px 10px;
+        }
 
-#write_button{
-  margin-top: 8px;
-  margin-right:7.5px;
-}
+        #write_button{
+            margin-top: 8px;
+            margin-right:7.5px;
+        }
 
-#tag_text{
-  width: 300px;
-}
+        #tag_text{
+            width: 300px;
+        }
 
-#list_button{
-  background-color: #b49b7a;
+        #list_button{
+            background-color: #b49b7a;
 
-}
-#write_button{
-  background-color: #9bafd2;
-}
+        }
+        #write_button{
+            background-color: #9bafd2;
+        }
 
-#list_button, #write_button{
-  cursor: pointer;
-  padding: 5px;
-  border-style: none;
-  width: 100px;
-  height: 50px;
-  margin-top: 10px;
-  margin-right: 15px;
-  margin-left: 15px;
-  color: white;
-  border: 0;
-  outline: 0;
-}
+        #list_button, #write_button{
+            cursor: pointer;
+            padding: 5px;
+            border-style: none;
+            width: 100px;
+            height: 50px;
+            margin-top: 10px;
+            margin-right: 15px;
+            margin-left: 15px;
+            color: white;
+            border: 0;
+            outline: 0;
+        }
 
-#file_button{
-  width: 300px;
-  margin-right: 30px;
-  margin-bottom: 10px;
-}
+        #file_button{
+            width: 300px;
+            margin-right: 30px;
+            margin-bottom: 10px;
+        }
+        .positionHead{
+            max-width: 1200px;
+            min-width: 1200px;
+            margin:0 auto;
+            margin-top: -15px;
+            margin-left: 180px;
+        }
+        .positionBody{
+            max-width: 1200px;
+            margin:0 auto;
+            margin-top: 30px;
+        }
+        a {
+            display: inline-block;
+            transition: .3s;
+            -webkit-transform: scale(1);
+            transform: scale(1);
+            text-decoration: none;
+            color: #000000;
+        }
+        a:hover {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+            text-decoration: underline;
+        } 
+        #ulStyle{
+            margin-left: 100px;
+            padding: 10px;
+            width: 1300px;
+            height: 70px;
+        }
+        #liStyle{ 
+            font-family: 'Do Hyeon', sans-serif;
+            font-size: 25px;
+            list-style:none;
+            float: left;
+            padding:0px;
+        }
+    </style>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script>
+        function complete(){
+            alert('글이 등록되었습니다.');
+            
+        }
+    </script>
 
-</style>
-<title> 게시판 글쓰기 </title>
-<script src="ckeditor/ckeditor.js"></script>
+    <title> 게시판 글쓰기 </title>
 </head>
-<body>
-<div class="body">
-<div class="body_border">
-  <div class="form_div">
-  <h3 id="h3"> <span class="font_dohyun"> 자유게시판 글쓰기 </span><img src="image/pencil.png" width="25" height="25"> </h3>
-  <hr>
-  <form action="" method="post">
-    <div class="title_line">
-    <label><span class="font_jua" style="margin-right:7.5px";> 제목 </span><input type="text" placeholder="게시글 제목을 입력하세요" id="title_text"></label>
+<body> 
+    <header class = positionHead>
+        <table>
+            <tr>
+                <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                <td width="600"></td>
+                <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a href="logIn.html" title="로그인하기">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="createId.html" title="회원가입하기">회원가입</a>&nbsp;&nbsp;</td>
+            </tr>
+        </table>
+    </header>
+    <nav class = positionHead> 
+        <ul id="ulStyle" >
+            <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a href="aptitudeTest.html">직업정보 및 테크트리</a></li>
+            <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a href="jobEducation.html">지원교육정보</a></li>
+            <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a href="supportPolicy.html">지원정책</a></li>
+            <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
+            <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="body_border">
+            <div class="form_div">
+                <h3 id="h3"> <span class="font_dohyun"> 자유게시판 글쓰기 </span><img src="image/pencil.png" width="25" height="25"> </h3>
+                <hr>
+                <form action="" method="post">
+                <div class="title_line">
+                <label><span class="font_jua" style="margin-right:7.5px";> 제목 </span><input type="text" placeholder="게시글 제목을 입력하세요" id="title_text"></label>
+                </div>
+                <div class="main_line">
+                    <label>
+                        <div id="main_text_word"><span class="font_jua">본문</span></div>
+                        <div id="main_text"> <textarea name="editor1" id="editor1"></textarea>
+                            <script> CKEDITOR.replace('editor1'); </script>
+                        </div>
+                    </label>
+                </div>
+                <div class="file_line">
+                <label>
+                    <div style="margin-right : 15px; display:inline-block"> <span class="font_jua">첨부파일 </span></div>
+                    <input type="file" value="파일 선택" id="file_button">
+                </label>
+                </div>
+                <div class="tag_line">
+                <label>
+                <div style="margin-right : 45px; display:inline-block"> <span class="font_jua">태그 </span></div>
+                <input type="text" placeholder="태그의 구분은 쉼표(,) 최대 5개" id="tag_text"></label>
+                </div>
+                <hr>
+                <div class="final_line">
+                    <input type="submit" id="write_button" name="write" value="글쓰기" onclick="complete()">
+                    <input type="submit" id="list_button" name="cancel" value="글목록">
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
-    <div class="main_line">
-    <label>
-      <div id="main_text_word"><span class="font_jua">본문</span></div>
-      <div id="main_text"> <textarea name="editor1" id="editor1"></textarea>
-          <script> CKEDITOR.replace('editor1'); </script>
-      </div>
-
-    </label>
-    </div>
-    <div class="file_line">
-      <label>
-        <div style="margin-right : 15px; display:inline-block"> <span class="font_jua">첨부파일 </span></div>
-        <input type="file" value="파일 선택" id="file_button">
-    </label>
-    </div>
-    <div class="tag_line">
-    <label>
-      <div style="margin-right : 45px; display:inline-block"> <span class="font_jua">태그 </span></div>
-      <input type="text" placeholder="태그의 구분은 쉼표(,) 최대 5개" id="tag_text"></label>
-    </div>
-    <hr>
-    <div class="final_line">
-        <input type="submit" id="write_button" name="write" value="글쓰기">
-        <input type="submit" id="list_button" name="cancel" value="글목록">
-    </div>
-  </form>
-</div>
-</div>
-</div>
 </body>
 </html>
