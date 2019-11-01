@@ -87,25 +87,25 @@
 
 
             <div style="margin-left:17%;">
-                <form method="post" action="createId.jsp">
+                <form method="post" action="jsp/createId.jsp">
                     <table border="0">
-                        <tr><td><input type="text" placeholder="  이름" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="id" placeholder="  아이디" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr>
                             <td>
-                                <input type="text" placeholder="  년도" style="width:100px; height:40px; padding-left:10px; float:left;">년
-                                <input type="text" placeholder="  월" style="width:100px; height:40px; padding-left:10px;">월
-                                <input type="text" placeholder="  일" style="width:100px; height:40px; padding-left:10px;">일
+                                <input type="text" name="year" placeholder="  년도" style="width:100px; height:40px; padding-left:10px; float:left;">년
+                                <input type="text" name="month" placeholder="  월" style="width:100px; height:40px; padding-left:10px;">월
+                                <input type="text" name="day" placeholder="  일" style="width:100px; height:40px; padding-left:10px;">일
                             </td>
                         </tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" placeholder="  닉네임" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="nickname" placeholder="  닉네임" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" placeholder="  이메일" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="email" placeholder="  이메일" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="password" placeholder="  비밀번호" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="password" name="password" placeholder="  비밀번호" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="password" placeholder="  비밀번호 확인" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="password" name="passwordcheck" placeholder="  비밀번호 확인" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr>
                             <td style="border-bottom:1px solid #d3d3d3;">
@@ -131,7 +131,7 @@
                         <tr><td><input type="text" placeholder="  상세주소" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">도킹잡 서비스에 대한 소식을 이메일로 받아봅니다.</label></td></tr>
+                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox" name="emailcheck">도킹잡 서비스에 대한 소식을 이메일로 받아봅니다.</label></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">도킹잡에서 제공하는 서비스 약관에 동의합니다.</label>&nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-size:13px;"><a href="">약관보기</a></st></td></tr>
                         <tr><td style="height:10px;"></td></tr>
