@@ -190,8 +190,20 @@
     <script>
         function complete(){
             alert('글이 등록되었습니다.');
-            
+            location.href='community.html';
+
         }
+
+        function cancelWrite(){
+            var result = confirm('이 페이지를 벗어나면 마지막 저장 후 수정된 내용은 저장되지 않습니다.');
+            if(result == true){
+               location.href='community.html';
+            }
+            else{
+                return;
+            }
+        }
+
     </script>
 
     <title> 게시판 글쓰기 </title>
@@ -208,7 +220,7 @@
     </header>
     <nav class = positionHead> 
         <ul id="ulStyle" >
-            <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a href="aptitudeTest.html">직업정보 및 테크트리</a></li>
+            <li id="liStyle" title="직업적성검사 이동" style="margin-left: 60px;"><a href="ProgramerInfo.html">직업정보</a></li>
             <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a href="jobEducation.html">지원교육정보</a></li>
             <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a href="supportPolicy.html">지원정책</a></li>
             <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
@@ -245,8 +257,8 @@
                 </div>
                 <hr>
                 <div class="final_line">
-                    <input type="submit" id="write_button" name="write" value="글쓰기" onclick="complete()">
-                    <input type="submit" id="list_button" name="cancel" value="글목록">
+                    <input type="button" id="write_button" name="write" value="글쓰기" onclick="complete()">
+                    <input type="button" id="list_button" name="cancel" value="글목록" onclick="cancelWrite()">
                 </div>
                 </form>
             </div>
