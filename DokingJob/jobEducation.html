@@ -42,7 +42,8 @@
                 height: 70px;
             }
             #liStyle{ 
-                font-family: 'Do Hyeon', sans-serif;
+                font-family: 'Noto Sans KR', sans-serif;
+                font-weight: bold;
                 font-size: 25px;
                 list-style:none;
                 float: left;
@@ -59,7 +60,20 @@
                 font-family: 'Noto Sans KR', sans-serif;
             }
                
-            
+            #btn{
+                background-color: #edf1f8;
+                width: 80px;
+                height: 40px;
+                border: 1px solid darkgray;
+                outline: none; 
+                
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: gray;
+                color: white;   
+            }
+
             /*사이드 메뉴 소스*/
             #STATICMENU { 
             margin: 0pt; 
@@ -126,20 +140,20 @@
             </table>
         </header>
         <nav class = positionHead> 
-                <ul id="ulStyle" >
-                    <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a href="aptitudeTest.html">직업정보 및 테크트리</a></li>
-                    <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a href="jobEducation.html">지원교육정보</a></li>
-                    <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a href="supportPolicy.html">지원정책</a></li>
-                    <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
-                    <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
-                </ul>
-        </nav>
+            <ul id="ulStyle" >
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
+                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="supportPolicy.html">지원정책</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
+            </ul>
+    </nav>
         <section class = positionBody>
                 <div style="margin-left:44%;">
                     <h1>전체 과정 안내</h1>
                     
                 </div>
-                <table border="1" style="margin-left: 20px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
+                <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
                     <tr style="color:black;background:#72bee0;"">
                         <th><select style="width:100px;height:40px;">
                                 <option value="1">지점</option>
@@ -152,23 +166,20 @@
                                 <option value="8">제주</option>  
                         </select></th> 
                         <th><select style="width:100px; height:40px; padding:0%;">
-                                <option value="1">대상</option>
-                                <option value="2">국가기간</option>
-                                <option value="3">구직자</option>
-                                <option value="4">재직자/유료</option>
-                                <option value="5">일반(유료)</option>
-                                <option value="6">청년취업아카데미</option>
+                                <option value="1">교육종류</option>
+                                <option value="2">국비교육</option>
+                                <option value="3">기업교육</option>
                         </select></th> 
                         <th><select style="width:150px; height:40px; padding:0%;">
                                 <option value="1">분야</option>
-                                <option value="2">디자인/웹/설계</option>
-                                <option value="3">전기/태양광(신재생)</option>
-                                <option value="4">OA/세무회계/ERP</option>
-                                <option value="5">바리스타/제빵/요리</option>
-                                <option value="6">미용/패션</option>
+                                <option value="2">웹</option>
+                                <option value="3">앱</option>
+                                <option value="4">네트워크</option>
+                                <option value="5">보안</option>
+                                <option value="6">빅데이터</option>
                         </select></th>     
-                        <th style="width:250px;">과정명</th>
-                        <th style="width:70px;">정원</th>
+                        <th style="width:1000px;">학원명_과정명</th>
+              
                         <th style="width:150px;">수강료</th>
                         <th><select style="width:200px; height:40px; padding:0%;">
                                 <option value="1">훈련기간</option>
@@ -180,34 +191,31 @@
                                 <option value="7">2022-04-01</option>                                  
                                 <option value="8">2022-05-01</option> 
                         </select></th> 
-                        <th style="width:100px"></th>
+                        <th style="width:100px"><input type="image" src="image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
                     </tr>
                     <tr height="50">     
                         <td>경기점</td>
-                        <td>국가기관</td>
-                        <td>전기/태양광(신재생)</td>
-                        <td>전기공사(내선 및 제어설계)</td>
-                        <td>30</td>
-                        <td>8,750,000원</td>
+                        <td>국비교육</td>
+                        <td>웹</td>
+                        <td>국제직업전문학교_반응형 웹 디자인</td>
+                        <td>4,200,000원</td>
                         <td>2019.10.01 ~ 2020.07.24</td>
                         <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
                     </tr>
                     <tr height="50">     
                         <td>서울점</td>
-                        <td>재직자/유료</td>
-                        <td>바리스타/제빵/요리</td>
-                        <td>제과기능사 자격증 취득과정</td>
-                        <td>20</td>
-                        <td>495,670원</td>
+                        <td>국비교육</td>
+                        <td>앱</td>
+                        <td>안드로이드개발교육원_안드로이드 어플리케이션 개발자</td>
+                        <td>3,900,000원</td>
                         <td>2019.10.01 ~ 2019.11.25</td>
                         <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
                     </tr>
                     <tr height="50">     
                             <td>강원점</td>
-                            <td>재직자/유료</td>
-                            <td>디자인/웹/설계</td>
-                            <td>시안 제작 심화 그래픽 Tool 응용</td>
-                            <td>15</td>
+                            <td>기업교육</td>
+                            <td>빅데이터</td>
+                            <td>삼성 청년 SW 아카데미</td>
                             <td>전액무료</td>
                             <td>2019.10.01 ~ 2019.10.30</td>
                             <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>

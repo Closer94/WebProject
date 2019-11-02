@@ -29,7 +29,8 @@ a:hover {
     height: 70px;
 }
 #liStyle{ 
-    font-family: 'Do Hyeon', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
     font-size: 25px;
     list-style:none;
     float: left;
