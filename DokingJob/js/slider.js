@@ -64,7 +64,6 @@ var scrollProgess = function(){
 };
 
 window.addEventListener('scroll', scrollProgess);
-window.onload = function()
+window.onload = function(){
     responsiveSlider();
-    
 }

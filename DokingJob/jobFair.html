@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
-        <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
+
         <script>
             //사이드 메뉴 소스
             var stmnLEFT = 50; // 오른쪽 여백 
@@ -72,10 +72,13 @@
                     <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
             </ul>
         </nav>
+        
         <section class = positionBody>
                 <div style="margin-left:10%;">
                     <p style="font-size:30px;"><span style="color:blueviolet"><strong>웹 개발자</strong></span>를 위한 취업박람회 일정</p> 
                 </div>
+                
+                <hr>
 
                 <!--silder 시작-->
                 <div id="slider">
@@ -103,47 +106,94 @@
                     <a href="#" id="next">&#8811;</a>
                 </div>
                 <!--slider 끝-->
+                
+                
                 <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>웹 개발자</strong></span>를 위한 구직정보</p> 
+                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>당신을 위한</strong></span> 구직정보</p> 
                 </div>
                 
-                <div class="card">
-                    <div class="card-title" style="background:yellow">
-                        <h3>카카오</h3>
-                        <p>2019/10/1 ~ 2019/10/30</p>
-                        <!-- 화살표 백터기반 아이콘-->
-                        <svg viewbox="0 0 28 25">
-                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title" style="background:green">
-                        <h3>네이버</h3>
-                        <p>2019/9/1 ~ 2019/10/30</p>
-                        <!-- 화살표 백터기반 아이콘-->
-                        <svg viewbox="0 0 28 25">
-                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
-                        </svg>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-title" style="background:blue">
-                        <h3>다음</h3>
-                        <p>2019/11/12 ~ 2019/12/30</p>
-                        <!-- 화살표 백터기반 아이콘-->
-                        <svg viewbox="0 0 28 25">
-                            <path d="M13.145 2.13l1.94-1.867 12.178 12-12.178 12-1.94-1.867 8.931-8.8H.737V10.93h21.339z"/>
-                        </svg>
-                    </div>
-                </div>
-
- 
-
-
+                <hr>
+                <div class="select">
+                    <select name="place">
+                            <option value="1">전국</option>
+                            <option value="2">서울/경기</option>
+                            <option value="3">충청</option>
+                            <option value="4">전라</option>>
+                            <option value="4">경상</option>>
+                            <option value="4">강원</option>>
+                    </select>    
+                    <span> 지역에 있는</span>
                     
+                    <select name="type">
+                        <option value="1">웹</option>
+                        <option value="1">앱</option>
+                    </select>
+
+                    <span> 개발자 구직정보 입니다.</span>
+                </div>
+
+                <hr>
+                
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/kakao.png" alt="카카오">
+                    </div>
+                    <div class="content">
+                        <p class="title">웹 퍼블리셔</p>
+                        <p class="company">카카오</p>
+                        <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/naver.png" alt="네이버">
+                    </div>
+                    <div class="content">
+                        <p class="title">DB 관리</p>
+                        <p class="company">네이버</p>
+                        <p class="place">강원</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/facebook.png" alt="페이스북">
+                    </div>
+                    <div class="content">
+                        <p class="title">웹/앱 서버개발</p>
+                        <p class="company">facebook</p>
+                        <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/amazon.png" alt="아마존"">
+                    </div>
+                    <div class="content">
+                        <p class="title">디지털 마케팅</p>
+                        <p class="company">Amazon</p>
+                        <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                    </div>
+                    <div class="content">
+                        <p class="title">구직제목</p>
+                        <p class="company">회사</p>
+                        <p class="place">지역</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
         </section>      
         <footer class="positionBody" >
             <hr>
@@ -155,65 +205,10 @@
     </body>
 
 <!-- slider 시작-->
-    <script type="text/javascript">
-        var responsiveSlider = function(){
-            var slider = document.getElementById("slider"); 
-            alert(slider);
-            var sliderWidth = slider.offsetWidth;
-            var sliderList = document.getElementById("sliderWrap");
-            var count = 1;
-            var items = sliderList.querySelectorAll("li").length;
-            var prev = document.getElementById("prev");
-            var next = document.getElementById("next");
-            
-            var lists = sliderList.querySelectorAll("li");
-            for(var i = 0; i < items; i++){
-                var list = lists.item(i);
-                list.style.width = sliderWidth + "px";
-        }
-        
-        window.addEventListener('resize', function(){
-            sliderWidth = slider.offsetWidth;
-        });
+    <script type="text/javascript" src="./js/slider.js"></script>
+<!-- slider 끝-->
+<!-- jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-        var prevSlider = function(){
-            
-            if(count > 1){
-                count = count - 2;
-                sliderList.style.left= "-" + count*sliderWidth + "px";
-                count++;
-            }
 
-            else if(count == 1){
-                sliderList.style.left = "-" + ( items-1)*sliderWidth + "px";
-                count = items;
-            }
-            
-        };
-
-        var nextSlider = function(){
-            
-            if(count < items){
-                sliderList.style.left = "-" + count * sliderWidth + "px";
-                count++;
-            }
-            else if(count == items){
-                sliderList.style.left = "0px";
-                count = 1;
-            }
-            
-        };
-
-        next.addEventListener("click", function(){
-            nextSlider();
-        });
-
-        prev.addEventListener("click", function(){
-            prevSlider();
-        });
-    };
-
-    window.onload = responsiveSlider();
-    </script>
-<!-- slider 시작-->
 </html>

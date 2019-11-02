@@ -1,0 +1,146 @@
+.positionHead{
+    max-width: 1200px;
+    min-width: 1200px;
+    margin:0 auto;
+    margin-top: -15px;
+    margin-left: 180px;
+}
+.positionBody{
+    max-width: 1000px;
+    margin:0 auto;
+    margin-top: 30px;
+}
+a {
+    display: inline-block;
+    transition: .3s;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    text-decoration: none;
+    color: #000000;
+}
+a:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    text-decoration: underline;
+} 
+#ulStyle{
+    margin-left: 100px;
+    padding: 10px;
+    width: 1300px;
+    height: 70px;
+}
+#liStyle{ 
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 25px;
+    list-style:none;
+    float: left;
+    padding:0px;
+}
+.jb-text {
+    padding: 5px 10px;
+    text-align: center;
+    position: absolute;
+
+    transform: translate( -50%, -50% );
+    font-size: 50px;
+    color: white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+/*검색 소스*/
+.searchDiv{
+    float:right;
+    height:47px;
+    width: 400px;
+    border: 1px solid #1b5ac2;
+    background: #ffffff;
+}   
+.searchInput{
+    font-size: 16px;
+    width: 325px;
+    padding:10px;
+    border: 0px;
+    outline:none;
+    float: left;
+}
+.searchButton{
+    width:50px;
+    height:100%;
+    border: 0px;
+    background: #1b5ac2;
+    outline: none;
+    float: right;
+    color: #ffffff;
+}
+/*검색 소스*/
+/*사이드 메뉴 소스*/
+#STATICMENU { 
+margin: 0pt; 
+padding: 0pt;  
+position: absolute; 
+right: 0px; 
+top: 0px;
+}
+/*사이드 메뉴 소스*/
+tr:nth-child(even) { 
+    background : aliceblue;
+}
+
+/*card 시작*/
+
+.card {
+    margin:20px;
+    padding:0px;
+
+    display:inline-flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items: center;
+
+    width:450px;
+    height:200px;
+    box-shadow:0px 13px 21px -5px rgba(0, 0, 0, 0.3);
+    background: white;
+    
+    border-radius: 15px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow:0px 13px 21px -3px rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    background:rgba(255, 0, 0, 0.5);
+}
+
+.card:hover p{
+    color:white;
+    transition: all 0.3s ease;
+}
+
+
+.card p{
+    text-align: left;
+    display: inline-block;
+    margin:10px 1px 10px 1px;
+    padding:0px;
+    width:400px;
+}
+
+.card .title{
+    font-size:35px;
+    font-weight: bold;
+    color:#393c45;	
+}
+
+.card .content{
+    font-size:15px;
+    color:#48cfad;
+}
+
+
+.card .hashtag{
+    height:50px;
+    font-size:15px;
+    color:blueviolet;
+}
+
+

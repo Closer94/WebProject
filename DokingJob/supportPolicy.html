@@ -8,96 +8,8 @@
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="./css/policy.css">
 
-        <style>
-            .positionHead{
-                max-width: 1200px;
-                min-width: 1200px;
-                margin:0 auto;
-                margin-top: -15px;
-                margin-left: 180px;
-            }
-            .positionBody{
-                max-width: 1000px;
-                margin:0 auto;
-                margin-top: 30px;
-            }
-            a {
-                display: inline-block;
-                transition: .3s;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                text-decoration: none;
-                color: #000000;
-            }
-            a:hover {
-                -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-                text-decoration: underline;
-            } 
-            #ulStyle{
-                margin-left: 100px;
-                padding: 10px;
-                width: 1300px;
-                height: 70px;
-            }
-            #liStyle{ 
-                font-family: 'Do Hyeon', sans-serif;
-                font-size: 25px;
-                list-style:none;
-                float: left;
-                padding:0px;
-            }
-            .jb-text {
-                padding: 5px 10px;
-                text-align: center;
-                position: absolute;
-            
-                transform: translate( -50%, -50% );
-                font-size: 50px;
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-            }
-            /*검색 소스*/
-            .searchDiv{
-                float:right;
-                height:47px;
-                width: 400px;
-                border: 1px solid #1b5ac2;
-                background: #ffffff;
-            }   
-            .searchInput{
-                font-size: 16px;
-                width: 325px;
-                padding:10px;
-                border: 0px;
-                outline:none;
-                float: left;
-            }
-            .searchButton{
-                width:50px;
-                height:100%;
-                border: 0px;
-                background: #1b5ac2;
-                outline: none;
-                float: right;
-                color: #ffffff;
-            }
-            /*검색 소스*/
-            /*사이드 메뉴 소스*/
-            #STATICMENU { 
-            margin: 0pt; 
-            padding: 0pt;  
-            position: absolute; 
-            right: 0px; 
-            top: 0px;
-            }
-            /*사이드 메뉴 소스*/
-            tr:nth-child(even) { 
-                background : aliceblue;
-            }
-
-        </style>
         <script>
             //사이드 메뉴 소스
             var stmnLEFT = 50; // 오른쪽 여백 
@@ -160,74 +72,33 @@
                 </ul>
         </nav>
         <section class = positionBody>
-            <div>
-                <div style="font-size:20px;"><strong>현재 일하고 있는 사람들의 생생한 정보들</strong>
-                    <span style="margin-left:57%;; font-size:15px;"><a href="" style="color:gray;">글쓰기</a></span>          
+                <div style="margin-left:10%;">
+                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>당신을 위한</strong></span> 지원정책</p> 
                 </div>
                 <hr>
-                <select style="width:150px;height:50px">
-                        <option value="1">업종별</option>
-                        <option value="2">서비스직</option>
-                        <option value="3">사무직</option>
-                        <option value="4">생산직</option>>
-                </select>    
-                <select style="width:150px;height:50px">
-                    <option value="1">직업별</option>
-         
-                </select>
-                <select style="width:150px;height:50px">
-                    <option value="1">제목</option>
-                    <option value="2">내용</option>>
-                </select>
-                <div class="searchDiv">
-                    <input class="searchInput" type="text" placeholder="검색어를 입력해주세요.">
-                    <button title="검색" class="searchButton">검색</button>
+                <div class="card">
+                    <p class="title">대학일자리센터운영</p>
+                    <p class="content">대학 내 진로지도 및 취창업 지원 기능 공간적 일원화
+                        기능적 연계 등 원스톱 고용서비스 전달체계 구축 지원으로, 대학의 취창업
+                        지원역량 강화 및 청년의 원할한 노동시장 이행 지원합니다.
+                    </p>
+                    <p class="hashtag">#취업지원 #구직자 #청년</p>
                 </div>
-            </div>      
-            
-            <table border="1" style="margin-left: 10px; margin-top:50px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                    <tr height="50" style="color:black; background:#72bee0;">
-                        <th>닉네임</th><th>업종</th><th>직업</th><th>제목</th><th>날짜</th>
-                    </tr>
-                    <tr height="40" style="color:darkslategrey;">     
-                        <td width="120">라뗀말이야</td>
-                        <td width="120">서비스직</td>
-                        <td width="120">바리스타</td>
-                        <td width="500" style="text-align:left; padding-left:20px;"><a href="">바리스타 5년차의 경험담과 알짜배기 정보</a></td>
-                        <td width="100">2019.9.03</td>
-                    </tr>
-                    <tr height="40" style="color:darkslategrey;">     
-                        <td width="120">가위손</td>
-                        <td width="120">서비스직</td>
-                        <td width="120">미용사</td>
-                        <td width="500" style="text-align:left; padding-left:20px;"><a href="">신입 미용사의 경험담</a></td>
-                        <td width="100">2019.8.23</td>
-                    </tr>
-                    <tr height="40" style="color:darkslategrey;">     
-                        <td width="120">부엉이</td>
-                        <td width="120">사무직</td>
-                        <td width="120">프로그래머</td>
-                        <td width="500" style="text-align:left; padding-left:20px;"><a href="">10년차 게임개발자의 현실조언</a></td>
-                        <td width="100">2018.7.11</td>
-                    </tr>
-                    <tr height="40" style="color:darkslategrey;">     
-                        <td width="120">삽질</td>
-                        <td width="120">건설직</td>
-                        <td width="120">중장비기사</td>
-                        <td width="500" style="text-align:left; padding-left:20px;"><a href="">포크레인 기사의 자격증 꿀팁</a></td>
-                        <td width="100">2018.1.20</td>
-                    </tr>
-        </s>
-        <section class = positionBody>
-                <div style="margin-left: 35%;">
-                    <table style="margin-left: 40%; text-align: center; border-collapse: collapse;border-color:darkgrey;">
-                        <tr>
-                            <td style="padding:5px;"><a herf="">&lt;&lt;</a></td><td style="padding:5px;"><a href="">&lt;</a></td>
-                            <td style="padding:5px;"><a herf="">1</a></td><td style="padding:5px;"><a herf="">2</a></td><td style="padding:5px;"><a herf="">3</a></td><td style="padding:5px;"><a herf="">4</a></td>
-                            <td style="padding:5px;"><a herf="">&gt;</a></td><td style="padding:5px;"><a herf="">&gt;&gt;</a></td>
-                        </tr>
-                    </table>
+
+                <div class="card">
+                    <p class="title">재학생직무체험</p>
+                    <p class="content">상대적으로 일경험 기회가 부족하고 취업률도 낮은 인문·사회·예체능계열 대학재학생(2~3학년 중심)들의 산업현장 체험기회 제공을 통한 입직기간 단축 등을 지원하는 프로그램입니다.
+                    </p>
+                    <p class="hashtag">#취업지원 #구직자 #청년</p>
                 </div>
+
+                <div class="card">
+                    <p class="title">중소기업탐방프로그램</p>
+                    <p class="content">청년들에게 다양한 직업세계 및 산업현장에 대한 체험기회를 제공하고, 우수한 중소·강소기업에 대한 정보제공을 통해 중소기업 인력 미스매치 해소 및 노동시장으로의 조기입직 유도하는 프로그램입니다.
+                    </p>
+                    <p class="hashtag">#취업지원 #구직자 #청년</p>
+                </div>
+                
         </section>
         <footer class="positionBody" >
             <hr>
