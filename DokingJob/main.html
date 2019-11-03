@@ -1,88 +1,227 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>
-            도킹잡(DockingJob) - 미생에서 완생으로
-        </title>
-        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
-        <link rel="stylesheet" href="css/main.css">
-        
-    </head>
-    <body style="background:#edf1f8;overflow:hidden;" onload="InitializeStaticMenu();">
-        <header class = positionHead>
-            <table style="position:fixed; margin-top:-100px;">
-                <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
-                    <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a href="logIn.html" title="로그인하기">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="createId.html" title="회원가입하기">회원가입</a>&nbsp;&nbsp;</td>
-                </tr>
-            </table>
-        </header>
-        <nav class = positionHead> 
-                <ul id="ulStyle" >
-                    <li id="liStyle" title="직업적성검사 이동" style="margin-left: 0px;"><a href="aptitudeTest.html">직업정보 및 테크트리</a></li>
-                    <li id="liStyle" title="직업별 솔직담백한 정보 이동" style="margin-left: 70px;"><a href="jobEducation.html">지원교육정보</a></li>
-                    <li id="liStyle" title="취업교육 프로그램 이동" style="margin-left: 70px;"><a href="supportPolicy.html">지원정책</a></li>
-                    <li id="liStyle" title="회사정보 이동" style="margin-left: 70px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
-                    <li id="liStyle" title="성공후기 이동" style="margin-left: 70px;"><a href="community.html">커뮤니티</a></li>
-                </ul>
-        </nav>
-        <section class = positionBody>
-            <div class="jb-wrap">
-                <div class="jb-image"><img src="./image/0.jpg" width="1170" height="500" style="margin-top:100px;"></div>
-                <div class="jb-text" style="top: 45%; left: 70%; font-family: 'Jua', sans-serif">
-                    <p>
-                        <br>
-                        미생에서 완생으로<br>
-                        인생의 나침반이 <br>
-                        되어드립니다.
-                    </p>                    
-                </div>                    
-            </div>
-                
-            <div style="height:200px;" id = "1"></div>
-            <div class="jb-wrap">
-                <div class="jb-image"><a href="aptitudeTest.html"><img title="클릭하여 자세한 내용보기" src="./image/2.jpg" width="1170" height="500" ></a></div>
-                    <div class="jb-text" style="top: 130%; left: 50%;">
-                        <p>당신의 직업적성을 분석합니다.</p>
-                    </div>    
-            </div>
-            
-            <div style="height:200px;" id = "2"></div>
-            <div class="jb-wrap">
-                <div class="jb-image"><a href="factInfo.html"><img title="클릭하여 자세한 내용보기" src="./image/3.jpg" width="1170" height="500" ></a></div>
-                    <div class="jb-text" style="top: 235%; left: 50%;">
-                        <p>현재 직업에 종사하고 있는<br> 사람들의 정보를 공유합니다.</p>
-                    </div>    
-            </div>
+<head>
+	<meta charset="utf-8">
+	<title>도킹잡-미생에서 완생을 향한 날개</title>
+	<link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="full-page-scroll.css">
+	<link rel="stylesheet" type="text/css" href="./css/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<!--모달창-->
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/needpopup.min.css">
+<!--모달창-->
 
-            <div style="height:200px;" id = "3"></div>
-            <div class="jb-wrap">
-                <div class="jb-image"><a href="jobEducation.html"><img title="클릭하여 자세한 내용보기" src="./image/4.jpg" width="1170" height="500" ></a></div>
-                    <div class="jb-text" style="top: 330%; left: 50%;">
-                        <p>직업 교육을 안내합니다.</p>
-                    </div>    
-            </div>
+	<style type="text/css">
 
-            <div style="height:200px;" id = "4"></div>
-            <div class="jb-wrap">
-                <div class="jb-image"><a href="jobFair.html".html"><img title="클릭하여 자세한 내용보기" src="./image/5.jpg" width="1170" height="500" ></a></div>
-                    <div class="jb-text" style="top: 430%; left: 50%;">
-                        <p>취업박람회 정보를 공유합니다.</p>
-                    </div>    
-            </div>
+	body{
+		min-height: 600px;
+		
+	}
+	/*각 section내 div 가운데 정렬*/
+	.scroll-container section{
+		text-align: center;
+	}
 
-            <div style="height:210px;" id = "5"></div>
-            <div class="jb-wrap">
-                <div class="jb-image"><a href="success.html"><img title="클릭하여 자세한 내용보기" src="./image/6.jpg" width="1170" height="500" ></a></div>
-                    <div class="jb-text" style="top: 530%; left: 50%;">
-                        <p>취업에 성공한 사람들의 정보를<br> 공유합니다.</p>
-                    </div>    
-            </div>
-        </section>
-    </body>
+	.section1 {
+		background-image: url("./image/0.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
 
+	.section2 {
+		background-image: url("./image/1.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section3 {
+		background-image: url("./image/2.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section4 {
+		background-image: url("./image/3.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+
+	.section5 {
+		background-image: url("./image/4.jpg");
+		background-repeat: no-repeat;
+		background-size:cover;
+	}
+	
+	/* 각 section 내 들어갈 공간 .header.height : 100px */
+/*
+	section>div {
+		font-family: 'Open Sans';
+		font-style: normal;
+		text-align: center;
+		position: relative;
+		
+		top: 50%; 
+		transform: translateY(-50%);
+		
+	
+		border:3px red solid;
+		color : white;
+		height: 100%;
+		width:100%;
+	}
+*/
+	.section-wrap{
+		font-family: '배달의민족 도현', 'Open Sans';
+		font-style: normal;
+		color:white;
+		position: relative;
+		margin:auto;
+		width:80%;
+		top : 100px;
+		text-shadow: 6px 6px 10px black;
+		text-align: left;
+	}
+
+	</style>	
+
+	<script>
+	//section 내의 seciton-wrap 반응형
+	setInterval(
+	function sectionDivResize(){
+		var sectionWrap = document.querySelectorAll(".section-wrap");
+		var section = document.querySelector("section");
+		for (var i = 0; i < sectionWrap.length; i++){
+			var item = sectionWrap.item(i);
+			item.style.height = section.offsetHeight - 100 + "px";
+		}
+	}
+	, 100);
+	
+	window.onload = function(){
+		window.onresize = sectionDivResize();
+	};
+	
+	</script>
+
+
+</head>
+<body>
+	<div class="header">
+		<div class="wrapper">
+			<div class="logo">
+				도킹잡
+			</div>
+		</div>
+	</div>
+	
+	<div id="main" class="scroll-container">
+		<section class="section1">
+			<div class="section-wrap">
+				<div class="section-title">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
+				<div class="section-subtitle">
+					<p>미생에서 완생으로<br>
+						인생의 나침반이 <br>
+						되어드립니다.
+					</p>
+					<button class="btn-2" href="#" data-needpopup-show="#small-popup" id = "titleMenu">서비스 이용하러가기</button>
+				</div>
+			</div>
+		</section>
+<!-- 로그인 모달창 -->
+        <div id='small-popup' class="needpopup" style="width:400px; margin-left:-13.5%;">
+                <div>
+                    <form>
+                        <table>
+                            <tr><td style="font-size:50px; text-align: center; font-family: 'Jua', 'sans-serif'; ">도킹잡</td></tr>
+                            <tr><td><input type="text" placeholder="아이디 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
+                            <tr><td><input type="password" placeholder="비밀번호 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
+                            <tr><td style="height:25px;"></td></tr>                            <tr><td><input type="submit" value="로 그 인" style="width:315px; height:40px; background:#4d87ef; color:whitesmoke;font-family: 'Noto Sans KR', sans-serif;font-size:20px;"></td></tr>
+                            <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">로그인 상태 유지</label></td></tr>
+                                <tr><td style="height:20px;"></td></tr>
+                                <tr><td style="font-size:13px; font-family: 'Noto Sans KR', sans-serif; text-align: center;"><a href="" style="text-decoration:none; color:black;">아이디 찾기</a> | <a href="" style="text-decoration:none; color:black;">비밀번호 찾기</a></td></tr>
+                        </table>
+                    </form>    
+                </div>
+            </div>
+    
+            <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+            <script src="js/needpopup.min.js"></script>
+            <script>  
+                needPopup.config.custom = {
+                    'removerPlace': 'outside',
+                    'closeOnOutside': false,
+                    onShow: function() {
+                        console.log('needPopup is shown');
+                    },
+                    onHide: function() {
+                        console.log('needPopup is hidden');
+                    }
+                };
+                needPopup.init();
+            </script>
+<!-- 로그인 모달창 -->		
+		<section class="section2">
+			<div class="section-wrap">
+				<div class="section-title" style="text-align: right;">IT비전공자<br>상관없어<br>너도 개발자가<br>될수있어!</div>
+				<div class="section-subtitle" style="text-align: right;">
+					<p>개발자 = 컴퓨터공학?<br>
+						대부분의 개발자는 컴공이 아니라는 사실!<br>
+						우리와 함께 차근차근 공부해보자구요!<br>
+						<button class="btn-2" style="display:inline-block"  href="#" data-needpopup-show="#small-popup" id = "titleMenu">Let's 도킹잡</button>
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="section3">
+			<div class="section-wrap">
+				<div class="section-title" style="text-align: center;">어이 거기~<br>한번<br>개발해볼<br>생각없나?</div>
+				<div class="section-subtitle" style="text-align: center;">
+					<p>전국 곳곳에 흩어진 수많은 국비지원 강의들<br>
+						도킹잡이 수많은 사이트에서 당신에 맞는 강의를<br>
+						스스로 추천해줍니다!
+					</p>
+					<button class="btn-2" style="display:inline-block"  href="#" data-needpopup-show="#small-popup" id = "titleMenu">Let's 도킹잡</button>
+				</div>
+			</div>
+		</section>
+		<section class="section4">
+				<div class="section-wrap">
+					<div class="section-title" style="text-align: left;">취업을<br>위한<br>당신만의<br>국가지원정책</div>
+					<div class="section-subtitle" style="text-align: left;">
+						<p>취업을 위한 수많은 국가정책이 있다는 사실<br>
+							도킹잡에서 당신을 위한 맞춤 고용정책을<br>
+							찾아보세요.
+						</p>
+						<button class="btn-2" style="display:inline-block"  href="#" data-needpopup-show="#small-popup" id = "titleMenu">Let's 도킹잡</button>
+					</div>
+				</div>
+		</section>
+		<section class="section5">
+			<div class="section-wrap">
+				<div class="section-title" style="text-align: right;">다양한<br>정보들을<br>여러사람들과<br>공유해보세요.</div>
+				<div class="section-subtitle" style="text-align: right;">
+					<p>당신만 알고있는 정보<br>
+					   당신만 모르고 있는 정보를<br>
+					   사람들과 소통을 통해 공유해보세요.
+					</p>
+					<button class="btn-2" style="display:inline-block"  href="#" data-needpopup-show="#small-popup" id = "titleMenu">Let's 도킹잡</button>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="full-page-scroll.js"></script>
+	<script type="text/javascript">
+		new fullScroll({
+			displayDots: true,
+			dotsPosition: 'left',
+			animateTime: 0.7,
+			animateFunction: 'ease'
+		});
+	</script>
+
+
+</body>
 </html>
