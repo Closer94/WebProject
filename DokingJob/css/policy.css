@@ -3,13 +3,12 @@
     min-width: 1200px;
     margin:0 auto;
     margin-top: -15px;
-    margin-left: 180px;
 }
 .positionBody{
-    max-width: 1000px;
+    max-width: 1200px;
     margin:0 auto;
-    margin-top: 30px;
 }
+
 a {
     display: inline-block;
     transition: .3s;
@@ -86,18 +85,29 @@ tr:nth-child(even) {
     background : aliceblue;
 }
 
+.content-wrapper{
+    display: flex ;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: center ;
+    align-items: center ;
+    align-content: center ;
+}
+
+
+
 /*card 시작*/
 
 .card {
     margin:20px;
-    padding:0px;
+    padding:20px;
 
     display:inline-flex;
     flex-direction:column;
     justify-content:space-between;
     align-items: center;
 
-    width:450px;
+    width:500px;
     height:200px;
     box-shadow:0px 13px 21px -5px rgba(0, 0, 0, 0.3);
     background: white;
@@ -147,3 +157,27 @@ tr:nth-child(even) {
 }
 
 
+/*section-title 시작*/
+div.section-title-wrapper{
+    text-shadow:1px 1px 3px white;
+    font-weight:bold;
+    font-size:30px;
+    display: flex ;
+    flex-direction: row ;
+    flex-wrap: wrap ;
+    justify-content: space-between ;
+    align-items: center ;
+    align-content: center ;
+    margin: 20px 0px;
+}
+
+p.section-title span{
+    display: inline-block;
+    color:blueviolet;
+}
+
+div.section-title-wrapper .logo img{
+    height: 25px;
+}
+
+/*section-title 끝*/

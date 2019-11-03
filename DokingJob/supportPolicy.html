@@ -53,7 +53,7 @@
             <tr><td title="맨아래로"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">▼</button></td></tr>
         </table>
         <!--사이드 메뉴-->
-        <header class = positionHead>
+        <header class="positionHead">
             <table>
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
@@ -61,22 +61,28 @@
                     <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
-        </header>
-        <nav class = positionHead> 
+        <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="직업정보 이동" style="margin-left: -40px;"><a href="ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -10px;"><a href="ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
                 <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="supportPolicy.html">지원정책</a></li>
                 <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
                 <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
             </ul>
         </nav>
-        <section class = positionBody>
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>당신을 위한</strong></span> 지원정책</p>
-                    <img src="./image/worknet.png" alt="workent logo" onclick="window.open('https://www.work.go.kr/empWelfareSrv/recommendSrv/srvEmpPolList.do?pageIndex=1&sortOrdr=ASC&sortOrdrText=&svcClCdArray=&svcRcvfTrgtCdArray=&weakScstTrgtSecdArray=&svno=&svcClCd=01&svcRcvfTrgtCd=03&weakScstTrgtSecd=01&svnm=&pageUnit=12')" style="cursor: pointer;">
+        </header>
+
+        <section class="positionBody">
+            <!--section title -->
+            <div class="section-title-wrapper">
+                <p class="section-title">당신을 위한 <span>지원정책</span></p>
+                <div class="logo">
+                    <img src="./image/carrier_logo.png" alt="carrier_logo">
                 </div>
+            </div>
+            <!--section title -->
                 <hr>
+            <div class="content-wrapper">
                 <div class="card" onclick="window.open('https://www.work.go.kr/empWelfareSrv/recommendSrv/srvEmpPolDetail.do?pageIndex=1&sortOrdr=ASC&sortOrdrText=&svcClCdArray=01&svcRcvfTrgtCdArray=03&weakScstTrgtSecdArray=01&svno=10183&svcClCd=01&svcRcvfTrgtCd=03&weakScstTrgtSecd=01&svnm=&pageUnit=12')">
                     <p class="title">대학일자리센터운영</p>
                     <p class="content">대학 내 진로지도 및 취·창업 지원 기능의 공간적 일원화, 기능적 연계 등 원스톱 고용서비스 전달체계 구축 지원으로, 대학의 취·창업 지원역량 강화 및 청년의 원활한 노동시장 이행 지원합니다.
@@ -132,9 +138,7 @@
                     </p>
                     <p class="hashtag">#취업지원 #기타</p>
                 </div>
-                
-                
-                
+            </div>
         </section>
         <footer class="positionBody" >
             <hr>
