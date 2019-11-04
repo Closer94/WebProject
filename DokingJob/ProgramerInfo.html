@@ -15,12 +15,10 @@
                 min-width: 1200px;
                 margin:0 auto;
                 margin-top: -15px;
-                margin-left: 180px;
             }
             .positionBody{
                 max-width: 1200px;
                 margin:0 auto;
-                margin-top: 20px;
             }
            
             a {
@@ -86,9 +84,9 @@
 
             .main {
                 min-width: 320px;
-                max-width: 1000px;
+                
                 padding: 50px;
-                margin-left:210px;
+                /*margin-left:210px;*/
                 background: #ffffff;
             }
 
@@ -179,7 +177,7 @@
             <tr><td title="맨아래로"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">▼</button></td></tr>
         </table>
         <!--사이드 메뉴-->
-        <header class = positionHead>
+        <header class = "positionHead">
             <table>
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
@@ -187,8 +185,8 @@
                     <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
-        </header>
-        <nav class = positionHead> 
+
+        <nav> 
             <ul id="ulStyle" >
                 <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
@@ -197,7 +195,8 @@
                 <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
             </ul>
         </nav>
-                
+        </header>
+        <div class="positionBody">
         <div class="main" style="background:#d5e7f5;">
             <input id="tab1" type="radio" name="tabs" checked> <!--디폴트 메뉴-->
             <label for="tab1">웹</label>
@@ -537,8 +536,9 @@
                     <tr><td style="padding-left:640px; color:gray;"><p><p><p><p><p><p><출처: 한국고용정보원, 정보통신분야 직업전망></td></tr>
                 </table>
             </section>
-
+            
         </div>
+    </div>  
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
