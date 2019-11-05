@@ -12,29 +12,29 @@
 
         <script>
             //사이드 메뉴 소스
-            var stmnLEFT = 50; // 오른쪽 여백 
-            var stmnGAP1 = 0; // 위쪽 여백 
-            var stmnGAP2 = 550; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
-            var stmnBASE = 150; // 스크롤 시작위치 
+            var stmnLEFT = 50; // 오른쪽 여백
+            var stmnGAP1 = 0; // 위쪽 여백
+            var stmnGAP2 = 550; // 스크롤시 브라우저 위쪽과 떨어지는 거리
+            var stmnBASE = 150; // 스크롤 시작위치
             var stmnActivateSpeed = 20; //스크롤을 인식하는 딜레이 (숫자가 클수록 느리게 인식)
             var stmnScrollSpeed = 10; //스크롤 속도 (클수록 느림)
-            var stmnTimer; 
-            
-            function RefreshStaticMenu() { 
-            var stmnStartPoint, stmnEndPoint; 
-            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10); 
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
-            if (stmnStartPoint != stmnEndPoint) { 
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
-            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
-            stmnRefreshTimer = stmnScrollSpeed; 
+            var stmnTimer;
+
+            function RefreshStaticMenu() {
+            var stmnStartPoint, stmnEndPoint;
+            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10);
+            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2;
+            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
+            if (stmnStartPoint != stmnEndPoint) {
+            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 );
+            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px';
+            stmnRefreshTimer = stmnScrollSpeed;
             }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
-            } 
+            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
+            }
             function InitializeStaticMenu() {
             document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //처음에 오른쪽에 위치. left로 바꿔도.
-            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px'; 
+            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
             RefreshStaticMenu();
             }
             function goTop(){
@@ -43,7 +43,7 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //사이드 메뉴 소스  
+            //사이드 메뉴 소스
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
@@ -58,7 +58,7 @@
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp"  title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
@@ -146,7 +146,7 @@
                 <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
-        </footer>  
+        </footer>
     </body>
 
 </html>

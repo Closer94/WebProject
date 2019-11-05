@@ -20,7 +20,7 @@
                 max-width: 1200px;
                 margin:0 auto;
             }
-           
+
             a {
                 display: inline-block;
                 transition: .3s;
@@ -33,14 +33,14 @@
                 -webkit-transform: scale(1.1);
                 transform: scale(1.1);
                 text-decoration: underline;
-            } 
+            }
             #ulStyle{
                 margin-left: 100px;
                 padding: 10px;
                 width: 1300px;
                 height: 70px;
             }
-            #liStyle{ 
+            #liStyle{
                 font-family: 'Noto Sans KR', sans-serif;
                 font-weight: bold;
                 font-size: 25px;
@@ -52,23 +52,23 @@
                 padding: 5px 10px;
                 text-align: center;
                 position: absolute;
-            
+
                 transform: translate( -50%, -50% );
                 font-size: 50px;
                 color: white;
                 font-family: 'Noto Sans KR', sans-serif;
-            }               
-            
+            }
+
             /*사이드 메뉴 소스*/
-            #STATICMENU { 
-                margin: 0pt; 
-                padding: 0pt;  
-                position: absolute; 
-                right: 0px; 
+            #STATICMENU {
+                margin: 0pt;
+                padding: 0pt;
+                position: absolute;
+                right: 0px;
                 top: 0px;
             }
             /*사이드 메뉴 소스*/
-            
+
 
             /*탭메뉴 소스*/
             h1 {
@@ -84,7 +84,7 @@
 
             .main {
                 min-width: 320px;
-                
+
                 padding: 50px;
                 /*margin-left:210px;*/
                 background: #ffffff;
@@ -136,29 +136,29 @@
 
         <script>
             //사이드 메뉴 소스
-            var stmnLEFT = 50; // 오른쪽 여백 
-            var stmnGAP1 = 0; // 위쪽 여백 
-            var stmnGAP2 = 550; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
-            var stmnBASE = 150; // 스크롤 시작위치 
+            var stmnLEFT = 50; // 오른쪽 여백
+            var stmnGAP1 = 0; // 위쪽 여백
+            var stmnGAP2 = 550; // 스크롤시 브라우저 위쪽과 떨어지는 거리
+            var stmnBASE = 150; // 스크롤 시작위치
             var stmnActivateSpeed = 20; //스크롤을 인식하는 딜레이 (숫자가 클수록 느리게 인식)
             var stmnScrollSpeed = 10; //스크롤 속도 (클수록 느림)
-            var stmnTimer; 
-            
-            function RefreshStaticMenu() { 
-            var stmnStartPoint, stmnEndPoint; 
-            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10); 
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
-            if (stmnStartPoint != stmnEndPoint) { 
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
-            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
-            stmnRefreshTimer = stmnScrollSpeed; 
+            var stmnTimer;
+
+            function RefreshStaticMenu() {
+            var stmnStartPoint, stmnEndPoint;
+            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10);
+            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2;
+            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
+            if (stmnStartPoint != stmnEndPoint) {
+            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 );
+            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px';
+            stmnRefreshTimer = stmnScrollSpeed;
             }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
-            } 
+            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
+            }
             function InitializeStaticMenu() {
             document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //처음에 오른쪽에 위치. left로 바꿔도.
-            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px'; 
+            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
             RefreshStaticMenu();
             }
             function goTop(){
@@ -167,13 +167,13 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //사이드 메뉴 소스  
+            //사이드 메뉴 소스
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
         <!--사이드 메뉴-->
         <table id="STATICMENU">
-            <tr><td title="맨위로"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">▲</button></td></tr>            
+            <tr><td title="맨위로"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">▲</button></td></tr>
             <tr><td title="맨아래로"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">▼</button></td></tr>
         </table>
         <!--사이드 메뉴-->
@@ -182,11 +182,11 @@
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp"  title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
 
-        <nav> 
+        <nav>
             <ul id="ulStyle" >
                 <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
@@ -219,7 +219,7 @@
                             ■ 웹사이트에 관한 다양한 기술개발 전문가 ‘웹개발자’<br>
                             웹개발자는 웹사이트의 구축에 있어서 필요한 프로그램을 담당하는 웹프로그래머와 웹서버구축과 운용, 네트워크와 관련된 일을 하는 웹엔지니어를 포함한다.<br>
                             일반적으로 큰 규모의 업체를 제외하고는 웹프로그래밍과 웹엔지니링 업무는 한 사람이 담당한다.<br>
-                            여기서 웹프로그래머는 웹이 구현되는 데 필요한 기술을 지원하고 HTML뿐만 아니라 C, C++나 비주얼베이직, PEARL, JAVA 등의 프로그래밍 언어에 대한 지식을 갖추고 ASP, JSP, PHP, XML, UML 등 웹기술을 활용하여 웹사이트를 구축하는 일을 한다.<br> 
+                            여기서 웹프로그래머는 웹이 구현되는 데 필요한 기술을 지원하고 HTML뿐만 아니라 C, C++나 비주얼베이직, PEARL, JAVA 등의 프로그래밍 언어에 대한 지식을 갖추고 ASP, JSP, PHP, XML, UML 등 웹기술을 활용하여 웹사이트를 구축하는 일을 한다.<br>
                             또한 웹프로그래머는 인터넷상에 있는 많은 정보들을 웹에서 활용하기 위해서 웹과 데이터베이스가 연동되도록 프로그램을 개발하기 때문에 프로그래밍 언어뿐만 아니라 데이터베이스 언어에도 익숙하여야 한다.<br>
                             웹엔지니어는 웹서버의 구축 및 최적 운영에 대한 기술적인 책임을 가지며, 새로운 웹 관련 기술의 적용 여부 등을 결정, 웹서비스가 원활히 이루어지도록 네트워크, 운영체제, 데이터베이스 등을 기술적으로 통합하는 업무를 수행한다.
                             <p>
@@ -234,7 +234,7 @@
                             &nbsp;③ 작성한 프로그램의 코딩 ④ 웹과 데이터베이스를 연동시키기 위한 프로그램의 작성<br>
                             &nbsp;⑤ 사용자의 요구에 맞는 프로그램의 개발 및 개선<br>
                             &nbsp;⑥ 웹사이트상의 문제점 확인 및 프로그램상의 오류 수정 등의 업무가 있다.<br>
-                            ■ 웹엔지니어의 업무<br> 
+                            ■ 웹엔지니어의 업무<br>
                             &nbsp;① 플랫폼(컴퓨터시스템의 기반이 되는 하드웨어 또는 소프트웨어)의 선정<br>
                             &nbsp;② 웹서버를 구축하기 위한 제반사항 검토를 통한 시스템의 기본설계<br>
                             &nbsp;③ 웹서버에 대한 상태 점검, 튜닝(Tunning)<br>
@@ -244,7 +244,7 @@
                     </tr>
                     <tr><td style="font-size:25px; font-family:'Noto Sans KR', sans-serif;">3. 어떻게 준비하고 진출하나요?</td></tr>
                     <tr>
-                        <td style="font-family:'Noto Sans KR', sans-serif;"> 
+                        <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 웹개발자는 전문대학 및 대학교의 컴퓨터공학과 등에서 웹구축에 필요한 프로그래밍언어, 서버, 네트워크, 데이터베이스 등의 커리큘럼을 이수하고 진출하는 것이 유리하다.<br>
                             이 외에도 학원 등에서 웹 관련 프로그래밍, 디자인 등의 과정을 이수하고 진출할 수 있다.<br>
                             웹개발을 위해 웹언어뿐만 아니라 SQL을 다루는 데이터베이스, 웹에디터(나모웹에디터, 드림위버), 그래픽소프트웨어(포토샵, 일러스트레이터, 플래시, 플렉스) 등의 지식과 능력을 갖추고 있으면 취업에 유리하다. <br>
@@ -282,12 +282,12 @@
                     <tr>
                         <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 관련 직업은 웹기획자, 웹디자이너 등이고 예시직업은 전자상거래개발자, 홈페이지구축원, 웹페이지제작자, 쇼핑몰프로그래머, 웹프로그래머, <br>JAVA프로그래머, JSP프로그래머, ASP프로그래머, PHP프로그래머, XML프로그래머, EJB프로그래머, Servlet프로그래머, .Net프로그래머, HTML/DHTML프로그래머, HTML코딩, 웹개발자, 웹엔지니
-                            어 등이 있다.        
+                            어 등이 있다.
                         </td>
                     </tr>
                     <tr><td style="padding-left:640px; color:gray;"><p><p><p><p><p><p><출처: 한국고용정보원, 정보통신분야 직업전망></td></tr>
                 </table>
-                
+
             </section>
 
             <section id="content2">
@@ -324,11 +324,11 @@
                     </tr>
                     <tr><td style="font-size:25px; font-family:'Noto Sans KR', sans-serif;">3. 어떻게 준비하고 진출하나요?</td></tr>
                     <tr>
-                        <td style="font-family:'Noto Sans KR', sans-serif;"> 
+                        <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 전문대학이나 대학교의 컴퓨터공학과, 전산(공학)과, 소프트웨어공학과, 게임공학과 등을 전공하면 업무를 하는 데 도움이 된다.<br>
                             비전공자의 경우에도 6개월 내지 1년 정도의 훈련을 받으면 입직이 가능하다. <br>
                             스마트폰 어플리케이션 개발을 위해서는 그에 맞는 디바이스와 개발 툴이 있어야 하고, 개발 언어에 대한 이해가 필수적이다.<br>
-                            아이폰용 앱을 개발하기 위한 플랫폼의 경우 Mac PC와 Mac OS환경을 기본적으로 갖추어야 하며, C++언어에서 파생된 Objective C언어와 개발 툴인 Xcode(Mac용 개발프로그램)를 능숙하게 다룰 수 있어야 한다.<br> 
+                            아이폰용 앱을 개발하기 위한 플랫폼의 경우 Mac PC와 Mac OS환경을 기본적으로 갖추어야 하며, C++언어에서 파생된 Objective C언어와 개발 툴인 Xcode(Mac용 개발프로그램)를 능숙하게 다룰 수 있어야 한다.<br>
                             일반적으로 Objective C언어는 컴퓨터 프로그래밍을 위한 C언어보다는 쉬운 언어에 해당하므로, C언어에 능숙한 사람들은 쉽게 배울 수 있다. <br>
                             안드로이드 플랫폼의 경우 일반 PC와 윈도우즈에서 작업이 가능하며, JAVA 개발 환경에서 이클립스 등을 이용하게 된다. <br>
                             스마트폰 어플리케이션개발자에게는 프로그래밍 기술은 기본이며 참신한 아이디어를 찾아내는 것이 중요하다. <br>
@@ -371,7 +371,7 @@
                     <tr>
                         <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 관련 직업은 응용소프트웨어 프로그래머, 게임프로그래머, 웹개발자 등이 있으며 예시직업으로 모바일콘텐츠개발자, 모바일게임개발전문가 등이 있다.
-        
+
                         </td>
                     </tr>
                     <tr><td style="padding-left:640px; color:gray;"><p><p><p><p><p><p><출처: 한국고용정보원, 정보통신분야 직업전망></td></tr>
@@ -405,7 +405,7 @@
                     </tr>
                     <tr><td style="font-size:25px; font-family:'Noto Sans KR', sans-serif;">3. 어떻게 준비하고 진출하나요?</td></tr>
                     <tr>
-                        <td style="font-family:'Noto Sans KR', sans-serif;"> 
+                        <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 네트워크시스템 분석 및 개발자가 되기 위해서는 전자 및 컴퓨터 관련 분야를 전공하는 것이 유리하며 네트워크시스템을 기획·설계·개발하는 업무까지 할 수 있으므로 이에 대한 종합적인 지식을 갖추는 것이 필요하다.<br>
                             네트워크의 분석 및 개발업무를 위해서는 네트워크, 하드웨어, 소프트웨어, 프로그래밍, 프로토콜 등에 대한 충분한 이해가 필요하고 네트워크시스템 구축에 따른 문제를 해결하기 위해서는 논리적이고 분석적인 사고가 필요하다. <br>
                             이 외에도 시스템 구축·설계를 의뢰한 고객과의 의사소통능력도 필요하다. 또한 기업에서 필수적으로 요구하지는 않으나 취업 시 우대되는 네트워크관리사 등 정보통신 관련 자격증을 취득하는 것도 중요하다. <br>
@@ -449,7 +449,7 @@
                     <tr><td style="font-size:25px; font-family:'Noto Sans KR', sans-serif;">6.관련 직업</td></tr>
                     <tr>
                         <td style="font-family:'Noto Sans KR', sans-serif;">
-                            ■ 관련 직업은 네트워크운영관리자, 컴퓨터시스템 설계 및 분석가 등이 있고 예시직업으로 네트워크전문가, 네트워크엔지니어, WAN설계가, VAN설계가, LAN설계개발자, 네트워크시스템 아키텍처설계가, 네트워크서버구축기술자, 네트워크시스템분석가 등이 있다.        
+                            ■ 관련 직업은 네트워크운영관리자, 컴퓨터시스템 설계 및 분석가 등이 있고 예시직업으로 네트워크전문가, 네트워크엔지니어, WAN설계가, VAN설계가, LAN설계개발자, 네트워크시스템 아키텍처설계가, 네트워크서버구축기술자, 네트워크시스템분석가 등이 있다.
                             <p>
                         </td>
                     </tr>
@@ -486,7 +486,7 @@
                     </tr>
                     <tr><td style="font-size:25px; font-family:'Noto Sans KR', sans-serif;">3. 어떻게 준비하고 진출하나요?</td></tr>
                     <tr>
-                        <td style="font-family:'Noto Sans KR', sans-serif;"> 
+                        <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 컴퓨터보안전문가가 되기 위해서는 통신, 컴퓨터와 전자공학 등을 전공하는 것이 좋고 정보보호나 정보해킹 관련학과 또는 인터넷과 관련된 학과가 유리하다.<br>
                             이 외에도 학원 등에서 직업훈련을 받으면 진출에 용이하고 SIS(정보보호전문가) 등 협회에서 진행하는 공인민간자격을 취득하면 취업에 유리하다.<br>
                             이 외에도 서버, 네트워크, 데이터베이스, 프로그래밍언어 등을 잘 알아야 하며 악성코드분석, 웹공격기법, 네트워크공격기법, 침해사고분석 등에 정통하여야 한다. <br>
@@ -510,7 +510,7 @@
                     <tr>
                         <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 향후 5년간 컴퓨터보안전문가의 고용은 증가할 것으로 전망된다.<br>
-                            컴퓨터와 인터넷 사용의 보편화, 전자상거래 증가, 일상생활과 컴퓨터가 연계된 유비쿼터스 환경이 확대되면서 전문가를 통한 보안유지의 필요성이 더욱 중요해졌다.<br> 
+                            컴퓨터와 인터넷 사용의 보편화, 전자상거래 증가, 일상생활과 컴퓨터가 연계된 유비쿼터스 환경이 확대되면서 전문가를 통한 보안유지의 필요성이 더욱 중요해졌다.<br>
                             만일 직장이나 가정에서 사용하고 있는 정보들이 해커들에 의해 해킹되고 바이러스 침입 등으로 손상된다면 엄청난 손실을 가져오게 될 것이며 더구나 정부나 지방자치단체, 국가 중요시설 등에서 이러한 일들이 발생한다면 엄청난 국가적 손실을 피할 수 없을 것이다.<br>
                             이에 따라 개인이나 기업, 공공기관 등에서도 정보보호에 대한 관심이 높아지고 있으며 관련인력이 많이 필요하게 되었다.<br>
                             한국인터넷 진흥원의「2010 국내 정보보안산업 실태조사」에 의하면 정보보안기업의 2010년도 매출액(전망치)은 1조 1,314억 원으로 2009년도 매출액 9,304억 원보다 21.5% 증가하였다. <br>
@@ -530,22 +530,22 @@
                     <tr>
                         <td style="font-family:'Noto Sans KR', sans-serif;">
                             ■ 컴퓨터보안전문가는 정보보호전문가, 컴퓨터보안프로그래머 등으로 불리우며 관련 직업으로는 IT컨설턴트, 컴퓨터시스템설계 및 분석가, 컴퓨터시스템감리전문가 등이 있고 예시직업으로 VPN정보보안장비개발자, 보안프로그램개발자, 보안솔루션개발자, 인터넷보안전문가, 인터넷정보보안연구원, 시스템보안전문가, 방화벽개발전문가, 보안관련프로그래머, 컴퓨터시스템 보안 컨설턴트, 네트워크보안 컨설턴트 등이 있다.
-                            <p>    
+                            <p>
                         </td>
                     </tr>
                     <tr><td style="padding-left:640px; color:gray;"><p><p><p><p><p><p><출처: 한국고용정보원, 정보통신분야 직업전망></td></tr>
                 </table>
             </section>
-            
+
         </div>
-    </div>  
+    </div>
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
                 <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
-        </footer>  
+        </footer>
     </body>
 
 </html>

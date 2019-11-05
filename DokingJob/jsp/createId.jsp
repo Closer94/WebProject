@@ -9,7 +9,7 @@
 <body>
 <h1> Result! </h1>
 
-<jsp:useBean id="db" class="jsp.db.DBConnection" scope="application"/>
+<jsp:useBean id="db" class="jsp.db.DBConnection" />
 
 <%@ page import = "java.sql.*" %>
 <%
@@ -29,8 +29,7 @@ String address = request.getParameter("address");
 
 String birthday = year+month+day;
 boolean emailcheck = true;
-address = "seoul";
-interest = "000001";
+
 
 Connection conn = db.SqlConnectionStart();
 Statement stm = null;
@@ -71,6 +70,10 @@ day : <%= day %><br>
 nickname : <%= nickname %><br>
 email : <%= email %><br>
 interest : <%= interest  %><br>
+address : <%= address  %><br>
 
+<% 
+response.sendRedirect("login.jsp");
+%>
 </body>
 </html>
