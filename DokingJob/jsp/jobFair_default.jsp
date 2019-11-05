@@ -1,6 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+
+<jsp:useBean id="db" class="jsp.db.DBConnection" />
+
+<%@ page import = "java.sql.*" %>
+<%
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+
+String url = "../logIn.html";
+
+//로그인 했는지 안했는지 확인
+String user_id = (String)session.getAttribute("user_id");
+if(user_id == null || user_id.equals(""))
+	response.sendRedirect(url);
+else{
+String user_interest_job = (String)session.getAttribute("user_interest");
+
+Connection conn = db.SqlConnectionStart();
+Statement stm = null;
+ResultSet rs = null;
+try {
+	stm = conn.createStatement();
+	
+	String query = "select * from employment where interest_job = '"+user_interest_job+"';";
+	rs = stm.executeQuery(query);
+
+%>
+
         <meta charset="utf-8">
         <title>
             도킹잡(DockingJob) - 미생에서 완생으로
@@ -8,7 +38,7 @@
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
+        <link rel="stylesheet" type="text/css" href="../css/jobFair.css">
 
         <script>
             //사이드 메뉴 소스
@@ -84,22 +114,22 @@
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
-                            <a href=""><img src="./image/jobFair01.GIF"></a>
-                            <a href=""><img src="./image/jobFair02.png"></a>
-                            <a href=""><img src="./image/jobFair03.jpg"></a>
-                            <a href=""><img src="./image/jobFair04.png"></a>
+                            <a href=""><img src="../image/jobFair01.GIF"></a>
+                            <a href=""><img src="../image/jobFair02.png"></a>
+                            <a href=""><img src="../image/jobFair03.jpg"></a>
+                            <a href=""><img src="../image/jobFair04.png"></a>
                         </li>
                         <li>
-                            <a href=""><img src="./image/jobFair05.GIF"></a>
-                            <a href=""><img src="./image/jobFair06.jpg"></a>
-                            <a href=""><img src="./image/jobFair07.jpg"></a>
-                            <a href=""><img src="./image/jobFair08.jpg"></a>
+                            <a href=""><img src="../image/jobFair05.GIF"></a>
+                            <a href=""><img src="../image/jobFair06.jpg"></a>
+                            <a href=""><img src="../image/jobFair07.jpg"></a>
+                            <a href=""><img src="../image/jobFair08.jpg"></a>
                         </li>
                         <li>
-                            <a href=""><img src="./image/jobFair09.jpg"></a>
-                            <a href=""><img src="./image/jobFair10.png"></a>
-                            <a href=""><img src="./image/jobFair11.jpg"></a>
-                            <a href=""><img src="./image/jobFair12.png"></a>
+                            <a href=""><img src="../image/jobFair09.jpg"></a>
+                            <a href=""><img src="../image/jobFair10.png"></a>
+                            <a href=""><img src="../image/jobFair11.jpg"></a>
+                            <a href=""><img src="../image/jobFair12.png"></a>
                         </li>  
                     </ul>
                     <a href="#" id="prev">&#8810;</a>
@@ -133,10 +163,43 @@
                 </div>
 
                 <hr>
-                
-                <div class="card">
+
+				<%
+                    while(rs.next()){ 
+                    	String employ_url = rs.getString("url");
+                    	String title = rs.getString("title");
+                    	String region = rs.getString("region");
+                    	String interest = rs.getString("interest_job");
+                    	
+                    	if(interest.equals("1"))              	interest = "웹";
+                    	else if(interest.equals("2"))			interest = "앱";
+                    	
+                    	String open_date = rs.getString("open_date");
+                    	String start_date = rs.getString("start_date");
+                    	String end_date = rs.getString("end_date");
+                    	String agency = rs.getString("agency");
+                    	String img_url = rs.getString("img_url");
+
+                    	String start_date_temp = start_date.substring(0, 10); 
+                    	String end_date_temp = end_date.substring(0, 10); 
+        
+                    	String applicaiton_date = start_date_temp+" ~ " + end_date_temp;
+                    	
+                    	out.print("<div class='card'>");
+                        out.print("<div class='img-section'>");
+                        out.print("<img src='"+img_url+"' alt='사진파일'>");
+                        out.print("</div>");
+                        out.print("<div class='content'>");
+                        out.print("<p class='title'>"+title+"</p>");
+                    	out.print("<p class='company'>"+agency+"</p>");
+                    	out.print("<p class='place'>"+region+"/"+applicaiton_date+"</p>");
+                    	out.print("</div></div>");
+                    }
+                    %>
+                    
+                 <div class="card">
                     <div class="img-section">
-                        <img src="./image/kakao.png" alt="카카오">
+                        <img src="../image/kakao.png" alt="카카오">
                     </div>
                     <div class="content">
                         <p class="title">웹 퍼블리셔</p>
@@ -157,10 +220,19 @@
     </body>
 
 <!-- slider 시작-->
-    <script type="text/javascript" src="./js/slider.js"></script>
+    <script type="text/javascript" src="../js/slider.js"></script>
 <!-- slider 끝-->
 <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-
 </html>
+<% }
+catch(Exception e) {
+	out.println(e.getMessage());
+}
+finally{
+	if(rs != null)			rs.close();
+	if(stm != null)			stm.close();
+	if(conn != null)		conn.close();
+}
+} %>

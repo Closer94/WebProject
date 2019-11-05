@@ -67,10 +67,10 @@
             <p title="메인페이지로 가기" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif; margin-left:250px"><a href="main.html" style="text-decoration:none; ">도킹잡</a>
             <hr>
             <div>
-                <form>
+                <form method="post" action="jsp/login.jsp">
                     <table border="0">
-                        <tr><td><input type="text" placeholder="아이디 입력" style="width:300px; height:40px; padding-left:10px;"></td><td rowspan="7"><img src="image/login.jpg" width="250" height="250" style="padding-left:20px;"></td></tr>
-                        <tr><td><input type="password" placeholder="비밀번호 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
+                        <tr><td><input type="text" name="id" placeholder="아이디 입력" style="width:300px; height:40px; padding-left:10px;"></td><td rowspan="7"><img src="image/login.jpg" width="250" height="250" style="padding-left:20px;"></td></tr>
+                        <tr><td><input type="password" name="password" placeholder="비밀번호 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
                         <tr><td style="height:25px;"></td></tr>
                         <tr><td><input type="submit" value="로 그 인" style="width:315px; height:40px; background:#4d87ef; color:whitesmoke;font-family: 'Noto Sans KR', sans-serif;font-size:20px;"></td></tr>
                         <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">로그인 상태 유지</label></td></tr>

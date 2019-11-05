@@ -1,10 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
-    <head>
+<head>
+
+<jsp:useBean id="db" class="jsp.db.DBConnection" />
+
+<%@ page import = "java.sql.*" %>
+<%
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+
+String url = "../logIn.html";
+
+//·Î±×ÀÎ Çß´ÂÁö ¾ÈÇß´ÂÁö È®ÀÎ
+String user_id = (String)session.getAttribute("user_id");
+if(user_id == null || user_id.equals(""))
+	response.sendRedirect(url);
+
+else{
+String user_interest_job = (String)session.getAttribute("user_interest");
+
+Connection conn = db.SqlConnectionStart();
+Statement stm = null;
+ResultSet rs = null;
+try {
+	stm = conn.createStatement();
+	
+	String query = "select * from education where interest_job = '"+user_interest_job+"';";
+	rs = stm.executeQuery(query);
+
+%>
         <meta charset="utf-8">
-        <title>
-            ë„í‚¹ì¡(DockingJob) - ë¯¸ìƒì—ì„œ ì™„ìƒìœ¼ë¡œ
-        </title>
+        <title> µµÅ·Àâ(DockingJob) - ¹Ì»ı¿¡¼­ ¿Ï»ıÀ¸·Î </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
@@ -74,7 +102,7 @@
                 color: white;
             }
 
-            /*ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤*/
+            /*»çÀÌµå ¸Ş´º ¼Ò½º*/
             #STATICMENU {
             margin: 0pt;
             padding: 0pt;
@@ -82,19 +110,19 @@
             right: 0px;
             top: 0px;
             }
-            /*ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤*/
+            /*»çÀÌµå ¸Ş´º ¼Ò½º*/
             tr:nth-child(even) {
                 background : aliceblue;
             }
         </style>
         <script>
-            //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤
-            var stmnLEFT = 50; // ì˜¤ë¥¸ìª½ ì—¬ë°±
-            var stmnGAP1 = 0; // ìœ„ìª½ ì—¬ë°±
-            var stmnGAP2 = 550; // ìŠ¤í¬ë¡¤ì‹œ ë¸Œë¼ìš°ì € ìœ„ìª½ê³¼ ë–¨ì–´ì§€ëŠ” ê±°ë¦¬
-            var stmnBASE = 150; // ìŠ¤í¬ë¡¤ ì‹œì‘ìœ„ì¹˜
-            var stmnActivateSpeed = 20; //ìŠ¤í¬ë¡¤ì„ ì¸ì‹í•˜ëŠ” ë”œë ˆì´ (ìˆ«ìê°€ í´ìˆ˜ë¡ ëŠë¦¬ê²Œ ì¸ì‹)
-            var stmnScrollSpeed = 10; //ìŠ¤í¬ë¡¤ ì†ë„ (í´ìˆ˜ë¡ ëŠë¦¼)
+            //»çÀÌµå ¸Ş´º ¼Ò½º
+            var stmnLEFT = 50; // ¿À¸¥ÂÊ ¿©¹é
+            var stmnGAP1 = 0; // À§ÂÊ ¿©¹é
+            var stmnGAP2 = 550; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú À§ÂÊ°ú ¶³¾îÁö´Â °Å¸®
+            var stmnBASE = 150; // ½ºÅ©·Ñ ½ÃÀÛÀ§Ä¡
+            var stmnActivateSpeed = 20; //½ºÅ©·ÑÀ» ÀÎ½ÄÇÏ´Â µô·¹ÀÌ (¼ıÀÚ°¡ Å¬¼ö·Ï ´À¸®°Ô ÀÎ½Ä)
+            var stmnScrollSpeed = 10; //½ºÅ©·Ñ ¼Óµµ (Å¬¼ö·Ï ´À¸²)
             var stmnTimer;
 
             function RefreshStaticMenu() {
@@ -110,7 +138,7 @@
             stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
             }
             function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //ì²˜ìŒì— ì˜¤ë¥¸ìª½ì— ìœ„ì¹˜. leftë¡œ ë°”ê¿”ë„.
+            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³À½¿¡ ¿À¸¥ÂÊ¿¡ À§Ä¡. left·Î ¹Ù²ãµµ.
             document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
             RefreshStaticMenu();
             }
@@ -120,69 +148,69 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤
+            //»çÀÌµå ¸Ş´º ¼Ò½º
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-        <!--ì‚¬ì´ë“œ ë©”ë‰´-->
+        <!--»çÀÌµå ¸Ş´º-->
         <table id="STATICMENU">
-            <tr><td title="ë§¨ìœ„ë¡œ"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">â–²</button></td></tr>
-            <tr><td title="ë§¨ì•„ë˜ë¡œ"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">â–¼</button></td></tr>
+            <tr><td title="¸ÇÀ§·Î"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">¡ã</button></td></tr>
+            <tr><td title="¸Ç¾Æ·¡·Î"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">¡å</button></td></tr>
         </table>
-        <!--ì‚¬ì´ë“œ ë©”ë‰´-->
+        <!--»çÀÌµå ¸Ş´º-->
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="ë©”ì¸í˜ì´ì§€ë¡œ ê°€ê¸°" href="main.html" style="text-decoration:none;">ë„í‚¹ì¡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ŞÀÎÆäÀÌÁö·Î °¡±â" href="main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html".html" title="ë§ˆì´í˜ì´ì§€ ì´ë™">ë§ˆì´í˜ì´ì§€</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="ë¡œê·¸ì•„ì›ƒ í•˜ê¸°">ë¡œê·¸ì•„ì›ƒ</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html".html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
         <nav class = positionHead>
             <ul id="ulStyle" >
-                <li id="liStyle" title="ì§ì—…ì •ë³´ ì´ë™" style="margin-left: -30px;"><a href="ProgramerInfo.html">ì§ì—…ì •ë³´</a></li>
-                <li id="liStyle" title="ì§€ì›êµìœ¡ì •ë³´ ì´ë™" style="margin-left: 100px;"><a href="jobEducation.html">ì§€ì›êµìœ¡ì •ë³´</a></li>
-                <li id="liStyle" title="ì§€ì›ì •ì±… ì´ë™" style="margin-left: 100px;"><a href="supportPolicy.html">ì§€ì›ì •ì±…</a></li>
-                <li id="liStyle" title="ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´ ì´ë™" style="margin-left: 100px;"><a href="jobFair.html">ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´</a></li>
-                <li id="liStyle" title="ì»¤ë®¤ë‹ˆí‹° ì´ë™" style="margin-left: 100px;"><a href="community.html">ì»¤ë®¤ë‹ˆí‹°</a></li>
+                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -30px;"><a href="ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation.html">Áö¿ø±³À°Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
+                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="./jobFair_default.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
+                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="community.html">Ä¿¹Â´ÏÆ¼</a></li>
             </ul>
     </nav>
         <section class = positionBody>
                 <div style="margin-left:44%;">
-                    <h1>ì „ì²´ ê³¼ì • ì•ˆë‚´</h1>
+                    <h1>ÀüÃ¼ °úÁ¤ ¾È³»</h1>
 
                 </div>
                 <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
                     <tr style="color:black;background:#72bee0;"">
                         <th><select style="width:100px;height:40px;">
-                                <option value="1">ì§€ì </option>
-                                <option value="2">ì„œìš¸</option>
-                                <option value="3">ê²½ê¸°</option>
-                                <option value="4">ê°•ì›</option>
-                                <option value="5">ì¶©ì²­</option>
-                                <option value="6">ì „ë¼</option>
-                                <option value="7">ê²½ìƒ</option>
-                                <option value="8">ì œì£¼</option>
+                                <option value="1">ÁöÁ¡</option>
+                                <option value="2">¼­¿ï</option>
+                                <option value="3">°æ±â</option>
+                                <option value="4">°­¿ø</option>
+                                <option value="5">ÃæÃ»</option>
+                                <option value="6">Àü¶ó</option>
+                                <option value="7">°æ»ó</option>
+                                <option value="8">Á¦ÁÖ</option>
                         </select></th>
                         <th><select style="width:100px; height:40px; padding:0%;">
-                                <option value="1">êµìœ¡ì¢…ë¥˜</option>
-                                <option value="2">êµ­ë¹„êµìœ¡</option>
-                                <option value="3">ê¸°ì—…êµìœ¡</option>
+                                <option value="1">±³À°Á¾·ù</option>
+                                <option value="2">±¹ºñ±³À°</option>
+                                <option value="3">±â¾÷±³À°</option>
                         </select></th>
                         <th><select style="width:150px; height:40px; padding:0%;">
-                                <option value="1">ë¶„ì•¼</option>
-                                <option value="2">ì›¹</option>
-                                <option value="3">ì•±</option>
-                                <option value="4">ë„¤íŠ¸ì›Œí¬</option>
-                                <option value="5">ë³´ì•ˆ</option>
-                                <option value="6">ë¹…ë°ì´í„°</option>
+                                <option value="1">ºĞ¾ß</option>
+                                <option value="2">À¥</option>
+                                <option value="3">¾Û</option>
+                                <option value="4">³×Æ®¿öÅ©</option>
+                                <option value="5">º¸¾È</option>
+                                <option value="6">ºòµ¥ÀÌÅÍ</option>
                         </select></th>
-                        <th style="width:1000px;">í•™ì›ëª…_ê³¼ì •ëª…</th>
+                        <th style="width:1000px;">ÇĞ¿ø¸í_°úÁ¤¸í</th>
 
-                        <th style="width:150px;">ìˆ˜ê°•ë£Œ</th>
+                        <th style="width:150px;">¼ö°­·á</th>
                         <th><select style="width:200px; height:40px; padding:0%;">
-                                <option value="1">í›ˆë ¨ê¸°ê°„</option>
+                                <option value="1">ÈÆ·Ã±â°£</option>
                                 <option value="2">2019-11-01</option>
                                 <option value="3">2019-12-01</option>
                                 <option value="4">2020-01-01</option>
@@ -193,33 +221,37 @@
                         </select></th>
                         <th style="width:100px"><input type="image" src="image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
                     </tr>
-                    <tr height="50">
-                        <td>ê²½ê¸°ì </td>
-                        <td>êµ­ë¹„êµìœ¡</td>
-                        <td>ì›¹</td>
-                        <td>êµ­ì œì§ì—…ì „ë¬¸í•™êµ_ë°˜ì‘í˜• ì›¹ ë””ìì¸</td>
-                        <td>4,200,000ì›</td>
-                        <td>2019.10.01 ~ 2020.07.24</td>
-                        <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">ëª¨ì§‘ì¤‘</span></td>
-                    </tr>
-                    <tr height="50">
-                        <td>ì„œìš¸ì </td>
-                        <td>êµ­ë¹„êµìœ¡</td>
-                        <td>ì•±</td>
-                        <td>ì•ˆë“œë¡œì´ë“œê°œë°œêµìœ¡ì›_ì•ˆë“œë¡œì´ë“œ ì–´í”Œë¦¬ì¼€ì´ì…˜ ê°œë°œì</td>
-                        <td>3,900,000ì›</td>
-                        <td>2019.10.01 ~ 2019.11.25</td>
-                        <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">ëª¨ì§‘ì¤‘</span></td>
-                    </tr>
-                    <tr height="50">
-                            <td>ê°•ì›ì </td>
-                            <td>ê¸°ì—…êµìœ¡</td>
-                            <td>ë¹…ë°ì´í„°</td>
-                            <td>ì‚¼ì„± ì²­ë…„ SW ì•„ì¹´ë°ë¯¸</td>
-                            <td>ì „ì•¡ë¬´ë£Œ</td>
-                            <td>2019.10.01 ~ 2019.10.30</td>
-                            <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">ëª¨ì§‘ì¤‘</span></td>
-                        </tr>
+                    
+                    <%
+                    while(rs.next()){ 
+                    	String region = rs.getString("region");
+                    	String type = rs.getString("type");
+                    	String interest = rs.getString("interest_job");
+                    	if(interest.equals("1"))
+                    		interest = "À¥";
+                    	String title = rs.getString("title");
+                    	String agency = rs.getString("agency");
+                    	//title = agency + "_" + title;
+                    	String cost = rs.getString("cost");
+                    	
+                    	if(cost.equals("0"))
+                    		cost = "Àü¾×¹«·á";
+                    	else
+                    		 cost = String.format("%,d", Integer.parseInt(cost));
+                    	
+                    	String training_date = rs.getString("training_date");
+                    	String applicaiton_date = "<span style='background:red; padding:5px; height:30px; text-align: center; color:white;'>¸ğÁıÁß</span>";
+                        
+                    	out.print("<tr height='50'><td>"+region+"</td>");
+                    	out.print("<td>"+type+"</td>");
+                    	out.print("<td>"+interest+"</td>");
+                    	out.print("<td>"+title+"</td>");
+                    	out.print("<td>"+cost+"</td>");
+                    	out.print("<td>"+training_date+"</td>");
+                    	out.print("<td>"+applicaiton_date+"</td></tr>");
+                    	//out.print("<td>¸ğÁıÁß</td></tr>");
+                    }
+                    %>
                 </table>
 
             </section>
@@ -237,10 +269,19 @@
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ìƒí˜¸: ë„í‚¹ì¡&nbsp;&nbsp;&nbsp;ëŒ€í‘œ: ì´ê°‘ì„±&nbsp;&nbsp;&nbsp;ì£¼ì†Œ: ê°•ì›ë„ ì¶˜ì²œì‹œ í•œë¦¼ëŒ€í•™ê¸¸ 1 [24252]&nbsp;&nbsp;&nbsp;ì „í™”ë²ˆí˜¸: 010-1234-5678&nbsp;&nbsp;&nbsp;ì‚¬ì—…ìë²ˆí˜¸: 312-15-00712&nbsp;&nbsp;&nbsp;ëŒ€í‘œë©”ì¼: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">»óÈ£: µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇĞ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ŞÀÏ: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>
     </body>
-
-</html>
+    </html>
+<% }
+catch(Exception e) {
+	out.println(e.getMessage());
+}
+finally{
+	if(rs != null)			rs.close();
+	if(stm != null)			stm.close();
+	if(conn != null)		conn.close();
+}
+} %>
