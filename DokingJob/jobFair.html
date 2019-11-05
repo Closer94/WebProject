@@ -10,51 +10,9 @@
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
 
-        <script>
-            //사이드 메뉴 소스
-            var stmnLEFT = 50; // 오른쪽 여백 
-            var stmnGAP1 = 0; // 위쪽 여백 
-            var stmnGAP2 = 550; // 스크롤시 브라우저 위쪽과 떨어지는 거리 
-            var stmnBASE = 150; // 스크롤 시작위치 
-            var stmnActivateSpeed = 20; //스크롤을 인식하는 딜레이 (숫자가 클수록 느리게 인식)
-            var stmnScrollSpeed = 10; //스크롤 속도 (클수록 느림)
-            var stmnTimer; 
-            
-            function RefreshStaticMenu() { 
-            var stmnStartPoint, stmnEndPoint; 
-            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10); 
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
-            if (stmnStartPoint != stmnEndPoint) { 
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
-            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
-            stmnRefreshTimer = stmnScrollSpeed; 
-            }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
-            } 
-            function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //처음에 오른쪽에 위치. left로 바꿔도.
-            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px'; 
-            RefreshStaticMenu();
-            }
-            function goTop(){
-                document.documentElement.scrollTop=0;
-            }
-            function goBottom(){
-                document.documentElement.scrollTop = document.body.scrollHeight;
-            }
-            //사이드 메뉴 소스  
-        </script>
-
     </head>
-    <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-        <!--사이드 메뉴-->
-        <table id="STATICMENU">
-            <tr><td title="맨위로"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">▲</button></td></tr>
-            <tr><td title="맨아래로"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">▼</button></td></tr>
-        </table>
-        <!--사이드 메뉴-->
-        <header class = positionHead>
+    <body style="background:#edf1f8;">
+        <header class="positionHead">
             <table>
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
@@ -62,8 +20,7 @@
                     <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
-        </header>
-        <nav class = positionHead> 
+        <nav>
             <ul id="ulStyle" >
                 <li id="liStyle" title="직업정보 이동" style="margin-left: -10px;"><a href="ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
@@ -72,66 +29,224 @@
                 <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
             </ul>
         </nav>
+        </header>
         
         <section class = positionBody>
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>웹 개발자</strong></span>를 위한 취업박람회 일정</p> 
+
+            <!--section title -->
+            <div class="section-title-wrapper">
+                <p class="section-title"><span>어떤 세미나</span>가 좋을까?</p>
+                <div class="logo">
+                    <img src="./image/itkorea_logo.png" alt="itkorea_logo">
+                    <img src="./image/naver_logo.png" alt="naver_logo">
+                    <img src="./image/nhn-logo.png" alt="nhn_logo">
+                    <img src="./image/kakao_logo.png" alt="kakao_logo">
+                    <img src="./image/samsung_logo.png" alt="samsung_logo">
+                    <img src="./image/microsoft_logo.png" alt="microsoft_logo">
                 </div>
+            </div>
+            <!--section title -->
+
                 
-                <hr>
 
                 <!--silder 시작-->
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
-                            <a href=""><img src="./image/jobFair01.GIF"></a>
-                            <a href=""><img src="./image/jobFair02.png"></a>
-                            <a href=""><img src="./image/jobFair03.jpg"></a>
-                            <a href=""><img src="./image/jobFair04.png"></a>
+                            <a href="https://forward.nhn.com/" target="_blank"><img src="./image/seminar1.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=96&clkMater=&txtMenu=&GoTopage=1&selMater=" target="_blank"><img src="./image/seminar2.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=94&clkMater=&txtMenu=&GoTopage=1&selMater="target="_blank"><img src="./image/seminar3.jpg"></a>
+                            <a href="http://ictconference.kr/ICTconference/2019ict/main/main.php"target="_blank"><img src="./image/seminar4.png"></a>
                         </li>
                         <li>
-                            <a href=""><img src="./image/jobFair05.GIF"></a>
-                            <a href=""><img src="./image/jobFair06.jpg"></a>
-                            <a href=""><img src="./image/jobFair07.jpg"></a>
-                            <a href=""><img src="./image/jobFair08.jpg"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair05.GIF"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair06.jpg"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair07.jpg"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair08.jpg"></a>
                         </li>
                         <li>
-                            <a href=""><img src="./image/jobFair09.jpg"></a>
-                            <a href=""><img src="./image/jobFair10.png"></a>
-                            <a href=""><img src="./image/jobFair11.jpg"></a>
-                            <a href=""><img src="./image/jobFair12.png"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair09.jpg"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair10.png"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair11.jpg"></a>
+                            <a href=""target="_blank"><img src="./image/jobFair12.png"></a>
                         </li>  
                     </ul>
-                    <a href="#" id="prev">&#8810;</a>
-                    <a href="#" id="next">&#8811;</a>
+                    <a href="#" id="prev"><</a>
+                    <a href="#" id="next">></a>
                 </div>
                 <!--slider 끝-->
                 
-                
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>당신을 위한</strong></span> 구직정보</p> 
+                <!--section title -->
+            <div class="section-title-wrapper">
+                    <p class="section-title"><span>당신을 위한</span> 구직정보</p>
+                    <div class="logo">
+                        <img src="./image/carrier_logo.png" alt="carrier_logo">
+                    </div>
                 </div>
+                <!--section title -->
                 
                 <hr>
-                <div class="select">
-                    <select name="place">
-                            <option value="1">전국</option>
-                            <option value="2">서울/경기</option>
-                            <option value="3">충청</option>
-                            <option value="4">전라</option>>
-                            <option value="4">경상</option>>
-                            <option value="4">강원</option>>
-                    </select>    
-                    <span> 지역에 있는</span>
+                <!--choice 시작-->
+<form method="post" action="findJobInfo.jsp" class="choice">
+                    <!--관심분야 section 시작-->
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
+                        <label for="interest_1">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>웹</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="interest" value="2" class="interest" id="interest_2">
+                        <label for="interest_2">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>앱</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+                    <!--관심분야 section 끝-->
                     
-                    <select name="type">
-                        <option value="1">웹</option>
-                        <option value="1">앱</option>
-                    </select>
+                    <span>개발자를 위한</span>
 
-                    <span> 개발자 구직정보 입니다.</span>
-                </div>
+                    <!--지역 section 시작-->
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="1" class="region" id="region_1">
+                        <label for="region_1">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>서울</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
 
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="2" class="region" id="region_2">
+                        <label for="region_2">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>경기</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="3" class="region" id="region_3">
+                        <label for="region_3">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>충청</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="4" class="region" id="region_4">
+                        <label for="region_4">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>전라</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="5" class="region" id="region_5">
+                        <label for="region_5">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>경상</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <!--checkbox 시작-->
+                    <input type="checkbox" name="region" value="6" class="region" id="region_6">
+                        <label for="region_6">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>강원</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox 끝-->
+
+                    <span>지역의 구직정보</span>
+                    <!--지역 section 끝-->
+
+                    <!--확인버튼섹션-->                    
+                    <!--버튼 시작-->
+                    <button type="submit" class="btn-go">검색</button>
+</form>
+                <!--choice 끝-->
+
+                 
                 <hr>
                 
                 <div class="card">
@@ -142,6 +257,54 @@
                         <p class="title">웹 퍼블리셔</p>
                         <p class="company">카카오</p>
                         <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/naver.png" alt="네이버">
+                    </div>
+                    <div class="content">
+                        <p class="title">DB 관리</p>
+                        <p class="company">네이버</p>
+                        <p class="place">강원</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/facebook.png" alt="페이스북">
+                    </div>
+                    <div class="content">
+                        <p class="title">웹/앱 서버개발</p>
+                        <p class="company">facebook</p>
+                        <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                        <img src="./image/amazon.png" alt="아마존"">
+                    </div>
+                    <div class="content">
+                        <p class="title">디지털 마케팅</p>
+                        <p class="company">Amazon</p>
+                        <p class="place">서울/경기</p>
+                        <p class="date">2015/10/30~2015/11/30</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="img-section">
+                    </div>
+                    <div class="content">
+                        <p class="title">구직제목</p>
+                        <p class="company">회사</p>
+                        <p class="place">지역</p>
                         <p class="date">2015/10/30~2015/11/30</p>
                     </div>
                 </div>
@@ -161,6 +324,7 @@
 <!-- slider 끝-->
 <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
 
 
 </html>
