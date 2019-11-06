@@ -227,8 +227,6 @@
 				String edu_id = rs.getString("edu_id");
 				String type = rs.getString("type");
 				String interest_job = rs.getString("interest_job");
-
-
             	
 				String url = rs.getString("url");
 				String title = rs.getString("title");
@@ -238,8 +236,8 @@
 				String region = rs.getString("region");
 				String agency = rs.getString("agency");
 				String cost = rs.getString("cost");
-
-
+				
+				
             	if (educationArea.equals(region) && educationType.equals(type) && educationField.equals(interest_job)) {
                 	if(interest_job.equals("1"))
                 		interest_job = "웹";
@@ -250,6 +248,8 @@
                 		cost = "전액무료";
                 	else
                 		 cost = String.format("%,d", Integer.parseInt(cost));
+                	
+    				
 	%>	
 					<tr height="50">
 						<td><%= region %></td>

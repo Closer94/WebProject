@@ -27,7 +27,7 @@ ResultSet rs = null;
 try {
 	stm = conn.createStatement();
 	
-	String query = "select * from employment where interest_job = '"+user_interest_job+"' and region = '"+user_region+"';";
+	String query = "select * from employment where interest_job = '"+user_interest_job+"' and region = '"+user_region+"' limit 10;";
 	rs = stm.executeQuery(query);
 %>
 
@@ -282,19 +282,20 @@ try {
                     	String employ_url = rs.getString("url");
                     	String title = rs.getString("title");
                     	String region = rs.getString("region");
-                    	String interest = rs.getString("interest_job");
                     	
-                    	String open_date = rs.getString("open_date");
                     	String start_date = rs.getString("start_date");
                     	String end_date = rs.getString("end_date");
                     	String agency = rs.getString("agency");
                     	String img_url = rs.getString("img_url");
 
                     	String start_date_temp = start_date.substring(0, 10); 
-                    	String end_date_temp = end_date.substring(0, 10); 
+                    	String end_date_temp = end_date.substring(0, 10);
         
                     	String applicaiton_date = start_date_temp+" ~ " + end_date_temp;
                     	
+                    	if(title.length() > 14)
+        					title = title.substring(0, 14)+"...";
+        				
                     	out.print("<div class='card'>");
                         out.print("<div class='img-section'>");
                         out.print("<img src='"+img_url+"' alt='사진파일'>");
@@ -303,7 +304,7 @@ try {
                         out.print("<p class='title'><a href ="+employ_url+">"+title+"</p>");
                     	out.print("<p class='company'>"+agency+"</p>");
                     	out.print("<p class='place'>"+region+"</p>");
-                    	out.print("<p class="+applicaiton_date+"</p>");
+                    	out.print("<p class='date'>"+applicaiton_date+"</p>");
                     	out.print("</div></div>");
                     	
                     }

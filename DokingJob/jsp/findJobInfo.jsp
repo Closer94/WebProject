@@ -718,8 +718,8 @@ div.section-title-wrapper .logo img{
 				stmt = conn.createStatement(); //연결된 상태에서 stmt로
 
 				//DB에 들어있는 정보를 가져와서 rs객체로 저장(출력)
-				ResultSet rs = stmt.executeQuery("select * from employment");
-
+				ResultSet rs = stmt.executeQuery("select * from employment where interest_job = '"+interest[0]+"' and region = '"+employRegion[0]+"' limit 10;");
+            	
 				if (!rs.next()) {
 					out.println("해당하는 정보가 없습니다.");
 				} else {
@@ -727,19 +727,24 @@ div.section-title-wrapper .logo img{
 				}
 				//객체의 값이 있으면 TRUE
 				while (rs.next()) {
-					String employ_id = rs.getString("employ_id");
+					
 					String url = rs.getString("url");
 					String title = rs.getString("title");
 					String region = rs.getString("region");
-					String interest_job = rs.getString("interest_job");
 					String open_date = rs.getString("open_date");
 					String start_date = rs.getString("start_date");
 					String end_date = rs.getString("end_date");
 					String agency = rs.getString("agency");
                 	String img_url = rs.getString("img_url");
+					
+                	String start_date_temp = start_date.substring(0, 10); 
+                	String end_date_temp = end_date.substring(0, 10);
+    
+                	String applicaiton_date = start_date_temp+" ~ " + end_date_temp;
                 	
-                	
-					if (interest[0].equals(interest_job) && employRegion[0].equals(region)) {
+                	if(title.length() > 14)
+    					title = title.substring(0, 14)+"...";
+						
 		%>
 		<div class="card">
 			<div class="img-section">
@@ -751,14 +756,13 @@ div.section-title-wrapper .logo img{
 				</p>
 				<p class="company"><%=agency%></p>
 				<p class="place"><%=region%></p>
-				<p class="date"><%=open_date%></p>
+				<p class="date"><%=applicaiton_date%></p>
 			</div>
 		</div>
 
 
 		<%
 			}
-				}
 			} finally {
 			}
 		%>
