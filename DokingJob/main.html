@@ -18,7 +18,7 @@
 
 	body{
 		min-height: 600px;
-		
+
 	}
 	/*각 section내 div 가운데 정렬*/
 	.scroll-container section{
@@ -54,7 +54,7 @@
 		background-repeat: no-repeat;
 		background-size:cover;
 	}
-	
+
 	/* 각 section 내 들어갈 공간 .header.height : 100px */
 /*
 	section>div {
@@ -62,11 +62,11 @@
 		font-style: normal;
 		text-align: center;
 		position: relative;
-		
-		top: 50%; 
+
+		top: 50%;
 		transform: translateY(-50%);
-		
-	
+
+
 		border:3px red solid;
 		color : white;
 		height: 100%;
@@ -85,7 +85,7 @@
 		text-align: left;
 	}
 
-	</style>	
+	</style>
 
 	<script>
 	//section 내의 seciton-wrap 반응형
@@ -99,11 +99,11 @@
 		}
 	}
 	, 100);
-	
+
 	window.onload = function(){
 		window.onresize = sectionDivResize();
 	};
-	
+
 	</script>
 
 
@@ -116,28 +116,28 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="main" class="scroll-container">
 		<section class="section1">
 			<div class="section-wrap">
-				<div class="section-title">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
-				<div class="section-subtitle">
+				<div class="section-title" style="text-align: right;">미생에서<br>완생으로<br>인생의 나침반이<br>되어드립니다.</div>
+				<div class="section-subtitle" style="text-align: right;">
 					<p>미생에서 완생으로<br>
 						인생의 나침반이 <br>
 						되어드립니다.
 					</p>
-					<button class="btn-2" href="#" data-needpopup-show="#small-popup" id = "titleMenu">서비스 이용하러가기</button>
+					<button class="btn-2" style="display:inline-block" href="#" data-needpopup-show="#small-popup" id = "titleMenu">서비스 이용하러가기</button>
 				</div>
 			</div>
 		</section>
 <!-- 로그인 모달창 -->
         <div id='small-popup' class="needpopup" style="width:400px; margin-left:-13.5%;">
                 <div>
-                    <form>
+                    <form method="post" action="jsp/login.jsp">
                         <table>
                             <tr><td style="font-size:50px; text-align: center; font-family: 'Jua', 'sans-serif'; ">도킹잡</td></tr>
-                            <tr><td><input type="text" placeholder="아이디 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
-                            <tr><td><input type="password" placeholder="비밀번호 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
+                            <tr><td><input type="text" name="id" placeholder="아이디 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
+                            <tr><td><input type="password" name="password" placeholder="비밀번호 입력" style="width:300px; height:40px; padding-left:10px;"></td></tr>
                             <tr><td style="height:25px;"></td></tr>                            <tr><td><input type="submit" value="로 그 인" style="width:315px; height:40px; background:#4d87ef; color:whitesmoke;font-family: 'Noto Sans KR', sans-serif;font-size:20px;"></td></tr>
                             <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">로그인 상태 유지</label></td></tr>
                                 <tr><td style="height:20px;"></td></tr>
@@ -145,13 +145,13 @@
 								<tr><td>&nbsp;</td></tr>
 								<tr><td style="font-size:13px; font-family: 'Noto Sans KR', sans-serif; text-align: center;"><a href="createId.html" style="text-decoration:none; color:black;">아직 도킹잡 회원이 아니신가요?</td></tr>
                         </table>
-                    </form>    
+                    </form>
                 </div>
             </div>
-    
+
             <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
             <script src="js/needpopup.min.js"></script>
-            <script>  
+            <script>
                 needPopup.config.custom = {
                     'removerPlace': 'outside',
                     'closeOnOutside': false,
@@ -164,7 +164,7 @@
                 };
                 needPopup.init();
             </script>
-<!-- 로그인 모달창 -->		
+<!-- 로그인 모달창 -->
 		<section class="section2">
 			<div class="section-wrap">
 				<div class="section-title" style="text-align: right;">IT비전공자<br>상관없어<br>너도 개발자가<br>될수있어!</div>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="EUC-KR">
         <title>
-            ë„í‚¹ìž¡(DockingJob) - ë¯¸ìƒì—ì„œ ì™„ìƒìœ¼ë¡œ
+            µµÅ·Àâ(DockingJob) - ¹Ì»ý¿¡¼­ ¿Ï»ýÀ¸·Î
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -82,62 +82,62 @@
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
         <div class="positionHead">
-            <p style="width:300px;height:100px;font-size:50px; font-family:'Do Hyeon', sans-serif; margin-left:160px; margin-bottom:-40px;">ë„í‚¹ìž¡ íšŒì›ê°€ìž…</p>
-            <p style="font-size:20px; font-family:'Do Hyeon', sans-serif;margin-left:100px; margin-bottom:50px;">í•˜ë‚˜ì˜ ì•„ì´ë””ë¡œ ë„í‚¹ìž¡ì˜ ë§žì¶¤í˜• ì„œë¹„ìŠ¤ë¥¼ ì´ìš©í•´ ë³´ì„¸ìš”.</p>
+            <p style="width:300px;height:100px;font-size:50px; font-family:'Do Hyeon', sans-serif; margin-left:160px; margin-bottom:-40px;">µµÅ·Àâ È¸¿ø°¡ÀÔ</p>
+            <p style="font-size:20px; font-family:'Do Hyeon', sans-serif;margin-left:100px; margin-bottom:50px;">ÇÏ³ªÀÇ ¾ÆÀÌµð·Î µµÅ·ÀâÀÇ ¸ÂÃãÇü ¼­ºñ½º¸¦ ÀÌ¿ëÇØ º¸¼¼¿ä.</p>
 
 
             <div style="margin-left:17%;">
                 <form method="post" action="jsp/createId.jsp">
                     <table border="0">
-                        <tr><td><input type="text" name="id" placeholder="  ì•„ì´ë””" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="id" placeholder="  ¾ÆÀÌµð" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr>
                             <td>
-                                <input type="text" name="year" placeholder="  ë…„ë„" style="width:100px; height:40px; padding-left:10px; float:left;">ë…„
-                                <input type="text" name="month" placeholder="  ì›”" style="width:100px; height:40px; padding-left:10px;">ì›”
-                                <input type="text" name="day" placeholder="  ì¼" style="width:100px; height:40px; padding-left:10px;">ì¼
+                                <input type="text" name="year" placeholder="  ³âµµ" style="width:100px; height:40px; padding-left:10px; float:left;">³â
+                                <input type="text" name="month" placeholder="  ¿ù" style="width:100px; height:40px; padding-left:10px;">¿ù
+                                <input type="text" name="day" placeholder="  ÀÏ" style="width:100px; height:40px; padding-left:10px;">ÀÏ
                             </td>
                         </tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" name="nickname" placeholder="  ë‹‰ë„¤ìž„" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="nickname" placeholder="  ´Ð³×ÀÓ" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" name="email" placeholder="  ì´ë©”ì¼" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="email" placeholder="  ÀÌ¸ÞÀÏ" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="password" name="password" placeholder="  ë¹„ë°€ë²ˆí˜¸" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="password" name="password" placeholder="  ºñ¹Ð¹øÈ£" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="password" name="passwordcheck" placeholder="  ë¹„ë°€ë²ˆí˜¸ í™•ì¸" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="password" name="passwordcheck" placeholder="  ºñ¹Ð¹øÈ£ È®ÀÎ" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr>
                             <td style="border-bottom:1px solid #d3d3d3;">
                                 <select name="interest" id="interest" style="width:403px; height:40px; padding-left:10px">
-                                    <option selected value="0">ê´€ì‹¬ë¶„ì•¼</option>
-                                    <option value="1">ì›¹</option>
-                                    <option value="2">ì•±</option>
-                                    <option value="3">ë„¤íŠ¸ì›Œí¬</option>
-                                    <option value="4">ì •ë³´ë³´ì•ˆ</option>
-                                    <option value="5">ë°ì´í„°ë² ì´ìŠ¤</option>
+                                    <option selected value="0">°ü½ÉºÐ¾ß</option>
+                                    <option value="1">À¥</option>
+                                    <option value="2">¾Û</option>
+                                    <option value="3">³×Æ®¿öÅ©</option>
+                                    <option value="4">Á¤º¸º¸¾È</option>
+                                    <option value="5">µ¥ÀÌÅÍº£ÀÌ½º</option>
                                 </select>
                             </td>
                         </tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td>
-                                <input type="text" placeholder="  ìš°íŽ¸ë²ˆí˜¸" style="width:160px; height:40px; padding-left:10px; float:left;">&nbsp;&nbsp;&nbsp;&nbsp;
-                                <input type="button"  value="ìš°íŽ¸ë²ˆí˜¸ ì°¾ê¸°" id="btn" style="width:140px; height:40px; outline:none; background:#4d87ef; color:whitesmoke; font-size:13px;">
+                                <input type="text" placeholder="  ¿ìÆí¹øÈ£" style="width:160px; height:40px; padding-left:10px; float:left;">&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="button"  value="¿ìÆí¹øÈ£ Ã£±â" id="btn" style="width:140px; height:40px; outline:none; background:#4d87ef; color:whitesmoke; font-size:13px;">
                             </td>
                         </tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" name="address" placeholder="  ì£¼ì†Œ" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" name="address" placeholder="  ÁÖ¼Ò" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="text" placeholder="  ìƒì„¸ì£¼ì†Œ" style="width:390px; height:40px; padding-left:10px"></td></tr>
+                        <tr><td><input type="text" placeholder="  »ó¼¼ÁÖ¼Ò" style="width:390px; height:40px; padding-left:10px"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox" name="emailcheck">ë„í‚¹ìž¡ ì„œë¹„ìŠ¤ì— ëŒ€í•œ ì†Œì‹ì„ ì´ë©”ì¼ë¡œ ë°›ì•„ë´…ë‹ˆë‹¤.</label></td></tr>
+                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox" name="emailcheck">µµÅ·Àâ ¼­ºñ½º¿¡ ´ëÇÑ ¼Ò½ÄÀ» ÀÌ¸ÞÀÏ·Î ¹Þ¾Æº¾´Ï´Ù.</label></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">ë„í‚¹ìž¡ì—ì„œ ì œê³µí•˜ëŠ” ì„œë¹„ìŠ¤ ì•½ê´€ì— ë™ì˜í•©ë‹ˆë‹¤.</label>&nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-size:13px;"><a href="">ì•½ê´€ë³´ê¸°</a></st></td></tr>
+                        <tr><td style="font-family: 'Noto Sans KR', sans-serif;"><label><input type="checkbox">µµÅ·Àâ¿¡¼­ Á¦°øÇÏ´Â ¼­ºñ½º ¾à°ü¿¡ µ¿ÀÇÇÕ´Ï´Ù.</label>&nbsp;&nbsp;&nbsp;&nbsp;<strong style="font-size:13px;"><a href="">¾à°üº¸±â</a></st></td></tr>
                         <tr><td style="height:10px;"></td></tr>
-                        <tr><td><input type="submit" value="ê°€ìž…í•˜ê¸°" style="width:400px; height:40px; background:#4d87ef; color:whitesmoke;font-family: 'Noto Sans KR', sans-serif;font-size:20px;"></td></tr>
+                        <tr><td><input type="submit" value="°¡ÀÔÇÏ±â" style="width:400px; height:40px; background:#4d87ef; color:whitesmoke;font-family: 'Noto Sans KR', sans-serif;font-size:20px;"></td></tr>
                         <tr><td style="height:40px;"></td></tr>
-                        <tr><td style="padding-left:100px;">ì´ë¯¸ ê°€ìž… í•˜ì…¨ë‹¤ë©´? <strong><a href="logIn.html">ë¡œê·¸ì¸</a><strong></td></tr>
+                        <tr><td style="padding-left:100px;">ÀÌ¹Ì °¡ÀÔ ÇÏ¼Ì´Ù¸é? <strong><a href="logIn.html">·Î±×ÀÎ</a><strong></td></tr>
                     </table>
                 </form>
             </div>

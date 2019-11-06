@@ -1,9 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+   <%
+	request.setCharacterEncoding("euc-kr");
+%>
+    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="EUC-KR">
 <title>JSP File</title>
 </head>
 <body>
@@ -50,6 +54,7 @@ try {
 }
 catch(Exception e) {
 	out.println(e.getMessage());
+	response.sendRedirect("createId.jsp");
 }
 finally{
 	if(rs != null)			rs.close();
@@ -60,7 +65,7 @@ finally{
 
 %>
 
-<h3> М ▄Л⌡░Й╟─Л·┘ К░≤Л┘╗Л┼╣К▀┬К▀╓ ! </h3>
+<h3> х╦©Ь╟║ют ╣г╪л╫ю╢о╢ы ! </h3>
 id : <%= id %><br>
 password : <%= password %><br>
 passwordcheck : <%= passwordcheck %><br>
@@ -73,7 +78,7 @@ interest : <%= interest  %><br>
 address : <%= address  %><br>
 
 <% 
-response.sendRedirect("login.jsp");
+response.sendRedirect("../main.html");
 %>
 </body>
 </html>
