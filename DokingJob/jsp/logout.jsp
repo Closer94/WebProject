@@ -9,9 +9,8 @@
 <body>
 <%
 	session.invalidate();
-	//response.sendRedirect("../logIn.html");
 	out.print("<script> alert('Logout ¼º°ø'); </script>");
-	out.print("<script> history.back(); </script>");
+	out.print("<script> location.href='../main.html'; </script>");
 	
 %>
 

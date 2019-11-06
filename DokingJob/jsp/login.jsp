@@ -26,12 +26,15 @@ try {
 
 	String query = "select * from user where user_id = '"+id+"' and password = '"+password+"';";
 	rs = stm.executeQuery(query);
-	int i = 0;
+
 	while(rs.next()){
         session.setAttribute("user_id", id); // 인증되었음 세션에 남김
         session.setAttribute("user_interest", rs.getString("interest_job"));
-        url = "jobEducation_default.jsp";
+        session.setAttribute("user_region", rs.getString("address"));
+        url = "../ProgramerInfo.html";
 	}	
+	
+	out.println(query);
 }
 catch(Exception e) {
 	out.println(e.getMessage());
@@ -41,6 +44,8 @@ finally{
 	if(stm != null)			stm.close();
 	if(conn != null)		conn.close();
 }
+
+
 if(url.equals("../logIn.html")){
 	out.println("<script> alert('로그인 실패'); </script>");
 }
@@ -48,9 +53,10 @@ else{
 	out.println("<script> alert('로그인 성공'); </script>");
 }
 
+
 %>
 <% 
-//out.println("<script> location.href = url </script>");
+//out.println("<script> location.href='"+url+"' </script>");
 response.sendRedirect(url);
 
 %>

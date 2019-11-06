@@ -17,7 +17,7 @@
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="./css/jobFair.css">
+        <link rel="stylesheet" type="text/css" href="../css/jobFair.css">
 
 <style>
 .positionHead{
@@ -470,18 +470,18 @@ div.section-title-wrapper .logo img{
         <header class="positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="직업정보 이동" style="margin-left: -10px;"><a href="ProgramerInfo.html">직업정보</a></li>
-                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
-                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
-                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -10px;"><a href="../ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
+                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="../community.html">커뮤니티</a></li>
             </ul>
         </nav>
         </header>
@@ -492,12 +492,12 @@ div.section-title-wrapper .logo img{
             <div class="section-title-wrapper">
                 <p class="section-title"><span>어떤 세미나</span>가 좋을까?</p>
                 <div class="logo">
-                    <img src="./image/itkorea_logo.png" alt="itkorea_logo">
-                    <img src="./image/naver_logo.png" alt="naver_logo">
-                    <img src="./image/nhn-logo.png" alt="nhn_logo">
-                    <img src="./image/kakao_logo.png" alt="kakao_logo">
-                    <img src="./image/samsung_logo.png" alt="samsung_logo">
-                    <img src="./image/microsoft_logo.png" alt="microsoft_logo">
+                    <img src="../image/itkorea_logo.png" alt="itkorea_logo">
+                    <img src="../image/naver_logo.png" alt="naver_logo">
+                    <img src="../image/nhn-logo.png" alt="nhn_logo">
+                    <img src="../image/kakao_logo.png" alt="kakao_logo">
+                    <img src="../image/samsung_logo.png" alt="samsung_logo">
+                    <img src="../image/microsoft_logo.png" alt="microsoft_logo">
                 </div>
             </div>
             <!--section title -->
@@ -508,22 +508,22 @@ div.section-title-wrapper .logo img{
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
-                            <a href="https://forward.nhn.com/" target="_blank"><img src="./image/seminar1.jpg"></a>
-                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=96&clkMater=&txtMenu=&GoTopage=1&selMater=" target="_blank"><img src="./image/seminar2.jpg"></a>
-                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=94&clkMater=&txtMenu=&GoTopage=1&selMater="target="_blank"><img src="./image/seminar3.jpg"></a>
-                            <a href="http://ictconference.kr/ICTconference/2019ict/main/main.php"target="_blank"><img src="./image/seminar4.png"></a>
+                            <a href="https://forward.nhn.com/" target="_blank"><img src="../image/seminar1.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=96&clkMater=&txtMenu=&GoTopage=1&selMater=" target="_blank"><img src="../image/seminar2.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=94&clkMater=&txtMenu=&GoTopage=1&selMater="target="_blank"><img src="../image/seminar3.jpg"></a>
+                            <a href="http://ictconference.kr/ICTconference/2019ict/main/main.php"target="_blank"><img src="../image/seminar4.png"></a>
                         </li>
                         <li>
-                            <a href=""target="_blank"><img src="./image/jobFair05.GIF"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair06.jpg"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair07.jpg"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair08.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair05.GIF"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair06.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair07.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair08.jpg"></a>
                         </li>
                         <li>
-                            <a href=""target="_blank"><img src="./image/jobFair09.jpg"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair10.png"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair11.jpg"></a>
-                            <a href=""target="_blank"><img src="./image/jobFair12.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair09.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair10.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair11.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair12.png"></a>
                         </li>  
                     </ul>
                     <a href="#" id="prev"><</a>
@@ -535,14 +535,14 @@ div.section-title-wrapper .logo img{
             <div class="section-title-wrapper">
                     <p class="section-title"><span>당신을 위한</span> 구직정보</p>
                     <div class="logo">
-                        <img src="./image/carrier_logo.png" alt="carrier_logo">
+                        <img src="../image/carrier_logo.png" alt="carrier_logo">
                     </div>
                 </div>
                 <!--section title -->
                 
                 <hr>
                 <!--choice 시작-->
-<form class="choice">
+				<form method="post" action="findJobInfo.jsp" class="choice">
                     <!--관심분야 section 시작-->
                     <!--checkbox 시작-->
                     <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
@@ -718,14 +718,13 @@ div.section-title-wrapper .logo img{
 				stmt = conn.createStatement(); //연결된 상태에서 stmt로
 
 				//DB에 들어있는 정보를 가져와서 rs객체로 저장(출력)
-				ResultSet rs = stmt.executeQuery(" select * from employment ");
+				ResultSet rs = stmt.executeQuery("select * from employment");
 
 				if (!rs.next()) {
 					out.println("해당하는 정보가 없습니다.");
 				} else {
 					rs.previous();
 				}
-
 				//객체의 값이 있으면 TRUE
 				while (rs.next()) {
 					String employ_id = rs.getString("employ_id");
@@ -737,12 +736,14 @@ div.section-title-wrapper .logo img{
 					String start_date = rs.getString("start_date");
 					String end_date = rs.getString("end_date");
 					String agency = rs.getString("agency");
-
+                	String img_url = rs.getString("img_url");
+                	
+                	
 					if (interest[0].equals(interest_job) && employRegion[0].equals(region)) {
 		%>
 		<div class="card">
 			<div class="img-section">
-				<img src="./image/kakao.png" alt="카카오">
+				<img src='<%= img_url %>' alt="카카오">
 			</div>
 			<div class="content">
 				<p class="title">
@@ -778,7 +779,7 @@ div.section-title-wrapper .logo img{
 
 </body>
 <!-- slider 시작-->
-<script type="text/javascript" src="./js/slider.js"></script>
+<script type="text/javascript" src="../js/slider.js"></script>
 <!-- slider 끝-->
 <!-- jquery-->
 <script

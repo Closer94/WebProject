@@ -144,25 +144,26 @@
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
         <nav class = positionHead> 
             <ul id="ulStyle" >
-                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="ProgramerInfo.html">직업정보</a></li>
-                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
-                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair.html">박람회 및 채용정보</a></li>
-                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="../ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
+                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="../community.html">커뮤니티</a></li>
             </ul>
     </nav>
         <section class = positionBody>
             <div style="margin-left:44%;">
                 <h1>전체 과정 안내</h1>
             </div>
+				<form method="post" action="findJobEducation.jsp">
                 <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color: gainsboro;">
                     <tr style="color: black; background: #72bee0;">
                         <th><select name="educationArea" style="width: 100px; height: 40px;">
@@ -190,19 +191,10 @@
                         </select></th>
                         <th style="width: 1000px;">학원명_과정명</th>
                         <th style="width: 150px;">수강료</th>
-                        <th><select name="educationDate" style="width: 200px; height: 40px; padding: 0%;">
-                            <option value="1">훈련기간</option>
-                            <option value="2019-11-01">2019-11-01</option>
-                            <option value="2019-12-01">2019-12-01</option>
-                            <option value="2020-01-01">2020-01-01</option>
-                            <option value="2022-02-01">2022-02-01</option>
-                            <option value="2022-03-01">2022-03-01</option>
-                            <option value="2022-04-01">2022-04-01</option>
-                            <option value="2022-05-01">2022-05-01</option>
-                        </select></th>
-                        <th style="width: 100px"><input type="image" src="image/findImage.jpg" style="margin-top: 1px; margin-bottom: -1px;"></th>
+                        <th style="width: 200px; height: 40px; padding: 0%;">훈련기간</th>
+                        <th style="width: 100px"><input type="image" src="../image/findImage.jpg" style="margin-top: 1px; margin-bottom: -1px;"></th>
                     </tr>
-	
+					</form>
 	<%
 		String name = request.getParameter("name");
 		Connection conn = db.SqlConnectionStart(); //드라이버 연결
@@ -213,6 +205,8 @@
 		String educationField = request.getParameter("educationField");
 		String educationDate = request.getParameter("educationDate");
 		
+		
+		
 		try {
 			if (conn == null) {
 				throw new Exception("데이터베이스 연결 실패");
@@ -220,7 +214,7 @@
 			stmt = conn.createStatement(); //연결된 상태에서 stmt로
 
 			//DB에 들어있는 정보를 가져와서 rs객체로 저장(출력)
-			ResultSet rs = stmt.executeQuery(" select * from education ");
+			ResultSet rs = stmt.executeQuery("select * from education");
 
 			if (!rs.next()) {
 				out.println("해당하는 정보가 없습니다.");
@@ -233,15 +227,29 @@
 				String edu_id = rs.getString("edu_id");
 				String type = rs.getString("type");
 				String interest_job = rs.getString("interest_job");
+
+
+            	
 				String url = rs.getString("url");
 				String title = rs.getString("title");
 				String application_date = rs.getString("application_date");
+				
 				String training_date = rs.getString("training_date");
 				String region = rs.getString("region");
 				String agency = rs.getString("agency");
 				String cost = rs.getString("cost");
 
-				if (educationArea.equals(region) && educationType.equals(type) && educationField.equals(interest_job)) {
+
+            	if (educationArea.equals(region) && educationType.equals(type) && educationField.equals(interest_job)) {
+                	if(interest_job.equals("1"))
+                		interest_job = "웹";
+                	else
+                		interest_job = "앱";
+                	
+                	if(cost.equals("0"))
+                		cost = "전액무료";
+                	else
+                		 cost = String.format("%,d", Integer.parseInt(cost));
 	%>	
 					<tr height="50">
 						<td><%= region %></td>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,12 +13,13 @@ String password = request.getParameter("password");
 
 String url = "../logIn.html";
 
-//ë¡œê·¸ì¸ í–ˆëŠ”ì§€ ì•ˆí–ˆëŠ”ì§€ í™•ì¸
+//·Î±×ÀÎ Çß´ÂÁö ¾ÈÇß´ÂÁö È®ÀÎ
 String user_id = (String)session.getAttribute("user_id");
 if(user_id == null || user_id.equals(""))
 	response.sendRedirect(url);
 else{
 String user_interest_job = (String)session.getAttribute("user_interest");
+String user_region = (String)session.getAttribute("user_region");
 
 Connection conn = db.SqlConnectionStart();
 Statement stm = null;
@@ -26,141 +27,253 @@ ResultSet rs = null;
 try {
 	stm = conn.createStatement();
 	
-	String query = "select * from employment where interest_job = '"+user_interest_job+"';";
+	String query = "select * from employment where interest_job = '"+user_interest_job+"' and region = '"+user_region+"';";
 	rs = stm.executeQuery(query);
-
 %>
 
-        <meta charset="utf-8">
+     <meta charset="EUC-KR">
         <title>
-            ë„í‚¹ì¡(DockingJob) - ë¯¸ìƒì—ì„œ ì™„ìƒìœ¼ë¡œ
+            µµÅ·Àâ(DockingJob) - ¹Ì»ı¿¡¼­ ¿Ï»ıÀ¸·Î
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/jobFair.css">
 
-        <script>
-            //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤
-            var stmnLEFT = 50; // ì˜¤ë¥¸ìª½ ì—¬ë°± 
-            var stmnGAP1 = 0; // ìœ„ìª½ ì—¬ë°± 
-            var stmnGAP2 = 550; // ìŠ¤í¬ë¡¤ì‹œ ë¸Œë¼ìš°ì € ìœ„ìª½ê³¼ ë–¨ì–´ì§€ëŠ” ê±°ë¦¬ 
-            var stmnBASE = 150; // ìŠ¤í¬ë¡¤ ì‹œì‘ìœ„ì¹˜ 
-            var stmnActivateSpeed = 20; //ìŠ¤í¬ë¡¤ì„ ì¸ì‹í•˜ëŠ” ë”œë ˆì´ (ìˆ«ìê°€ í´ìˆ˜ë¡ ëŠë¦¬ê²Œ ì¸ì‹)
-            var stmnScrollSpeed = 10; //ìŠ¤í¬ë¡¤ ì†ë„ (í´ìˆ˜ë¡ ëŠë¦¼)
-            var stmnTimer; 
-            
-            function RefreshStaticMenu() { 
-            var stmnStartPoint, stmnEndPoint; 
-            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10); 
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2; 
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1; 
-            if (stmnStartPoint != stmnEndPoint) { 
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 ); 
-            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px'; 
-            stmnRefreshTimer = stmnScrollSpeed; 
-            }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed); 
-            } 
-            function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //ì²˜ìŒì— ì˜¤ë¥¸ìª½ì— ìœ„ì¹˜. leftë¡œ ë°”ê¿”ë„.
-            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px'; 
-            RefreshStaticMenu();
-            }
-            function goTop(){
-                document.documentElement.scrollTop=0;
-            }
-            function goBottom(){
-                document.documentElement.scrollTop = document.body.scrollHeight;
-            }
-            //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤  
-        </script>
-
     </head>
-    <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-        <!--ì‚¬ì´ë“œ ë©”ë‰´-->
-        <table id="STATICMENU">
-            <tr><td title="ë§¨ìœ„ë¡œ"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">â–²</button></td></tr>
-            <tr><td title="ë§¨ì•„ë˜ë¡œ"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">â–¼</button></td></tr>
-        </table>
-        <!--ì‚¬ì´ë“œ ë©”ë‰´-->
-        <header class = positionHead>
+    <body style="background:#edf1f8;">
+        <header class="positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="ë©”ì¸í˜ì´ì§€ë¡œ ê°€ê¸°" href="main.html" style="text-decoration:none;">ë„í‚¹ì¡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ŞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="ë§ˆì´í˜ì´ì§€ ì´ë™">ë§ˆì´í˜ì´ì§€</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="" title="ë¡œê·¸ì•„ì›ƒ í•˜ê¸°">ë¡œê·¸ì•„ì›ƒ</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
-        </header>
-        <nav class = positionHead> 
+        <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="ì§ì—…ì •ë³´ ì´ë™" style="margin-left: -10px;"><a href="ProgramerInfo.html">ì§ì—…ì •ë³´</a></li>
-                <li id="liStyle" title="ì§€ì›êµìœ¡ì •ë³´ ì´ë™" style="margin-left: 100px;"><a href="jobEducation.html">ì§€ì›êµìœ¡ì •ë³´</a></li>
-                <li id="liStyle" title="ì§€ì›ì •ì±… ì´ë™" style="margin-left: 100px;"><a href="supportPolicy.html">ì§€ì›ì •ì±…</a></li>
-                <li id="liStyle" title="ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´ ì´ë™" style="margin-left: 100px;"><a href="jobFair.html">ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´</a></li>
-                <li id="liStyle" title="ì»¤ë®¤ë‹ˆí‹° ì´ë™" style="margin-left: 100px;"><a href="community.html">ì»¤ë®¤ë‹ˆí‹°</a></li>
+                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -10px;"><a href="../ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation_default.jsp">Áö¿ø±³À°Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="../supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
+                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobFair_default.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
+                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="../community.html">Ä¿¹Â´ÏÆ¼</a></li>
             </ul>
         </nav>
-        
-        <section class = positionBody>
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>ì›¹ ê°œë°œì</strong></span>ë¥¼ ìœ„í•œ ì·¨ì—…ë°•ëŒíšŒ ì¼ì •</p> 
-                </div>
-                
-                <hr>
+        </header>
 
-                <!--silder ì‹œì‘-->
+        <section class = positionBody>
+
+            <!--section title -->
+            <div class="section-title-wrapper">
+                <p class="section-title"><span>¾î¶² ¼¼¹Ì³ª</span>°¡ ÁÁÀ»±î?</p>
+                <div class="logo">
+                    <img src="../image/itkorea_logo.png" alt="itkorea_logo">
+                    <img src="../image/naver_logo.png" alt="naver_logo">
+                    <img src="../image/nhn-logo.png" alt="nhn_logo">
+                    <img src="../image/kakao_logo.png" alt="kakao_logo">
+                    <img src="../image/samsung_logo.png" alt="samsung_logo">
+                    <img src="../image/microsoft_logo.png" alt="microsoft_logo">
+                </div>
+            </div>
+            <!--section title -->
+
+
+                <!--silder ½ÃÀÛ-->
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
-                            <a href=""><img src="../image/jobFair01.GIF"></a>
-                            <a href=""><img src="../image/jobFair02.png"></a>
-                            <a href=""><img src="../image/jobFair03.jpg"></a>
-                            <a href=""><img src="../image/jobFair04.png"></a>
+                            <a href="https://forward.nhn.com/" target="_blank"><img src="../image/seminar1.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=96&clkMater=&txtMenu=&GoTopage=1&selMater=" target="_blank"><img src="../image/seminar2.jpg"></a>
+                            <a href="http://koreaitcampus.co.kr/community/seminar_view.asp?idxnum=94&clkMater=&txtMenu=&GoTopage=1&selMater="target="_blank"><img src="../image/seminar3.jpg"></a>
+                            <a href="http://ictconference.kr/ICTconference/2019ict/main/main.php"target="_blank"><img src="../image/seminar4.png"></a>
                         </li>
                         <li>
-                            <a href=""><img src="../image/jobFair05.GIF"></a>
-                            <a href=""><img src="../image/jobFair06.jpg"></a>
-                            <a href=""><img src="../image/jobFair07.jpg"></a>
-                            <a href=""><img src="../image/jobFair08.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair05.GIF"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair06.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair07.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair08.jpg"></a>
                         </li>
                         <li>
-                            <a href=""><img src="../image/jobFair09.jpg"></a>
-                            <a href=""><img src="../image/jobFair10.png"></a>
-                            <a href=""><img src="../image/jobFair11.jpg"></a>
-                            <a href=""><img src="../image/jobFair12.png"></a>
-                        </li>  
+                            <a href=""target="_blank"><img src="../image/jobFair09.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair10.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair11.jpg"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair12.png"></a>
+                        </li>
                     </ul>
-                    <a href="#" id="prev">&#8810;</a>
-                    <a href="#" id="next">&#8811;</a>
+                    <a href="#" id="prev"><</a>
+                    <a href="#" id="next">></a>
                 </div>
-                <!--slider ë-->
+                <!--slider ³¡-->
                 
-                
-                <div style="margin-left:10%;">
-                    <p style="font-size:30px;"><span style="color:blueviolet"><strong>ë‹¹ì‹ ì„ ìœ„í•œ</strong></span> êµ¬ì§ì •ë³´</p> 
+                <!--section title -->
+            <div class="section-title-wrapper">
+                    <p class="section-title"><span>´ç½ÅÀ» À§ÇÑ</span> ±¸Á÷Á¤º¸</p>
+                    <div class="logo">
+                        <img src="../image/carrier_logo.png" alt="carrier_logo">
+                    </div>
                 </div>
-                
-                <hr>
-                <div class="select">
-                    <select name="place">
-                            <option value="1">ì „êµ­</option>
-                            <option value="2">ì„œìš¸/ê²½ê¸°</option>
-                            <option value="3">ì¶©ì²­</option>
-                            <option value="4">ì „ë¼</option>>
-                            <option value="4">ê²½ìƒ</option>>
-                            <option value="4">ê°•ì›</option>>
-                    </select>    
-                    <span> ì§€ì—­ì— ìˆëŠ”</span>
-                    
-                    <select name="type">
-                        <option value="1">ì›¹</option>
-                        <option value="1">ì•±</option>
-                    </select>
+                <!--section title -->
 
-                    <span> ê°œë°œì êµ¬ì§ì •ë³´ ì…ë‹ˆë‹¤.</span>
-                </div>
+                <hr>
+                <!--choice ½ÃÀÛ-->
+				<form method="post" action="findJobInfo.jsp" class="choice">
+                    <!--°ü½ÉºĞ¾ß section ½ÃÀÛ-->
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
+                        <label for="interest_1">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>À¥</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="interest" value="2" class="interest" id="interest_2">
+                        <label for="interest_2">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>¾Û</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+                    <!--°ü½ÉºĞ¾ß section ³¡-->
+
+                    <span>°³¹ßÀÚ¸¦ À§ÇÑ</span>
+
+                    <!--Áö¿ª section ½ÃÀÛ-->
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="¼­¿ï" class="region" id="region_1">
+                        <label for="region_1">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>¼­¿ï</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="°æ±â" class="region" id="region_2">
+                        <label for="region_2">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>°æ±â</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="ÃæÃ»" class="region" id="region_3">
+                        <label for="region_3">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>ÃæÃ»</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="Àü¶ó" class="region" id="region_4">
+                        <label for="region_4">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>Àü¶ó</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="°æ»ó" class="region" id="region_5">
+                        <label for="region_5">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>°æ»ó</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <!--checkbox ½ÃÀÛ-->
+                    <input type="checkbox" name="region" value="°­¿ø" class="region" id="region_6">
+                        <label for="region_6">
+                            <div class="icon">
+                                <div class="box">
+                                    <svg>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                        <circle cx="50%" cy="50%" r="40%"></circle>
+                                    </svg>
+                                    <div class="title">
+                                        <p>°­¿ø</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </input>
+                    <!--checkbox ³¡-->
+
+                    <span>Áö¿ªÀÇ ±¸Á÷Á¤º¸</span>
+                    <!--Áö¿ª section ³¡-->
+
+                    <!--È®ÀÎ¹öÆ°¼½¼Ç-->
+                    <!--¹öÆ° ½ÃÀÛ-->
+                    <button type="submit" class="btn-go">°Ë»ö</button>
+</form>
+                <!--choice ³¡-->
 
                 <hr>
 
@@ -170,9 +283,6 @@ try {
                     	String title = rs.getString("title");
                     	String region = rs.getString("region");
                     	String interest = rs.getString("interest_job");
-                    	
-                    	if(interest.equals("1"))              	interest = "ì›¹";
-                    	else if(interest.equals("2"))			interest = "ì•±";
                     	
                     	String open_date = rs.getString("open_date");
                     	String start_date = rs.getString("start_date");
@@ -187,43 +297,34 @@ try {
                     	
                     	out.print("<div class='card'>");
                         out.print("<div class='img-section'>");
-                        out.print("<img src='"+img_url+"' alt='ì‚¬ì§„íŒŒì¼'>");
+                        out.print("<img src='"+img_url+"' alt='»çÁøÆÄÀÏ'>");
                         out.print("</div>");
                         out.print("<div class='content'>");
-                        out.print("<p class='title'>"+title+"</p>");
+                        out.print("<p class='title'><a href ="+employ_url+">"+title+"</p>");
                     	out.print("<p class='company'>"+agency+"</p>");
-                    	out.print("<p class='place'>"+region+"/"+applicaiton_date+"</p>");
+                    	out.print("<p class='place'>"+region+"</p>");
+                    	out.print("<p class="+applicaiton_date+"</p>");
                     	out.print("</div></div>");
+                    	
                     }
                     %>
-                    
-                 <div class="card">
-                    <div class="img-section">
-                        <img src="../image/kakao.png" alt="ì¹´ì¹´ì˜¤">
-                    </div>
-                    <div class="content">
-                        <p class="title">ì›¹ í¼ë¸”ë¦¬ì…”</p>
-                        <p class="company">ì¹´ì¹´ì˜¤</p>
-                        <p class="place">ì„œìš¸/ê²½ê¸°</p>
-                        <p class="date">2015/10/30~2015/11/30</p>
-                    </div>
-                </div>
 
-        </section>      
+        </section>
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ìƒí˜¸: (ì£¼)ë„í‚¹ì¡&nbsp;&nbsp;&nbsp;ëŒ€í‘œ: ì´ê°‘ì„±&nbsp;&nbsp;&nbsp;ì£¼ì†Œ: ê°•ì›ë„ ì¶˜ì²œì‹œ í•œë¦¼ëŒ€í•™ê¸¸ 1 [24252]&nbsp;&nbsp;&nbsp;ì „í™”ë²ˆí˜¸: 010-1234-5678&nbsp;&nbsp;&nbsp;ì‚¬ì—…ìë²ˆí˜¸: 312-15-00712&nbsp;&nbsp;&nbsp;ëŒ€í‘œë©”ì¼: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">»óÈ£: (ÁÖ)µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇĞ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ŞÀÏ: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
-        </footer>  
+        </footer>
     </body>
 
-<!-- slider ì‹œì‘-->
+<!-- slider ½ÃÀÛ-->
     <script type="text/javascript" src="../js/slider.js"></script>
-<!-- slider ë-->
+<!-- slider ³¡-->
 <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 
 </html>
 <% }

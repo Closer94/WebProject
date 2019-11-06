@@ -20,6 +20,7 @@ if(user_id == null || user_id.equals(""))
 
 else{
 String user_interest_job = (String)session.getAttribute("user_interest");
+String user_region = (String)session.getAttribute("user_region");
 
 Connection conn = db.SqlConnectionStart();
 Statement stm = null;
@@ -27,7 +28,7 @@ ResultSet rs = null;
 try {
 	stm = conn.createStatement();
 	
-	String query = "select * from education where interest_job = '"+user_interest_job+"';";
+	String query = "select * from education where interest_job = '"+user_interest_job+"' and region = '"+user_region+"';";
 	rs = stm.executeQuery(query);
 
 %>
@@ -161,19 +162,19 @@ try {
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
         <nav class = positionHead>
             <ul id="ulStyle" >
-                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="ProgramerInfo.html">직업정보</a></li>
-                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation.html">지원교육정보</a></li>
-                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="./jobFair_default.jsp">박람회 및 채용정보</a></li>
-                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community.html">커뮤니티</a></li>
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="../ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">지원교육정보</a></li>
+                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="../community.html">커뮤니티</a></li>
             </ul>
     </nav>
         <section class = positionBody>
@@ -181,54 +182,51 @@ try {
                     <h1>전체 과정 안내</h1>
 
                 </div>
+                <form method="post" action="findJobEducation.jsp">
                 <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
                     <tr style="color:black;background:#72bee0;"">
-                        <th><select style="width:100px;height:40px;">
+                        <th><select name="educationArea" style="width:100px;height:40px;">
                                 <option value="1">지점</option>
-                                <option value="2">서울</option>
-                                <option value="3">경기</option>
+                                <option value="서울">서울</option>
+                                <option value="경기">경기</option>
                                 <option value="4">강원</option>
                                 <option value="5">충청</option>
                                 <option value="6">전라</option>
                                 <option value="7">경상</option>
                                 <option value="8">제주</option>
                         </select></th>
-                        <th><select style="width:100px; height:40px; padding:0%;">
+                        <th><select name="educationType" style="width:100px; height:40px; padding:0%;">
                                 <option value="1">교육종류</option>
-                                <option value="2">국비교육</option>
-                                <option value="3">기업교육</option>
+                                <option value="국비교육">국비교육</option>
+                                <option value="기업교육">기업교육</option>
                         </select></th>
-                        <th><select style="width:150px; height:40px; padding:0%;">
-                                <option value="1">분야</option>
-                                <option value="2">웹</option>
-                                <option value="3">앱</option>
-                                <option value="4">네트워크</option>
-                                <option value="5">보안</option>
-                                <option value="6">빅데이터</option>
+                        <th><select name="educationField" style="width:150px; height:40px; padding:0%;">
+                                <option value="0">분야</option>
+                                <option value="1">웹</option>
+                                <option value="2">앱</option>
+                                <option value="3">네트워크</option>
+                                <option value="4">보안</option>
+                                <option value="5">빅데이터</option>
                         </select></th>
                         <th style="width:1000px;">학원명_과정명</th>
 
                         <th style="width:150px;">수강료</th>
-                        <th><select style="width:200px; height:40px; padding:0%;">
-                                <option value="1">훈련기간</option>
-                                <option value="2">2019-11-01</option>
-                                <option value="3">2019-12-01</option>
-                                <option value="4">2020-01-01</option>
-                                <option value="5">2022-02-01</option>
-                                <option value="6">2022-03-01</option>
-                                <option value="7">2022-04-01</option>
-                                <option value="8">2022-05-01</option>
-                        </select></th>
-                        <th style="width:100px"><input type="image" src="image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
+                        <th style="width: 200px; height: 40px; padding: 0%;">훈련기간</th>
+                        <th style="width:100px"><input type="image" src="../image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
                     </tr>
-                    
+                    </form>
                     <%
                     while(rs.next()){ 
+                    	String employ_url = rs.getString("url");
                     	String region = rs.getString("region");
                     	String type = rs.getString("type");
                     	String interest = rs.getString("interest_job");
+                    	
                     	if(interest.equals("1"))
                     		interest = "웹";
+                    	else
+                    		interest = "앱";
+
                     	String title = rs.getString("title");
                     	String agency = rs.getString("agency");
                     	//title = agency + "_" + title;
@@ -245,11 +243,11 @@ try {
                     	out.print("<tr height='50'><td>"+region+"</td>");
                     	out.print("<td>"+type+"</td>");
                     	out.print("<td>"+interest+"</td>");
-                    	out.print("<td>"+title+"</td>");
+                    	out.print("<td><a href='"+employ_url+"'>"+title+"</td>");
                     	out.print("<td>"+cost+"</td>");
                     	out.print("<td>"+training_date+"</td>");
                     	out.print("<td>"+applicaiton_date+"</td></tr>");
-                    	//out.print("<td>모집중</td></tr>");
+                    	
                     }
                     %>
                 </table>
