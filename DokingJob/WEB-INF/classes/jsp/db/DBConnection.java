@@ -3,7 +3,7 @@ package jsp.db;
 import java.sql.*;
 
 public class DBConnection {
-	Connection conn = null;
+	static Connection conn = null;
 	
 	public DBConnection() {
 		try {
@@ -23,7 +23,7 @@ public class DBConnection {
 		}
 	}
 	
-	public Connection SqlConnectionStart() {
+	public static Connection SqlConnectionStart() {
 		return conn;
 	}
 	
