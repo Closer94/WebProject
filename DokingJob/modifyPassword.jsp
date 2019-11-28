@@ -1,0 +1,171 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="EUC-KR">
+        <title>
+            도킹잡 마이페이지
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+
+        <style>
+            .positionHead{
+                max-width: 1200px;
+                min-width: 1200px;
+                margin:0 auto;
+                margin-top: -15px;
+                margin-left: 180px;
+            }
+            .positionBody{
+                max-width: 1200px;
+                margin:0 auto;
+                margin-top: 110px;
+            }
+            #up {
+                display: inline-block;
+                transition: .3s;
+                -webkit-transform: scale(1);
+                transform: scale(1);
+                text-decoration: none;
+                color: #000000;
+            }
+            #up:hover {
+                -webkit-transform: scale(1.1);
+                transform: scale(1.1);
+                text-decoration: underline;
+
+            }
+            #menuUp {
+                text-decoration:none;
+                color: black;
+            }
+            #menuUp:hover{
+                color: #4a94f2;
+            }
+            #defaultUp{
+                text-decoration:none;
+                color: black;
+            }
+            #defaultUp:hover{
+                text-decoration:underline;
+            }
+            #btn{
+                background-color: #5892f9;
+                width: 100px;
+                height: 50px;
+                border: 1px solid darkgray;
+                outline: none;
+                color: white;
+                font-weight: bold;
+
+            }
+            #btn:hover{
+                text-decoration:none;
+                background: white;
+                color: #5892f9;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            }
+        </style>
+        <script>
+            var n = 1
+            function check_all() {
+                if(n == 1){
+                    n--;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                            my_form.mycheck[i].checked = true;
+                    }
+                }
+                else{
+                    n++;
+                    for(i=0; i < my_form.mycheck.length; i++) {
+                    my_form.mycheck[i].checked = false;
+                    }
+                }
+            }
+            function completeModify(){
+
+                alert('비밀번호 변경이 완료되었습니다.')
+            }
+        </script>
+    </head>
+    <body style="background:#edf1f8;" class = positionBody>
+        <div class = positionHead>
+                <table style="margin-top:-120px; margin-left: -150px;">
+                    <tr>
+                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                        <td width="600"></td>
+                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    </tr>
+                </table>
+        </div>
+        <div class = positionHead>
+            <table style="margin-top:-40px; margin-left:-100px;">
+                <tr>
+                    <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">마이페이지</td>
+                    <td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="나의 활동 페이지 이동" href="myPage_myActive1.html" >나의 활동</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="개인정보수정 페이지 이동" href="modifyProfile.jsp" >개인정보수정</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="비밀번호 변경 페이지 이동" href="modifyPassword.jsp" >비밀번호 변경</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="회원 탈퇴 페이지 이동" href="deleteAccount.jsp" >회원 탈퇴</a></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            &nbsp;
+        </div>
+        <div style="margin-top:-40px; width:1025px; margin-left:81px;"">
+            <hr style="border: solid 1.5px black;">
+        </div>
+        <table style="margin-top:40px; margin-left:120px; border-collapse: collapse;">
+                <tr><td rowspan="3"><img src="image/modifyPassword.JPG"></td><td style="font-size:25px; font-weight: bold;">&nbsp;&nbsp;주기적인<span style="color:#5297f2;">(6개월)</span>비밀번호 변경을 통해 개인정보를 안전하게 보호하세요.</td></tr>
+        </table>
+        <form method='post' action='jsp/myinfo_change.jsp'>
+            <fieldset style="width:800px; margin-top:10px; margin-left:180px; border-collapse: collapse; border-color:#e7e7e7;">
+                <legend style="font-size:20px; font-weight: bold; text-align: center;">[비밀번호 변경]</legend>
+                <table style="margin-left: 30px; margin-top: 40px;">
+                    <tr>
+                        <td style="font-weight:bold;">현재 비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td colspan="3" style="padding:0.6em; border: 1px solid #dadada;background-color: white;">
+                            <input type="password" name='old_password' id='old_password' placeholder="현재 비밀번호를 입력해 주세요." size ="40" style="border-style:none; height:25px; font-size:15px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:10px;">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight:bold;">새 비밀번호 &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td colspan="3" style="padding:0.6em; border: 1px solid #dadada;background-color: white;">
+                            <input type="password" name='new_password' id='new_password' placeholder="새 비밀번호를 입력해 주세요." size ="40" style="border-style:none; height:25px; font-size:15px;">
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td><img src="image/passwordTip.jpg"></td>
+                        <td colspan="2">
+                            <ui>
+                                <li style="font-size:14px; font-weight: bold; color: #797a7c;">비밀번호는 8~32자의 영문 대/소문자, 숫자, 특수문자를 조합하여 사용하실 수 있어요!</li>
+                                <li style="font-size:14px; font-weight: bold; color: #797a7c;">쉬운 비밀번호나 자주 쓰는 사이트의 비밀번호가 같을 경우, 도용되기 쉽습니다.</li>
+                                <li style="font-size:14px; font-weight: bold; color: #797a7c;">비밀번호에 특수문자를 추가하여 사용하시면 기억하기도 쉽고, 비밀번호 안전도가 높아집니다.</li>
+                            </ui>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+        
+        <div style="margin-top:20px;margin-left:480px;">
+            <input type="submit" id="btn" value="수정하기" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="취소">
+        </div>
+        </form>
+        <footer class="positionBody" >
+            <hr>
+            <p style="font-size:15px;color:gray;">
+                <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
+                <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
+            </p>
+        </footer>
+    </body>
+</html>
