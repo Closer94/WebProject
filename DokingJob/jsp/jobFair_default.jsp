@@ -13,7 +13,7 @@ String password = request.getParameter("password");
 
 String url = "../logIn.html";
 
-//로그인 했는지 안했는지 확인
+//占싸깍옙占쏙옙 占쌩댐옙占쏙옙 占쏙옙占쌩댐옙占쏙옙 확占쏙옙
 String user_id = (String)session.getAttribute("user_id");
 if(user_id == null || user_id.equals(""))
 	response.sendRedirect(url);
@@ -33,7 +33,7 @@ try {
 
      <meta charset="EUC-KR">
         <title>
-            도킹잡(DockingJob) - 미생에서 완생으로
+            占쏙옙킹占쏙옙(DockingJob) - 占싱삼옙占쏙옙占쏙옙 占싹삼옙占쏙옙占쏙옙
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -45,18 +45,18 @@ try {
         <header class="positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙" href="../main.html" style="text-decoration:none;">占쏙옙킹占쏙옙</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../modifyProfile.jsp" title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="占싸그아울옙 占싹깍옙">占싸그아울옙</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="직업정보 이동" style="margin-left: -10px;"><a href="../ProgramerInfo.html">직업정보</a></li>
-                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
-                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
-                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="../community.html">커뮤니티</a></li>
+                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: -10px;"><a href="../ProgramerInfo.html">占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
+                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: 100px;"><a href="jobEducation_default.jsp">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
+                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙책 占싱듸옙" style="margin-left: 100px;"><a href="../supportPolicy.html">占쏙옙占쏙옙占쏙옙책</a></li>
+                <li id="liStyle" title="占쌘띰옙회 占쏙옙 채占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: 100px;"><a href="jobFair_default.jsp">占쌘띰옙회 占쏙옙 채占쏙옙占쏙옙占쏙옙</a></li>
+                <li id="liStyle" title="커占승댐옙티 占싱듸옙" style="margin-left: 100px;"><a href="../community.html">커占승댐옙티</a></li>
             </ul>
         </nav>
         </header>
@@ -65,7 +65,7 @@ try {
 
             <!--section title -->
             <div class="section-title-wrapper">
-                <p class="section-title"><span>어떤 세미나</span>가 좋을까?</p>
+                <p class="section-title"><span>占쏘떤 占쏙옙占싱놂옙</span>占쏙옙 占쏙옙占쏙옙占쏙옙?</p>
                 <div class="logo">
                     <img src="../image/itkorea_logo.png" alt="itkorea_logo">
                     <img src="../image/naver_logo.png" alt="naver_logo">
@@ -78,7 +78,7 @@ try {
             <!--section title -->
 
 
-                <!--silder 시작-->
+                <!--silder 占쏙옙占쏙옙-->
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
@@ -103,11 +103,11 @@ try {
                     <a href="#" id="prev"><</a>
                     <a href="#" id="next">></a>
                 </div>
-                <!--slider 끝-->
+                <!--slider 占쏙옙-->
                 
                 <!--section title -->
             <div class="section-title-wrapper">
-                    <p class="section-title"><span>당신을 위한</span> 구직정보</p>
+                    <p class="section-title"><span>占쏙옙占쏙옙占� 占쏙옙占쏙옙</span> 占쏙옙占쏙옙占쏙옙占쏙옙</p>
                     <div class="logo">
                         <img src="../image/carrier_logo.png" alt="carrier_logo">
                     </div>
@@ -115,10 +115,10 @@ try {
                 <!--section title -->
 
                 <hr>
-                <!--choice 시작-->
+                <!--choice 占쏙옙占쏙옙-->
 				<form method="post" action="findJobInfo.jsp" class="choice">
-                    <!--관심분야 section 시작-->
-                    <!--checkbox 시작-->
+                    <!--占쏙옙占심분억옙 section 占쏙옙占쏙옙-->
+                    <!--checkbox 占쏙옙占쏙옙-->
                     <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
                         <label for="interest_1">
                             <div class="icon">
@@ -128,15 +128,15 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>웹</p>
+                                        <p>占쏙옙</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
+                    <!--checkbox 占쏙옙占쏙옙-->
                     <input type="checkbox" name="interest" value="2" class="interest" id="interest_2">
                         <label for="interest_2">
                             <div class="icon">
@@ -146,20 +146,20 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>앱</p>
+                                        <p>占쏙옙</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
-                    <!--관심분야 section 끝-->
+                    <!--checkbox 占쏙옙-->
+                    <!--占쏙옙占심분억옙 section 占쏙옙-->
 
-                    <span>개발자를 위한</span>
+                    <span>占쏙옙占쏙옙占쌘몌옙 占쏙옙占쏙옙</span>
 
-                    <!--지역 section 시작-->
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="서울" class="region" id="region_1">
+                    <!--占쏙옙占쏙옙 section 占쏙옙占쏙옙-->
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_1">
                         <label for="region_1">
                             <div class="icon">
                                 <div class="box">
@@ -168,16 +168,16 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>서울</p>
+                                        <p>占쏙옙占쏙옙</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="경기" class="region" id="region_2">
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙占�" class="region" id="region_2">
                         <label for="region_2">
                             <div class="icon">
                                 <div class="box">
@@ -186,16 +186,16 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>경기</p>
+                                        <p>占쏙옙占�</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="충청" class="region" id="region_3">
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙청" class="region" id="region_3">
                         <label for="region_3">
                             <div class="icon">
                                 <div class="box">
@@ -204,16 +204,16 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>충청</p>
+                                        <p>占쏙옙청</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="전라" class="region" id="region_4">
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_4">
                         <label for="region_4">
                             <div class="icon">
                                 <div class="box">
@@ -222,16 +222,16 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>전라</p>
+                                        <p>占쏙옙占쏙옙</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="경상" class="region" id="region_5">
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙占�" class="region" id="region_5">
                         <label for="region_5">
                             <div class="icon">
                                 <div class="box">
@@ -240,16 +240,16 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>경상</p>
+                                        <p>占쏙옙占�</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <!--checkbox 시작-->
-                    <input type="checkbox" name="region" value="강원" class="region" id="region_6">
+                    <!--checkbox 占쏙옙占쏙옙-->
+                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_6">
                         <label for="region_6">
                             <div class="icon">
                                 <div class="box">
@@ -258,22 +258,22 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>강원</p>
+                                        <p>占쏙옙占쏙옙</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox 끝-->
+                    <!--checkbox 占쏙옙-->
 
-                    <span>지역의 구직정보</span>
-                    <!--지역 section 끝-->
+                    <span>占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙</span>
+                    <!--占쏙옙占쏙옙 section 占쏙옙-->
 
-                    <!--확인버튼섹션-->
-                    <!--버튼 시작-->
-                    <button type="submit" class="btn-go">검색</button>
+                    <!--확占싸뱄옙튼占쏙옙占쏙옙-->
+                    <!--占쏙옙튼 占쏙옙占쏙옙-->
+                    <button type="submit" class="btn-go">占싯삼옙</button>
 </form>
-                <!--choice 끝-->
+                <!--choice 占쏙옙-->
 
                 <hr>
 
@@ -298,7 +298,7 @@ try {
         				
                     	out.print("<div class='card'>");
                         out.print("<div class='img-section'>");
-                        out.print("<img src='"+img_url+"' alt='사진파일'>");
+                        out.print("<img src='"+img_url+"' alt='占쏙옙占쏙옙占쏙옙占쏙옙'>");
                         out.print("</div>");
                         out.print("<div class='content'>");
                         out.print("<p class='title'><a href ="+employ_url+">"+title+"</p>");
@@ -314,15 +314,15 @@ try {
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">상호: (주)도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">占쏙옙호: (占쏙옙)占쏙옙킹占쏙옙&nbsp;&nbsp;&nbsp;占쏙옙표: 占싱곤옙占쏙옙&nbsp;&nbsp;&nbsp;占쌍쇽옙: 占쏙옙占쏙옙占쏙옙 占쏙옙천占쏙옙 占싼몌옙占쏙옙占싻깍옙 1 [24252]&nbsp;&nbsp;&nbsp;占쏙옙화占쏙옙호: 010-1234-5678&nbsp;&nbsp;&nbsp;占쏙옙占쏙옙薇占싫�: 312-15-00712&nbsp;&nbsp;&nbsp;占쏙옙표占쏙옙占쏙옙: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>
     </body>
 
-<!-- slider 시작-->
+<!-- slider 占쏙옙占쏙옙-->
     <script type="text/javascript" src="../js/slider.js"></script>
-<!-- slider 끝-->
+<!-- slider 占쏙옙-->
 <!-- jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 

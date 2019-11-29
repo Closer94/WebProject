@@ -8,7 +8,7 @@
     <head>
         <meta charset="EUC-KR">
         <title>
-            µµÅ·Àâ ¸¶ÀÌÆäÀÌÁö
+            ï¿½ï¿½Å·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -113,7 +113,7 @@
             function completeModify(){
 
             	
-                alert('Á¤º¸¼öÁ¤ÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù.')
+                alert('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.')
             }
         </script>
     </head>
@@ -154,9 +154,9 @@
         <div class = positionHead>
                 <table style="margin-top:-120px; margin-left:-150px;">
                     <tr>
-                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="¸ÞÀÎÆäÀÌÁö·Î °¡±â" href="main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
+                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" href="main.html" style="text-decoration:none;">ï¿½ï¿½Å·ï¿½ï¿½</a></td>
                         <td width="600"></td>
-                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="myPage_myActive1.html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
+                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï±ï¿½">ï¿½Î±×¾Æ¿ï¿½</a>&nbsp;&nbsp;</td>
                     </tr>
                 </table>
         </div>
@@ -164,11 +164,11 @@
         <div class = positionHead>
             <table style="margin-top:-40px; margin-left:-100px;">
                 <tr>
-                    <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">¸¶ÀÌÆäÀÌÁö</td>
-                    <td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="³ªÀÇ È°µ¿ ÆäÀÌÁö ÀÌµ¿" href="myPage_myActive1.html" >³ªÀÇ È°µ¿</a></td>
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="°³ÀÎÁ¤º¸¼öÁ¤ ÆäÀÌÁö ÀÌµ¿" href="modifyProfile.jsp" >°³ÀÎÁ¤º¸¼öÁ¤</a></td>
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ºñ¹Ð¹øÈ£ º¯°æ ÆäÀÌÁö ÀÌµ¿" href="modifyPassword.jsp" >ºñ¹Ð¹øÈ£ º¯°æ</a></td>
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="È¸¿ø Å»Åð ÆäÀÌÁö ÀÌµ¿" href="deleteAccount.jsp" >È¸¿ø Å»Åð</a></td>
+                    <!--<td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>-->
+                    <td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="myPage_myActive1.html" >ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="modifyProfile.jsp" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="modifyPassword.jsp" >ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="È¸ï¿½ï¿½ Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="deleteAccount.jsp" >È¸ï¿½ï¿½ Å»ï¿½ï¿½</a></td>
                 </tr>
             </table>
         </div>
@@ -179,42 +179,42 @@
             <hr style="border: solid 1.5px black;">
         </div>
         <table style="margin-left:80px; border-collapse: collapse;">
-                <tr><td style="font-size:30px; padding:5px;">È¸¿øÁ¤º¸¼öÁ¤</td></tr>
-            <tr><td colspan="2" style="padding:5px;"><span style="font-size:20px"> <%= name %> </span><span style="color:gray;">´ÔÀÇ È¸¿ø°¡ÀÔ ½Ã ÀÔ·ÂÇÑ Á¤º¸¸¦ ¼öÁ¤ÇÏ½Ç ¼ö ÀÖ½À´Ï´Ù.</span></td></tr>
+                <tr><td style="font-size:30px; padding:5px;">È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td></tr>
+            <tr><td colspan="2" style="padding:5px;"><span style="font-size:20px"> <%= name %> </span><span style="color:gray;">ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.</span></td></tr>
             <tr><td>&nbsp;</td></tr>
             <%
-            String temp = "<tr><td style='text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;'>´Ð³×ÀÓ</td><td style='border-bottom:1px solid #d3d3d3;'><input type='text' name='nickname' id='nickname' value='"+name+"' style='width:100px; height:20px; margin-left:20px;padding-left:10px;'></td></tr>";
+            String temp = "<tr><td style='text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;'>ï¿½Ð³ï¿½ï¿½ï¿½</td><td style='border-bottom:1px solid #d3d3d3;'><input type='text' name='nickname' id='nickname' value='"+name+"' style='width:100px; height:20px; margin-left:20px;padding-left:10px;'></td></tr>";
             out.println(temp);
             %>
             
-            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">¾ÆÀÌµð</td><td style="padding-left:20px; border-bottom:1px solid #d3d3d3;"><%= user_id %></td></tr>
-            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">°ü½É ºÐ¾ß</td>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½ï¿½ï¿½Ìµï¿½</td><td style="padding-left:20px; border-bottom:1px solid #d3d3d3;"><%= user_id %></td></tr>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½ï¿½ï¿½ï¿½ ï¿½Ð¾ï¿½</td>
                 <td style="border-bottom:1px solid #d3d3d3;">
                     <select name="interest" id="interest" style="width:120px; height:25px; margin-left:20px;">
                     <%
                     	if(interest.equals("1")){
                     %>
-                    		<option selected value="1">À¥</option>
-                    		<option value="2">¾Û</option>
-                            <option value="3">³×Æ®¿öÅ©</option>
-                            <option value="4">Á¤º¸º¸¾È</option>
-                            <option value="5">µ¥ÀÌÅÍº£ÀÌ½º</option>
+                    		<option selected value="1">ï¿½ï¿½</option>
+                    		<option value="2">ï¿½ï¿½</option>
+                            <option value="3">ï¿½ï¿½Æ®ï¿½ï¿½Å©</option>
+                            <option value="4">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                            <option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½</option>
                     <%
                     	}else if(interest.equals("2")){
                     %>
-                    		<option value="1">À¥</option>
-                    		<option selected value="2">¾Û</option>
-                            <option value="3">³×Æ®¿öÅ©</option>
-                            <option value="4">Á¤º¸º¸¾È</option>
-                            <option value="5">µ¥ÀÌÅÍº£ÀÌ½º</option>
+                    		<option value="1">ï¿½ï¿½</option>
+                    		<option selected value="2">ï¿½ï¿½</option>
+                            <option value="3">ï¿½ï¿½Æ®ï¿½ï¿½Å©</option>
+                            <option value="4">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                            <option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½</option>
                      <%
                     	}else{
                     %>
-                    		<option value="1">À¥</option>
-                    		<option value="2">¾Û</option>
-                            <option selected value="3">³×Æ®¿öÅ©</option>
-                            <option value="4">Á¤º¸º¸¾È</option>
-                            <option value="5">µ¥ÀÌÅÍº£ÀÌ½º</option>
+                    		<option value="1">ï¿½ï¿½</option>
+                    		<option value="2">ï¿½ï¿½</option>
+                            <option selected value="3">ï¿½ï¿½Æ®ï¿½ï¿½Å©</option>
+                            <option value="4">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                            <option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½</option>
                    <%
                     	}
                     %>
@@ -224,7 +224,7 @@
                 </td>
             </tr>
             <tr>
-                <td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ÀÌ¸ÞÀÏ ÁÖ¼Ò</td>
+                <td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½</td>
                 <td style="border-bottom:1px solid #d3d3d3;">
                 	<%
 	                    int index = email.indexOf("@");                 
@@ -240,7 +240,7 @@
 	                    
 					%>
                 	<select name="selectEmail" id = "selectEmail" onchange=changeEmail() style="width:180px; height:25px; margin-left:10px;">
-                        <option selected value="1">Á÷Á¢ÀÔ·Â</option>
+                        <option selected value="1">ï¿½ï¿½ï¿½ï¿½ï¿½Ô·ï¿½</option>
                         <option value="2">daum.net</option>
                         <option value="3">naver.com</option>
                         <option value="4">hotmail.com</option>
@@ -257,14 +257,14 @@
             	if(email_check.equals("1")){
 			%>
         			<tr>
-                    <td rowspan="2" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ÀÌ¸ÞÀÏ ¼ö½Å¿©ºÎ</td>
+                    <td rowspan="2" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½</td>
                     <td style="padding-left:20px;">
-                        <input type="radio" checked name="smsReception">¼ö½Åµ¿ÀÇ<span style="font-size:12px; color:gray"> (±¤°í¼º Á¤º¸¿¡ ´ëÇÑ µ¿ÀÇ Æ÷ÇÔ)</span>
+                        <input type="radio" checked name="smsReception">ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½<span style="font-size:12px; color:gray"> (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)</span>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left:20px; border-bottom:1px solid #d3d3d3;">
-                        <input type="radio" name="smsReception">¼ö½ÅÇÏÁö ¾ÊÀ½<span style="font-size:12px; color:gray"> (±³À°Á¤º¸, ¹Ú¶÷È¸ Á¤º¸, Ã¤¿ëÁ¤º¸, Áö¿øÁ¤Ã¥Á¤º¸ µî Áß¿äÇÑ Á¤º¸¸¦ ¹ÞÀ¸½Ç ¼ö ÀÖ½À´Ï´Ù.)</span>
+                        <input type="radio" name="smsReception">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½<span style="font-size:12px; color:gray"> (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ï¿½ï¿½, Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.)</span>
                     </td>
                 </tr>
            <% 
@@ -272,77 +272,77 @@
             	else{
            %>
         			<tr>
-                    <td rowspan="2" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ÀÌ¸ÞÀÏ ¼ö½Å¿©ºÎ</td>
+                    <td rowspan="2" style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Å¿ï¿½ï¿½ï¿½</td>
                     <td style="padding-left:20px;">
-                        <input type="radio" name="smsReception">¼ö½Åµ¿ÀÇ<span style="font-size:12px; color:gray"> (±¤°í¼º Á¤º¸¿¡ ´ëÇÑ µ¿ÀÇ Æ÷ÇÔ)</span>
+                        <input type="radio" name="smsReception">ï¿½ï¿½ï¿½Åµï¿½ï¿½ï¿½<span style="font-size:12px; color:gray"> (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)</span>
                     </td>
                 </tr>
                 <tr>
                     <td style="padding-left:20px; border-bottom:1px solid #d3d3d3;">
-                        <input type="radio" checked name="smsReception">¼ö½ÅÇÏÁö ¾ÊÀ½<span style="font-size:12px; color:gray"> (±³À°Á¤º¸, ¹Ú¶÷È¸ Á¤º¸, Ã¤¿ëÁ¤º¸, Áö¿øÁ¤Ã¥Á¤º¸ µî Áß¿äÇÑ Á¤º¸¸¦ ¹ÞÀ¸½Ç ¼ö ÀÖ½À´Ï´Ù.)</span>
+                        <input type="radio" checked name="smsReception">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½<span style="font-size:12px; color:gray"> (ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ï¿½ï¿½, Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö½ï¿½ï¿½Ï´ï¿½.)</span>
                     </td>
                 </tr>
             <%	
             	}
             %>
 
-            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ÁÖ°Å Áö¿ª</td>
+            <tr><td style="text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;">ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½</td>
                 <td style="border-bottom:1px solid #d3d3d3;">
                     <select name="region" id="region" style="width:120px; height:25px; margin-left:20px;">
 			<%	
 				if(region.equals("1")){
 			%>
-					<option selected value="1">¼­¿ï</option>
-                    <option value="2">°æ±â</option>
-                    <option value="3">°­¿ø</option>
-                    <option value="4">ÃæÃ»</option>
-                    <option value="5">Àü¶ó</option>
-                    <option value="6">°æ»ó</option>   
+					<option selected value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="2">ï¿½ï¿½ï¿½</option>
+                    <option value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="4">ï¿½ï¿½Ã»</option>
+                    <option value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="6">ï¿½ï¿½ï¿½</option>   
 			<%
 				}else if(region.equals("2")){
             %>
-                 	<option value="1">¼­¿ï</option>
-                 	<option selected value="2">°æ±â</option>
-                    <option value="3">°­¿ø</option>
-                    <option value="4">ÃæÃ»</option>
-                    <option value="5">Àü¶ó</option>
-                    <option value="6">°æ»ó</option>   
+                 	<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                 	<option selected value="2">ï¿½ï¿½ï¿½</option>
+                    <option value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="4">ï¿½ï¿½Ã»</option>
+                    <option value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="6">ï¿½ï¿½ï¿½</option>   
 			<%
 				}else if(region.equals("3")){
 			%>
-                 	<option value="1">¼­¿ï</option>
-                 	<option value="2">°æ±â</option>
-                    <option selected value="3">°­¿ø</option>
-                    <option value="4">ÃæÃ»</option>
-                    <option value="5">Àü¶ó</option>
-                    <option value="6">°æ»ó</option>   
+                 	<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                 	<option value="2">ï¿½ï¿½ï¿½</option>
+                    <option selected value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="4">ï¿½ï¿½Ã»</option>
+                    <option value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="6">ï¿½ï¿½ï¿½</option>   
        		<%
 				}else if(region.equals("4")){
 			%>     
-					<option value="1">¼­¿ï</option>
-                 	<option value="2">°æ±â</option>
-                    <option value="3">°­¿ø</option>
-                    <option selected value="4">ÃæÃ»</option>
-                    <option value="5">Àü¶ó</option>
-                    <option value="6">°æ»ó</option>   
+					<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                 	<option value="2">ï¿½ï¿½ï¿½</option>
+                    <option value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option selected value="4">ï¿½ï¿½Ã»</option>
+                    <option value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="6">ï¿½ï¿½ï¿½</option>   
        		<%
 				}else if(region.equals("5")){
 			%>  
-					<option value="1">¼­¿ï</option>
-                 	<option value="2">°æ±â</option>
-                    <option value="3">°­¿ø</option>
-                    <option value="4">ÃæÃ»</option>
-                    <option selected value="5">Àü¶ó</option>
-                    <option value="6">°æ»ó</option>   
+					<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                 	<option value="2">ï¿½ï¿½ï¿½</option>
+                    <option value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="4">ï¿½ï¿½Ã»</option>
+                    <option selected value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="6">ï¿½ï¿½ï¿½</option>   
        		<%
 				}else{
 			%>  
-					<option value="1">¼­¿ï</option>
-                 	<option value="2">°æ±â</option>
-                    <option value="3">°­¿ø</option>
-                    <option value="4">ÃæÃ»</option>
-                    <option value="5">Àü¶ó</option>
-                    <option selected value="6">°æ»ó</option>    
+					<option value="1">ï¿½ï¿½ï¿½ï¿½</option>
+                 	<option value="2">ï¿½ï¿½ï¿½</option>
+                    <option value="3">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option value="4">ï¿½ï¿½Ã»</option>
+                    <option value="5">ï¿½ï¿½ï¿½ï¿½</option>
+                    <option selected value="6">ï¿½ï¿½ï¿½</option>    
 			<%
 				}
 			%>
@@ -352,19 +352,19 @@
             
             <tr>
                 <tr><td colspan="2" style="border-bottom:1px solid #d3d3d3; padding: 10px 0px 10px 0px;">
-                    <bold style="font-size:13px; font-weight: bold;">* ÀÌ¸ÞÀÏÁÖ¼Ò°¡ Àß¸ø ±âÀçµÇ¾î ÀÖÀ¸¸é µµÅ·ÀâÀÇ ¾÷µ¥ÀÌÆ® Á¤º¸¸¦ ¹ÞÀ» ¼ö ¾øÀ¸´Ï ±âÀçÇÏ½Å È¸¿øÁ¤º¸¸¦ ¹Ýµå½Ã È®ÀÎÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.</bold>
+                    <bold style="font-size:13px; font-weight: bold;">* ï¿½Ì¸ï¿½ï¿½ï¿½ï¿½Ö¼Ò°ï¿½ ï¿½ß¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýµï¿½ï¿½ È®ï¿½ï¿½ï¿½Ï½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.</bold>
                </td></tr>
             </tr>
         </table>
         
         <div style="margin-top:20px;margin-left:480px;">
-            <input type="submit" id="btn" value="¼öÁ¤ÇÏ±â" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="Ãë¼Ò">
+            <input type="submit" id="btn" value="ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="ï¿½ï¿½ï¿½">
         </div>
 		</form>
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">»óÈ£: µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇÐ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ÞÀÏ: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">ï¿½ï¿½È£: ï¿½ï¿½Å·ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥: ï¿½Ì°ï¿½ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½Ö¼ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ 1 [24252]&nbsp;&nbsp;&nbsp;ï¿½ï¿½È­ï¿½ï¿½È£: 010-1234-5678&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£: 312-15-00712&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>

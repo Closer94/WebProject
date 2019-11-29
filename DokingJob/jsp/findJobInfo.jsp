@@ -12,7 +12,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>
-            µµÅ·Àâ(DockingJob) - ¹Ì»ý¿¡¼­ ¿Ï»ýÀ¸·Î
+            ï¿½ï¿½Å·ï¿½ï¿½(DockingJob) - ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï»ï¿½ï¿½ï¿½ï¿½ï¿½
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -59,7 +59,7 @@ a:hover {
 }
    
 
-/*»çÀÌµå ¸Þ´º ¼Ò½º*/
+/*ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½*/
 #STATICMENU { 
 margin: 0pt; 
 padding: 0pt;  
@@ -67,9 +67,9 @@ position: absolute;
 right: 0px; 
 top: 0px;
 }
-/*»çÀÌµå ¸Þ´º ¼Ò½º*/
+/*ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½*/
 
- /*slider ½ÃÀÛ*/
+ /*slider ï¿½ï¿½ï¿½ï¿½*/
  #slider{
     position: relative;
     width:100%;
@@ -104,7 +104,7 @@ top: 0px;
     position: relative;
     height:100%;
     width:100%;
-    /*width:80vw;*/ /*javascriptÀÌ¿ëÇØ slider.offsetWidth px ·Î ÃÊ±âÈ­*/ 
+    /*width:80vw;*/ /*javascriptï¿½Ì¿ï¿½ï¿½ï¿½ slider.offsetWidth px ï¿½ï¿½ ï¿½Ê±ï¿½È­*/ 
     float:left;
 }
 
@@ -167,10 +167,10 @@ top: 0px;
     width:100%;
     height:100%;
 }
-/*slider ³¡*/
+/*slider ï¿½ï¿½*/
 
 
-/*card ½ÃÀÛ*/
+/*card ï¿½ï¿½ï¿½ï¿½*/
 .card {
     margin:20px;
     padding:0px;
@@ -257,9 +257,9 @@ div.select{
     text-align: center;
 }
 
-/*choice ½ÃÀÛ*/
+/*choice ï¿½ï¿½ï¿½ï¿½*/
 
-/*select icon ½ÃÀÛ*/
+/*select icon ï¿½ï¿½ï¿½ï¿½*/
 div.icon{
     display:inline-block;
     position: relative;
@@ -301,12 +301,12 @@ div.icon:hover
         stroke-dashoffset: 220;
         stroke-dashoffset: 40;
         transition:all 0.7s ease;
-        /*¾Ö´Ï¸ÞÀÌ¼Çµµ °¡´É
+        /*ï¿½Ö´Ï¸ï¿½ï¿½Ì¼Çµï¿½ ï¿½ï¿½ï¿½ï¿½
         animation: circle-fill   ease;
         animation-fill-mode: forwards;*/
    }
 
-   /* ¾Ö´Ï¸ÞÀÌ¼Çµµ °¡´É
+   /* ï¿½Ö´Ï¸ï¿½ï¿½Ì¼Çµï¿½ ï¿½ï¿½ï¿½ï¿½
 @keyframes circle-fill{
     to{
         stroke-dashoffset: 40;
@@ -360,12 +360,12 @@ div.icon .box .title p{
     color:rgba(0, 0, 0, 0.3);
     transition:all 0.5s ease;
 }
-/*select icon ³¡*/
+/*select icon ï¿½ï¿½*/
 
-/*button ½ÃÀÛ*/
+/*button ï¿½ï¿½ï¿½ï¿½*/
 button,
 button::after {
-transition: width 0.3s ease; /*all »ç¿ë½Ã ³ªÅ¸³ª´Â °Íµµ tansition*/
+transition: width 0.3s ease; /*all ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Íµï¿½ tansition*/
 height:50px;
 }
 
@@ -402,7 +402,7 @@ border: 2px solid white;
 transition: all 0.5s ease;
 }
 
-/* btn-go ½ÃÀÛ */
+/* btn-go ï¿½ï¿½ï¿½ï¿½ */
 .btn-go::after {
 height: 100%;
 left: 0;
@@ -413,9 +413,9 @@ width: 0;
 .btn-go:hover:after {
 width: 100%;
 }
-/*button³¡*/
+/*buttonï¿½ï¿½*/
 
-/*search app ³¡*/
+/*search app ï¿½ï¿½*/
 
 /*form.choice*/
 form.choice{
@@ -435,7 +435,7 @@ form.choice span{
 
 }
 
-/*section-title ½ÃÀÛ*/
+/*section-title ï¿½ï¿½ï¿½ï¿½*/
 div.section-title-wrapper{
     text-shadow:1px 1px 3px white;
     font-weight:bold;
@@ -458,7 +458,7 @@ div.section-title-wrapper .logo img{
     height: 25px;
 }
 
-/*section-title ³¡*/
+/*section-title ï¿½ï¿½*/
 </style>
 </head>
 <body style="background:#edf1f8;">
@@ -470,18 +470,18 @@ div.section-title-wrapper .logo img{
         <header class="positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ÞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" href="../main.html" style="text-decoration:none;">ï¿½ï¿½Å·ï¿½ï¿½</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../myPage_myActive1.html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../modifyProfile.jsp" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï±ï¿½">ï¿½Î±×¾Æ¿ï¿½</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -10px;"><a href="../ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
-                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation_default.jsp">Áö¿ø±³À°Á¤º¸</a></li>
-                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="../supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
-                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobFair_default.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
-                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="../community.html">Ä¿¹Â´ÏÆ¼</a></li>
+                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: -10px;"><a href="../ProgramerInfo.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobEducation_default.jsp">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="../supportPolicy.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥</a></li>
+                <li id="liStyle" title="ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobFair_default.jsp">ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
+                <li id="liStyle" title="Ä¿ï¿½Â´ï¿½Æ¼ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="../community.html">Ä¿ï¿½Â´ï¿½Æ¼</a></li>
             </ul>
         </nav>
         </header>
@@ -490,7 +490,7 @@ div.section-title-wrapper .logo img{
 
             <!--section title -->
             <div class="section-title-wrapper">
-                <p class="section-title"><span>¾î¶² ¼¼¹Ì³ª</span>°¡ ÁÁÀ»±î?</p>
+                <p class="section-title"><span>ï¿½î¶² ï¿½ï¿½ï¿½Ì³ï¿½</span>ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?</p>
                 <div class="logo">
                     <img src="../image/itkorea_logo.png" alt="itkorea_logo">
                     <img src="../image/naver_logo.png" alt="naver_logo">
@@ -504,7 +504,7 @@ div.section-title-wrapper .logo img{
 
                 
 
-                <!--silder ½ÃÀÛ-->
+                <!--silder ï¿½ï¿½ï¿½ï¿½-->
                 <div id="slider">
                     <ul id="sliderWrap">
                         <li>
@@ -529,11 +529,11 @@ div.section-title-wrapper .logo img{
                     <a href="#" id="prev"><</a>
                     <a href="#" id="next">></a>
                 </div>
-                <!--slider ³¡-->
+                <!--slider ï¿½ï¿½-->
                 
                 <!--section title -->
             <div class="section-title-wrapper">
-                    <p class="section-title"><span>´ç½ÅÀ» À§ÇÑ</span> ±¸Á÷Á¤º¸</p>
+                    <p class="section-title"><span>ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</span> ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</p>
                     <div class="logo">
                         <img src="../image/carrier_logo.png" alt="carrier_logo">
                     </div>
@@ -541,10 +541,10 @@ div.section-title-wrapper .logo img{
                 <!--section title -->
                 
                 <hr>
-                <!--choice ½ÃÀÛ-->
+                <!--choice ï¿½ï¿½ï¿½ï¿½-->
 				<form method="post" action="findJobInfo.jsp" class="choice">
-                    <!--°ü½ÉºÐ¾ß section ½ÃÀÛ-->
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--ï¿½ï¿½ï¿½ÉºÐ¾ï¿½ section ï¿½ï¿½ï¿½ï¿½-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
                         <label for="interest_1">
                             <div class="icon">
@@ -554,15 +554,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>À¥</p>
+                                        <p>ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="interest" value="2" class="interest" id="interest_2">
                         <label for="interest_2">
                             <div class="icon">
@@ -572,19 +572,19 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>¾Û</p>
+                                        <p>ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
-                    <!--°ü½ÉºÐ¾ß section ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
+                    <!--ï¿½ï¿½ï¿½ÉºÐ¾ï¿½ section ï¿½ï¿½-->
                     
-                    <span>°³¹ßÀÚ¸¦ À§ÇÑ</span>
+                    <span>ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½</span>
 
-                    <!--Áö¿ª section ½ÃÀÛ-->
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--ï¿½ï¿½ï¿½ï¿½ section ï¿½ï¿½ï¿½ï¿½-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="1" class="region" id="region_1">
                         <label for="region_1">
                             <div class="icon">
@@ -594,15 +594,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>¼­¿ï</p>
+                                        <p>ï¿½ï¿½ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="2" class="region" id="region_2">
                         <label for="region_2">
                             <div class="icon">
@@ -612,15 +612,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>°æ±â</p>
+                                        <p>ï¿½ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="3" class="region" id="region_3">
                         <label for="region_3">
                             <div class="icon">
@@ -630,15 +630,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>ÃæÃ»</p>
+                                        <p>ï¿½ï¿½Ã»</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="4" class="region" id="region_4">
                         <label for="region_4">
                             <div class="icon">
@@ -648,15 +648,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>Àü¶ó</p>
+                                        <p>ï¿½ï¿½ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="5" class="region" id="region_5">
                         <label for="region_5">
                             <div class="icon">
@@ -666,15 +666,15 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>°æ»ó</p>
+                                        <p>ï¿½ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <!--checkbox ½ÃÀÛ-->
+                    <!--checkbox ï¿½ï¿½ï¿½ï¿½-->
                     <input type="checkbox" name="region" value="6" class="region" id="region_6">
                         <label for="region_6">
                             <div class="icon">
@@ -684,48 +684,48 @@ div.section-title-wrapper .logo img{
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>°­¿ø</p>
+                                        <p>ï¿½ï¿½ï¿½ï¿½</p>
                                     </div>
                                 </div>
                             </div>
                         </label>
                     </input>
-                    <!--checkbox ³¡-->
+                    <!--checkbox ï¿½ï¿½-->
 
-                    <span>Áö¿ªÀÇ ±¸Á÷Á¤º¸</span>
-                    <!--Áö¿ª section ³¡-->
+                    <span>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>
+                    <!--ï¿½ï¿½ï¿½ï¿½ section ï¿½ï¿½-->
 
-                    <!--È®ÀÎ¹öÆ°¼½¼Ç-->                    
-                    <!--¹öÆ° ½ÃÀÛ-->
-                    <button type="submit" class="btn-go">°Ë»ö</button>
+                    <!--È®ï¿½Î¹ï¿½Æ°ï¿½ï¿½ï¿½ï¿½-->                    
+                    <!--ï¿½ï¿½Æ° ï¿½ï¿½ï¿½ï¿½-->
+                    <button type="submit" class="btn-go">ï¿½Ë»ï¿½</button>
 
-                <!--choice ³¡-->
+                <!--choice ï¿½ï¿½-->
 </form>
                  
                 <hr>
 		<%
-			Connection conn = db.SqlConnectionStart(); //µå¶óÀÌ¹ö ¿¬°á
+			Connection conn = db.SqlConnectionStart(); //ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½
 			Statement stmt = null;
 
-			String[] interest = request.getParameterValues("interest"); //¼±ÅÃÇÑ °ü½ÉºÐ¾ß¸¦ ´ã°íÀÖ´Â º¯¼ö
+			String[] interest = request.getParameterValues("interest"); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÉºÐ¾ß¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
-			String[] employRegion = request.getParameterValues("region"); //¼±ÅÃÇÑ Áö¿ªÀ» ´ã°íÀÖ´Â º¯¼ö
+			String[] employRegion = request.getParameterValues("region"); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
 			
 			try {
 				if (conn == null) {
-					throw new Exception("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ½ÇÆÐ");
+					throw new Exception("ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 				}
-				stmt = conn.createStatement(); //¿¬°áµÈ »óÅÂ¿¡¼­ stmt·Î
+				stmt = conn.createStatement(); //ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â¿ï¿½ï¿½ï¿½ stmtï¿½ï¿½
 
-				//DB¿¡ µé¾îÀÖ´Â Á¤º¸¸¦ °¡Á®¿Í¼­ rs°´Ã¼·Î ÀúÀå(Ãâ·Â)
+				//DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ rsï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½)
 				ResultSet rs = stmt.executeQuery("select * from employment where interest_job = '"+interest[0]+"' and region = '"+employRegion[0]+"' limit 10;");
             	
 				if (!rs.next()) {
-					out.println("ÇØ´çÇÏ´Â Á¤º¸°¡ ¾ø½À´Ï´Ù.");
+					out.println("ï¿½Ø´ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 				} else {
 					rs.previous();
 				}
-				//°´Ã¼ÀÇ °ªÀÌ ÀÖÀ¸¸é TRUE
+				//ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TRUE
 				while (rs.next()) {
 					
 					String url = rs.getString("url");
@@ -748,7 +748,7 @@ div.section-title-wrapper .logo img{
 		%>
 		<div class="card">
 			<div class="img-section">
-				<img src='<%= img_url %>' alt="Ä«Ä«¿À">
+				<img src='<%= img_url %>' alt="Ä«Ä«ï¿½ï¿½">
 			</div>
 			<div class="content">
 				<p class="title">
@@ -770,10 +770,10 @@ div.section-title-wrapper .logo img{
 	<footer class="positionBody">
 		<hr>
 		<p style="font-size: 15px; color: gray;">
-			<span style="margin-left: 4%;">»óÈ£: (ÁÖ)µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥:
-				ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇÐ±æ 1
-				[24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£:
-				312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ÞÀÏ: kabsung3@naver.com
+			<span style="margin-left: 4%;">ï¿½ï¿½È£: (ï¿½ï¿½)ï¿½ï¿½Å·ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥:
+				ï¿½Ì°ï¿½ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½Ö¼ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ 1
+				[24252]&nbsp;&nbsp;&nbsp;ï¿½ï¿½È­ï¿½ï¿½È£: 010-1234-5678&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£:
+				312-15-00712&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½: kabsung3@naver.com
 				<p>
 					<span style="margin-left: 35%; color: gray;">CORYRIGHT
 						DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
@@ -782,9 +782,9 @@ div.section-title-wrapper .logo img{
 
 
 </body>
-<!-- slider ½ÃÀÛ-->
+<!-- slider ï¿½ï¿½ï¿½ï¿½-->
 <script type="text/javascript" src="../js/slider.js"></script>
-<!-- slider ³¡-->
+<!-- slider ï¿½ï¿½-->
 <!-- jquery-->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
