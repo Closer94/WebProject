@@ -13,7 +13,7 @@ String password = request.getParameter("password");
 
 String url = "../logIn.html";
 
-//占싸깍옙占쏙옙 占쌩댐옙占쏙옙 占쏙옙占쌩댐옙占쏙옙 확占쏙옙
+
 String user_id = (String)session.getAttribute("user_id");
 if(user_id == null || user_id.equals(""))
 	response.sendRedirect(url);
@@ -27,14 +27,20 @@ ResultSet rs = null;
 try {
 	stm = conn.createStatement();
 	
-	String query = "select * from employment where interest_job = '"+user_interest_job+"' and region = '"+user_region+"' limit 10;";
+	if(user_interest_job.equals("1"))
+		user_interest_job = "웹";
+	else if(user_interest_job.equals("2"))
+		user_interest_job = "앱";
+	
+	String query = "select * from jobfair where job_interest= '"+user_interest_job+"' and job_region = '"+user_region+"' limit 10;";
+	
+
+		
 	rs = stm.executeQuery(query);
 %>
 
      <meta charset="EUC-KR">
-        <title>
-            占쏙옙킹占쏙옙(DockingJob) - 占싱삼옙占쏙옙占쏙옙 占싹삼옙占쏙옙占쏙옙
-        </title>
+        <title> 도킹잡(DockingJob) - 미생에서 완생으로 </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
@@ -45,27 +51,26 @@ try {
         <header class="positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙" href="../main.html" style="text-decoration:none;">占쏙옙킹占쏙옙</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../modifyProfile.jsp" title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="占싸그아울옙 占싹깍옙">占싸그아울옙</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="Logouut.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: -10px;"><a href="../ProgramerInfo.html">占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: 100px;"><a href="jobEducation_default.jsp">占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙</a></li>
-                <li id="liStyle" title="占쏙옙占쏙옙占쏙옙책 占싱듸옙" style="margin-left: 100px;"><a href="../supportPolicy.html">占쏙옙占쏙옙占쏙옙책</a></li>
-                <li id="liStyle" title="占쌘띰옙회 占쏙옙 채占쏙옙占쏙옙占쏙옙 占싱듸옙" style="margin-left: 100px;"><a href="jobFair_default.jsp">占쌘띰옙회 占쏙옙 채占쏙옙占쏙옙占쏙옙</a></li>
-                <li id="liStyle" title="커占승댐옙티 占싱듸옙" style="margin-left: 100px;"><a href="../community.html">커占승댐옙티</a></li>
+                <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="../ProgramerInfo.html">직업정보</a></li>
+                <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
+                <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community_list.jsp">커뮤니티</a></li>
             </ul>
         </nav>
         </header>
-
         <section class = positionBody>
-
+			
             <!--section title -->
             <div class="section-title-wrapper">
-                <p class="section-title"><span>占쏘떤 占쏙옙占싱놂옙</span>占쏙옙 占쏙옙占쏙옙占쏙옙?</p>
+                <p class="section-title"><span>어떤 세미나</span>가 좋을까?</p>
                 <div class="logo">
                     <img src="../image/itkorea_logo.png" alt="itkorea_logo">
                     <img src="../image/naver_logo.png" alt="naver_logo">
@@ -76,7 +81,6 @@ try {
                 </div>
             </div>
             <!--section title -->
-
 
                 <!--silder 占쏙옙占쏙옙-->
                 <div id="slider">
@@ -107,7 +111,7 @@ try {
                 
                 <!--section title -->
             <div class="section-title-wrapper">
-                    <p class="section-title"><span>占쏙옙占쏙옙占� 占쏙옙占쏙옙</span> 占쏙옙占쏙옙占쏙옙占쏙옙</p>
+                    <p class="section-title"><span>당신을 위한</span>구직정보</p>
                     <div class="logo">
                         <img src="../image/carrier_logo.png" alt="carrier_logo">
                     </div>
@@ -128,7 +132,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙</p>
+                                        <p>웹</p>
                                     </div>
                                 </div>
                             </div>
@@ -146,7 +150,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙</p>
+                                        <p>앱</p>
                                     </div>
                                 </div>
                             </div>
@@ -155,11 +159,11 @@ try {
                     <!--checkbox 占쏙옙-->
                     <!--占쏙옙占심분억옙 section 占쏙옙-->
 
-                    <span>占쏙옙占쏙옙占쌘몌옙 占쏙옙占쏙옙</span>
+                    <span>당신을 위한 구직정보</span>
 
                     <!--占쏙옙占쏙옙 section 占쏙옙占쏙옙-->
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_1">
+                    <input type="checkbox" name="region" value="서울" class="region" id="region_1">
                         <label for="region_1">
                             <div class="icon">
                                 <div class="box">
@@ -168,7 +172,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙占쏙옙</p>
+                                        <p>서울</p>
                                     </div>
                                 </div>
                             </div>
@@ -177,7 +181,7 @@ try {
                     <!--checkbox 占쏙옙-->
 
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙占�" class="region" id="region_2">
+                    <input type="checkbox" name="region" value="경기" class="region" id="region_2">
                         <label for="region_2">
                             <div class="icon">
                                 <div class="box">
@@ -186,7 +190,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙占�</p>
+                                        <p>경기</p>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +199,7 @@ try {
                     <!--checkbox 占쏙옙-->
 
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙청" class="region" id="region_3">
+                    <input type="checkbox" name="region" value="충청" class="region" id="region_3">
                         <label for="region_3">
                             <div class="icon">
                                 <div class="box">
@@ -204,7 +208,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙청</p>
+                                        <p>충청</p>
                                     </div>
                                 </div>
                             </div>
@@ -213,7 +217,7 @@ try {
                     <!--checkbox 占쏙옙-->
 
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_4">
+                    <input type="checkbox" name="region" value="전라" class="region" id="region_4">
                         <label for="region_4">
                             <div class="icon">
                                 <div class="box">
@@ -222,7 +226,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙占쏙옙</p>
+                                        <p>전라</p>
                                     </div>
                                 </div>
                             </div>
@@ -231,7 +235,7 @@ try {
                     <!--checkbox 占쏙옙-->
 
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙占�" class="region" id="region_5">
+                    <input type="checkbox" name="region" value="경상" class="region" id="region_5">
                         <label for="region_5">
                             <div class="icon">
                                 <div class="box">
@@ -240,7 +244,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙占�</p>
+                                        <p>경상</p>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +253,7 @@ try {
                     <!--checkbox 占쏙옙-->
 
                     <!--checkbox 占쏙옙占쏙옙-->
-                    <input type="checkbox" name="region" value="占쏙옙占쏙옙" class="region" id="region_6">
+                    <input type="checkbox" name="region" value="강원" class="region" id="region_6">
                         <label for="region_6">
                             <div class="icon">
                                 <div class="box">
@@ -258,7 +262,7 @@ try {
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>占쏙옙占쏙옙</p>
+                                        <p>강원</p>
                                     </div>
                                 </div>
                             </div>
@@ -266,39 +270,39 @@ try {
                     </input>
                     <!--checkbox 占쏙옙-->
 
-                    <span>占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙</span>
+                    <span>지역의 구직정보</span>
                     <!--占쏙옙占쏙옙 section 占쏙옙-->
 
                     <!--확占싸뱄옙튼占쏙옙占쏙옙-->
                     <!--占쏙옙튼 占쏙옙占쏙옙-->
-                    <button type="submit" class="btn-go">占싯삼옙</button>
-</form>
+                    <button type="submit" class="btn-go">검색</button>
+			</form>
                 <!--choice 占쏙옙-->
 
                 <hr>
 
 				<%
-                    while(rs.next()){ 
-                    	String employ_url = rs.getString("url");
-                    	String title = rs.getString("title");
-                    	String region = rs.getString("region");
+                    while(rs.next()){                     	
+                    	String employ_url = rs.getString("job_url");
+                    	String title = rs.getString("job_title");
+                    	String region = rs.getString("job_region");
                     	
-                    	String start_date = rs.getString("start_date");
-                    	String end_date = rs.getString("end_date");
-                    	String agency = rs.getString("agency");
-                    	String img_url = rs.getString("img_url");
+                    //	String start_date = rs.getString("start_date");
+                    //	String end_date = rs.getString("end_date");
+                    	String agency = rs.getString("job_company");
+                    	String img_url = rs.getString("job_img");
 
-                    	String start_date_temp = start_date.substring(0, 10); 
-                    	String end_date_temp = end_date.substring(0, 10);
+                    //	String start_date_temp = start_date.substring(0, 10); 
+                    //	String end_date_temp = end_date.substring(0, 10);
         
-                    	String applicaiton_date = start_date_temp+" ~ " + end_date_temp;
+                    	String applicaiton_date = rs.getString("job_term");
                     	
                     	if(title.length() > 14)
         					title = title.substring(0, 14)+"...";
         				
                     	out.print("<div class='card'>");
                         out.print("<div class='img-section'>");
-                        out.print("<img src='"+img_url+"' alt='占쏙옙占쏙옙占쏙옙占쏙옙'>");
+                        out.print("<img src='"+img_url+"' alt='이미지'>");
                         out.print("</div>");
                         out.print("<div class='content'>");
                         out.print("<p class='title'><a href ="+employ_url+">"+title+"</p>");
@@ -306,7 +310,6 @@ try {
                     	out.print("<p class='place'>"+region+"</p>");
                     	out.print("<p class='date'>"+applicaiton_date+"</p>");
                     	out.print("</div></div>");
-                    	
                     }
                     %>
 
@@ -314,7 +317,7 @@ try {
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">占쏙옙호: (占쏙옙)占쏙옙킹占쏙옙&nbsp;&nbsp;&nbsp;占쏙옙표: 占싱곤옙占쏙옙&nbsp;&nbsp;&nbsp;占쌍쇽옙: 占쏙옙占쏙옙占쏙옙 占쏙옙천占쏙옙 占싼몌옙占쏙옙占싻깍옙 1 [24252]&nbsp;&nbsp;&nbsp;占쏙옙화占쏙옙호: 010-1234-5678&nbsp;&nbsp;&nbsp;占쏙옙占쏙옙薇占싫�: 312-15-00712&nbsp;&nbsp;&nbsp;占쏙옙표占쏙옙占쏙옙: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">상호: 도킹잡&nbsp;&nbsp;&nbsp;대표: 이갑성&nbsp;&nbsp;&nbsp;주소: 강원도 춘천시 한림대학길 1 [24252]&nbsp;&nbsp;&nbsp;전화번호: 010-1234-5678&nbsp;&nbsp;&nbsp;사업자번호: 312-15-00712&nbsp;&nbsp;&nbsp;대표메일: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>

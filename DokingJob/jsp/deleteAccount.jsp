@@ -5,7 +5,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            ï¿½ï¿½Å·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            µµÅ·Àâ ¸¶ÀÌÆäÀÌÁö
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -97,11 +97,11 @@
                     else { chk = false; }
                 }
                 if(chk) {
-                    alert("È¸ï¿½ï¿½Å»ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.\nï¿½Ì¿ï¿½ï¿½ï¿½ï¿½Ö¼Å¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
+                    alert("È¸¿øÅ»Åð Ã³¸®°¡ ¿Ï·áµÇ¾ú½À´Ï´Ù.\nÀÌ¿ëÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
                     return false;
                 }
                 else {
-                    alert("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.")
+                    alert("¸ðµç ¾à°ü¿¡ µ¿ÀÇÇØ ÁÖ¼¼¿ä.")
                 }
             }
         </script>
@@ -110,21 +110,20 @@
         <div class = positionHead>
                 <table style="margin-top:-120px; margin-left:-140px;">
                     <tr>
-                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" href="main.html" style="text-decoration:none;">ï¿½ï¿½Å·ï¿½ï¿½</a></td>
+                        <td colspan="2" style="width:300px;height:100px;font-size:30px;font-family: 'Jua', sans-serif"><a id = "up" title="¸ÞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
                         <td width="600"></td>
-                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï±ï¿½">ï¿½Î±×¾Æ¿ï¿½</a>&nbsp;&nbsp;</td>
+                        <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
                     </tr>
                 </table>
         </div>
-
         <div class = positionHead>
             <table style="margin-top:-40px; margin-left:-100px;">
                 <tr>
-                    <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td>
-                    <!--<td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="myPage_myActive1.html" >ï¿½ï¿½ï¿½ï¿½ È°ï¿½ï¿½</a></td>-->
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="modifyProfile.jsp" >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></td>
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="modifyPassword.jsp" >ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½ï¿½ï¿½</a></td>
-                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="È¸ï¿½ï¿½ Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" href="deleteAccount.jsp" >È¸ï¿½ï¿½ Å»ï¿½ï¿½</a></td>
+                    <td colspan="2" style="width:280px;height:100px;font-size:40px;font-family: 'Jua', sans-serif; text-decoration:none; color: black;">¸¶ÀÌÆäÀÌÁö</td>
+                    <!--<td style="width:120px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="³ªÀÇ È°µ¿ ÆäÀÌÁö ÀÌµ¿" href="myPage_myActive1.html" >³ªÀÇ È°µ¿</a></td>-->
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="°³ÀÎÁ¤º¸¼öÁ¤ ÆäÀÌÁö ÀÌµ¿" href="modifyProfile.jsp" >°³ÀÎÁ¤º¸¼öÁ¤</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="ºñ¹Ð¹øÈ£ º¯°æ ÆäÀÌÁö ÀÌµ¿" href="modifyPassword.jsp" >ºñ¹Ð¹øÈ£ º¯°æ</a></td>
+                    <td style="width:150px;height:100px;font-size:20px;font-family: 'Jua', sans-serif"><a id = "menuUp" title="È¸¿ø Å»Åð ÆäÀÌÁö ÀÌµ¿" href="deleteAccount.jsp" >È¸¿ø Å»Åð</a></td>
                 </tr>
             </table>
         </div>
@@ -135,63 +134,63 @@
             <hr style="border: solid 1.5px black;">
         </div>
         <table style="margin-top:40px; margin-left:160px; border-collapse: collapse;">
-                <tr><td rowspan="3"><img src="image/deleteAccount.jpg" style="width:100px; height:100px;"></td><td style="font-size:25px; font-weight: bold;">&nbsp;&nbsp;È¸ï¿½ï¿½Å»ï¿½ï¿½ ï¿½Õ¼ï¿½ <span style="color:#5297f2;">ï¿½ï¿½ï¿½Ç»ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½È³ï¿½</span>ï¿½ï¿½ ï¿½Ýµï¿½ï¿½ ï¿½Ð°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½!</td></tr>
+                <tr><td rowspan="3"><img src="../image/deleteAccount.jpg" style="width:100px; height:100px;"></td><td style="font-size:25px; font-weight: bold;">&nbsp;&nbsp;È¸¿øÅ»Åð¿¡ ¾Õ¼­ <span style="color:#5297f2;">À¯ÀÇ»çÇ× ¹× ¾È³»</span>¸¦ ¹Ýµå½Ã ÀÐ°í ÁøÇàÇØ ÁÖ¼¼¿ä!</td></tr>
         </table>
         <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
             <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
                 <tr>
-                    <td style="font-weight:bold; padding:20px;">ï¿½ï¿½Å·ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ ï¿½È³ï¿½</td>
+                    <td style="font-weight:bold; padding:20px;">µµÅ·Àâ ¾ÆÀÌµð´Â Àç»ç¿ë ¹× º¹±¸ ºÒ°¡ ¾È³»</td>
                     <td style="padding-left:340px;padding-right:40px;"><input id = "cb1" name="agree" type="checkbox" style="width:30px; height:30px;"></td>
 
                 </tr>
                 <tr>
-                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;È¸ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ ï¿½ï¿½ï¿½ <span style="color:red;">ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.</span></td>
-                    <td style="padding-left:342px;">ï¿½ï¿½ï¿½ï¿½</td>
+                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;È¸¿øÅ»Åð ÁøÇà ½Ã º»ÀÎÀ» Æ÷ÇÔÇÑ Å¸ÀÎ ¸ðµÎ <span style="color:red;">¾ÆÀÌµð Àç»ç¿ëÀÌ³ª º¹±¸°¡ ºÒ°¡´ÉÇÕ´Ï´Ù.</span></td>
+                    <td style="padding-left:342px;">µ¿ÀÇ</td>
                 </tr>
-                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</td></tr>
+                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;½ÅÁßÈ÷ ¼±ÅÃÇÏ½Å ÈÄ °áÁ¤ÇØÁÖ¼¼¿ä.</td></tr>
             </table>
         </div>
 
         <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
             <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
                 <tr>
-                    <td style="font-weight:bold; padding:20px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½</td>
+                    <td style="font-weight:bold; padding:20px;">³»Á¤º¸ ¹× °³ÀÎÇü ¼­ºñ½º ÀÌ¿ë ±â·Ï »èÁ¦ ¾È³»</td>
                     <td style="padding-left:312px; padding-right:40px;"><input id = "cb2" name="agree" type="checkbox" style="width:30px; height:30px;"></td>
                 </tr>
                 <tr>
-                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸ï¿½, <span style="color:red;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.</span></td>
-                    <td style="padding-left:315px;">ï¿½ï¿½ï¿½ï¿½</td>
+                    <td style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;³»Á¤º¸ ¹× °³ÀÎÇü ¼­ºñ½º ÀÌ¿ë±â·ÏÀÌ ¸ðµÎ »èÁ¦µÇ¸ç, <span style="color:red;">»èÁ¦µÈ µ¥ÀÌÅÍ´Â º¹±¸µÇÁö ¾Ê½À´Ï´Ù.</span></td>
+                    <td style="padding-left:315px;">µ¿ÀÇ</td>
                 </tr>
-                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½Ç´ï¿½ ï¿½ï¿½ï¿½ñ½º¸ï¿½ È®ï¿½ï¿½ï¿½Ï½Ã°ï¿½, ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í´ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</td></tr>
+                <tr><td colspan="2" style="font-size:13px; padding-bottom:20px;">&nbsp;&nbsp;&nbsp;&nbsp;»èÁ¦µÇ´Â ¼­ºñ½º¸¦ È®ÀÎÇÏ½Ã°í, ÇÊ¿äÇÑ µ¥ÀÌÅÍ´Â ¹Ì¸® ¹é¾÷À» ÇØÁÖ¼¼¿ä.</td></tr>
             </table>
         </div>
 
         <div style="border: 1.5px solid #dfdfdf; margin-top:20px; width:1025px; margin-left:81px;">
             <table style="margin:40px; border-collapse: collapse; border: 2px solid #dfdfdf; background:white;">
                 <tr>
-                    <td colspan="2" style="font-weight:bold; padding:20px;">ï¿½Ô½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò°ï¿½ ï¿½È³ï¿½</td>
+                    <td colspan="2" style="font-weight:bold; padding:20px;">°Ô½ÃÆÇÇü ¼­ºñ½º¿¡ µî·ÏÇÑ °Ô½Ã±Û »èÁ¦ ºÒ°¡ ¾È³»</td>
                     <td style="padding-left:460px; padding-right:37px;"><input id = "cb3" name="agree" type="checkbox" style="width:30px; height:30px"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ô½Ã±ï¿½ï¿½ï¿½ ï¿½Ö´Ù¸ï¿½ ï¿½Ýµï¿½ï¿½ È¸ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½Ã±ï¿½ ï¿½Ù¶ï¿½ï¿½Ï´ï¿½.
+                    <td colspan="3" style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;»èÁ¦¸¦ ¿øÇÏ´Â °Ô½Ã±ÛÀÌ ÀÖ´Ù¸é ¹Ýµå½Ã È¸¿øÅ»Åð Àü ºñ°ø°³ Ã³¸®ÇÏ°Å³ª »èÁ¦ÇÏ½Ã±â ¹Ù¶ø´Ï´Ù.
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <span style="padding-left:10px; font-size:17px">ï¿½ï¿½ï¿½ï¿½</span></td>
+                        <span style="padding-left:10px; font-size:17px">µ¿ÀÇ</span></td>
                 </tr>
-                <tr><td colspan="3" style="font-size:13px;padding-bottom:20px ;">&nbsp;&nbsp;&nbsp;&nbsp;Å»ï¿½ï¿½ ï¿½Ä¿ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç¾ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¸ï¿½ È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, <span style="color:red;">ï¿½Ô½Ã±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Øµå¸± ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. </span></td></tr>
+                <tr><td colspan="3" style="font-size:13px;padding-bottom:20px ;">&nbsp;&nbsp;&nbsp;&nbsp;Å»Åð ÈÄ¿¡´Â È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾î º»ÀÎ ¿©ºÎ¸¦ È®ÀÎÇÒ ¼ö ÀÖ´Â ¹æ¹ýÀÌ ¾ø¾î, <span style="color:red;">°Ô½Ã±ÛÀ» ÀÓÀÇ·Î »èÁ¦ÇØµå¸± ¼ö ¾ø½À´Ï´Ù. </span></td></tr>
             </table>
         </div>
 
         <div style="margin-top:20px;margin-left:480px;">
-            <input type="submit" id="btn" value="È¸ï¿½ï¿½ Å»ï¿½ï¿½" onclick='agree()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="Å»ï¿½ï¿½ ï¿½ï¿½ï¿½">
+            <input type="button" id="btn" value="È¸¿ø Å»Åð" onclick='agree()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="Å»Åð Ãë¼Ò">
         </div>
-
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ï¿½ï¿½È£: ï¿½ï¿½Å·ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥: ï¿½Ì°ï¿½ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½Ö¼ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ 1 [24252]&nbsp;&nbsp;&nbsp;ï¿½ï¿½È­ï¿½ï¿½È£: 010-1234-5678&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£: 312-15-00712&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">»óÈ£: µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇÐ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ÞÀÏ: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>
     </body>
 </html>
+

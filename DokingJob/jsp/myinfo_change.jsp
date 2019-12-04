@@ -43,7 +43,7 @@
 			
 			
 			if(password == null){
-				url = "../modifyProfile.jsp";
+				url = "modifyProfile.jsp";
 				
 				query = "update user set name = '"+name+
 						"', interest_job = '"+interest+
@@ -57,7 +57,7 @@
 			}
 			else{
 				query = "update user set password = '"+password+"'where user_id = '"+user_id+"';";
-				url = "../modifyPassword.jsp";
+				url = "modifyPassword.jsp";
 			}
 			
 			stm.executeUpdate(query);
