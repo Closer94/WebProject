@@ -8,12 +8,11 @@
 
 <%@ page import = "java.sql.*" %>
 <%
-String id = request.getParameter("id");
+String id = request.getParameter("user_id");
 String password = request.getParameter("password");
 
 String url = "../logIn.html";
 
-//ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ß´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ß´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
 String user_id = (String)session.getAttribute("user_id");
 if(user_id == null || user_id.equals(""))
 	response.sendRedirect(url);
@@ -28,12 +27,14 @@ ResultSet rs = null;
 try {
 	stm = conn.createStatement();
 	
-	String query = "select * from education where interest_job = '"+user_interest_job+"' and region = '"+user_region+"';";
+	String query = "select * from education where edu_interest= '"+user_interest_job+"' and edu_region = '"+user_region+"';";
 	rs = stm.executeQuery(query);
 
 %>
         <meta charset="utf-8">
-        <title> ï¿½ï¿½Å·ï¿½ï¿½(DockingJob) - ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï»ï¿½ï¿½ï¿½ï¿½ï¿½ </title>
+        <title>
+            µµÅ·Àâ(DockingJob) - ¹Ì»ý¿¡¼­ ¿Ï»ýÀ¸·Î
+        </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
@@ -117,13 +118,13 @@ try {
             }
         </style>
         <script>
-            //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½
-            var stmnLEFT = 50; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-            var stmnGAP1 = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-            var stmnGAP2 = 550; // ï¿½ï¿½Å©ï¿½Ñ½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
-            var stmnBASE = 150; // ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡
-            var stmnActivateSpeed = 20; //ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½Ú°ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½)
-            var stmnScrollSpeed = 10; //ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Óµï¿½ (Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+            //»çÀÌµå ¸Þ´º ¼Ò½º
+            var stmnLEFT = 50; // ¿À¸¥ÂÊ ¿©¹é
+            var stmnGAP1 = 0; // À§ÂÊ ¿©¹é
+            var stmnGAP2 = 550; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú À§ÂÊ°ú ¶³¾îÁö´Â °Å¸®
+            var stmnBASE = 150; // ½ºÅ©·Ñ ½ÃÀÛÀ§Ä¡
+            var stmnActivateSpeed = 20; //½ºÅ©·ÑÀ» ÀÎ½ÄÇÏ´Â µô·¹ÀÌ (¼ýÀÚ°¡ Å¬¼ö·Ï ´À¸®°Ô ÀÎ½Ä)
+            var stmnScrollSpeed = 10; //½ºÅ©·Ñ ¼Óµµ (Å¬¼ö·Ï ´À¸²)
             var stmnTimer;
 
             function RefreshStaticMenu() {
@@ -139,7 +140,7 @@ try {
             stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
             }
             function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½Ä¡. leftï¿½ï¿½ ï¿½Ù²ãµµ.
+            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³À½¿¡ ¿À¸¥ÂÊ¿¡ À§Ä¡. left·Î ¹Ù²ãµµ.
             document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
             RefreshStaticMenu();
             }
@@ -149,96 +150,95 @@ try {
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½
+            //»çÀÌµå ¸Þ´º ¼Ò½º
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-        <!--ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½-->
+        <!--»çÀÌµå ¸Þ´º-->
         <table id="STATICMENU">
-            <tr><td title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">ï¿½ï¿½</button></td></tr>
-            <tr><td title="ï¿½Ç¾Æ·ï¿½ï¿½ï¿½"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">ï¿½ï¿½</button></td></tr>
+            <tr><td title="¸ÇÀ§·Î"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">¡ã</button></td></tr>
+            <tr><td title="¸Ç¾Æ·¡·Î"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">¡å</button></td></tr>
         </table>
-        <!--ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½-->
+        <!--»çÀÌµå ¸Þ´º-->
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" href="../main.html" style="text-decoration:none;">ï¿½ï¿½Å·ï¿½ï¿½</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ÞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="../modifyProfile.jsp".html" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï±ï¿½">ï¿½Î±×¾Æ¿ï¿½</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="Logouut.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
         <nav class = positionHead>
             <ul id="ulStyle" >
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: -30px;"><a href="../ProgramerInfo.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobFair_default.jsp">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="../supportPolicy.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥</a></li>
-                <li id="liStyle" title="ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobFair_default.jsp">ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="Ä¿ï¿½Â´ï¿½Æ¼ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="../community.html">Ä¿ï¿½Â´ï¿½Æ¼</a></li>
+                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -30px;"><a href="../ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation_default.jsp">Áö¿ø±³À°Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="../supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
+                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
+                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="community_list.jsp">Ä¿¹Â´ÏÆ¼</a></li>
             </ul>
     </nav>
         <section class = positionBody>
                 <div style="margin-left:44%;">
-                    <h1>ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½È³ï¿½</h1>
+                <h1>ÀüÃ¼ °úÁ¤ ¾È³»</h1>
 
                 </div>
                 <form method="post" action="findJobEducation.jsp">
                 <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
                     <tr style="color:black;background:#72bee0;"">
                         <th><select name="educationArea" style="width:100px;height:40px;">
-                                <option value="1">ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½</option>
-                                <option value="4">ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="5">ï¿½ï¿½Ã»</option>
-                                <option value="6">ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="7">ï¿½ï¿½ï¿½</option>
-                                <option value="8">ï¿½ï¿½ï¿½ï¿½</option>
+                        		<option value="1">Áö¿ª</option>
+                                <option value="¼­¿ï">¼­¿ï</option>
+                                <option value="°æ±â">°æ±â</option>
+                                <option value="°­¿ø">°­¿ø</option>
+                                <option value="ÃæÃ»">ÃæÃ»</option>
+                                <option value="Àü¶ó">Àü¶ó</option>
+                                <option value="°æ»ó">°æ»ó</option>
+                                <option value="Á¦ÁÖ">Á¦ÁÖ</option>
                         </select></th>
                         <th><select name="educationType" style="width:100px; height:40px; padding:0%;">
-                                <option value="1">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                            <option value="1">±³À°Á¾·ù</option>
+                            <option value="±¹ºñ±³À°">±¹ºñ±³À°</option>
+                            <option value="±â¾÷±³À°">±â¾÷±³À°</option>
                         </select></th>
                         <th><select name="educationField" style="width:150px; height:40px; padding:0%;">
-                                <option value="0">ï¿½Ð¾ï¿½</option>
-                                <option value="1">ï¿½ï¿½</option>
-                                <option value="2">ï¿½ï¿½</option>
-                                <option value="3">ï¿½ï¿½Æ®ï¿½ï¿½Å©</option>
-                                <option value="4">ï¿½ï¿½ï¿½ï¿½</option>
-                                <option value="5">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+                           <option value="0">ºÐ¾ß</option>
+                            <option value="1">À¥</option>
+                            <option value="2">¾Û</option>
+                            <option value="3">³×Æ®¿öÅ©</option>
+                            <option value="4">º¸¾È</option>
+                            <option value="5">ºòµ¥ÀÌÅÍ</option>
                         </select></th>
-                        <th style="width:1000px;">ï¿½Ð¿ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
-
-                        <th style="width:150px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</th>
-                        <th style="width: 200px; height: 40px; padding: 0%;">ï¿½Æ·Ã±â°£</th>
+                        <th style="width: 1000px;">ÇÐ¿ø¸í_°úÁ¤¸í</th>
+                        <th style="width: 150px;">¼ö°­·á</th>
+                        <th style="width: 200px; height: 40px; padding: 0%;">ÈÆ·Ã±â°£</th>
                         <th style="width:100px"><input type="image" src="../image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
                     </tr>
                     </form>
                     <%
                     while(rs.next()){ 
-                    	String employ_url = rs.getString("url");
-                    	String region = rs.getString("region");
-                    	String type = rs.getString("type");
-                    	String interest = rs.getString("interest_job");
+                    	String employ_url = rs.getString("edu_url");
+                    	String region = rs.getString("edu_region");
+                    	String type = rs.getString("edu_type");
+                    	String interest = rs.getString("edu_interest");
                     	
                     	if(interest.equals("1"))
-                    		interest = "ï¿½ï¿½";
+                    		interest = "À¥";
                     	else
-                    		interest = "ï¿½ï¿½";
+                    		interest = "¾Û";
 
-                    	String title = rs.getString("title");
-                    	String agency = rs.getString("agency");
+                    	String title = rs.getString("edu_title");
+                    	String agency = rs.getString("edu_institute");
                     	//title = agency + "_" + title;
-                    	String cost = rs.getString("cost");
+                    	String cost = rs.getString("edu_fee");
                     	
                     	if(cost.equals("0"))
-                    		cost = "ï¿½ï¿½ï¿½×¹ï¿½ï¿½ï¿½";
+                    		cost = "Àü¾×¹«·á";
                     	else
                     		 cost = String.format("%,d", Integer.parseInt(cost));
                     	
-                    	String training_date = rs.getString("training_date");
-                    	String applicaiton_date = "<span style='background:red; padding:5px; height:30px; text-align: center; color:white;'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</span>";
+                    	String training_date = rs.getString("edu_term");
+                    	String applicaiton_date = "<span style='background:red; padding:5px; height:30px; text-align: center; color:white;'>¸ðÁýÁß</span>";
                         
                     	out.print("<tr height='50'><td>"+region+"</td>");
                     	out.print("<td>"+type+"</td>");
@@ -253,6 +253,7 @@ try {
                 </table>
 
             </section>
+            <!--
             <section class = positionBody style="max-width:1200px">
                     <div style="margin-left: 35%;">
                         <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
@@ -264,10 +265,11 @@ try {
                         </table>
                     </div>
             </section>
+            -->
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ï¿½ï¿½È£: ï¿½ï¿½Å·ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥: ï¿½Ì°ï¿½ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½Ö¼ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ 1 [24252]&nbsp;&nbsp;&nbsp;ï¿½ï¿½È­ï¿½ï¿½È£: 010-1234-5678&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£: 312-15-00712&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">»óÈ£: µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇÐ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ÞÀÏ: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>

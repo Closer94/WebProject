@@ -29,8 +29,8 @@ try {
 
 	while(rs.next()){
         session.setAttribute("user_id", id); // 인증되었음 세션에 남김
-        session.setAttribute("user_interest", rs.getString("interest_job"));
-        session.setAttribute("user_region", rs.getString("address"));
+        session.setAttribute("user_interest", rs.getString("interest"));
+        session.setAttribute("user_region", rs.getString("region"));
         url = "../ProgramerInfo.html";
 	}	
 	

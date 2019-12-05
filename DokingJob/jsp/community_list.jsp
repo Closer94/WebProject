@@ -66,17 +66,17 @@
         <header class = "positionHead">
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a  id = "titleMenu"  title="메인페이지로 가기" href="main.html" style="text-decoration:none;">도킹잡</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a  id = "titleMenu"  title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "titleMenu" href="myPage_myActive1.html" title="마이페이지로 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  id = "titleMenu" href="jsp/logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "titleMenu" href="modifyProfile.jsp" title="마이페이지로 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  id = "titleMenu" href="logout.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
                 <ul id="ulStyle">
-                    <li id="liStyle" title="직업정보 이동" style="margin-left: -45px;"><a id = "titleMenu"  href="ProgramerInfo.html">직업정보</a></li>
-                    <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="./jsp/jobEducation.jsp">지원교육정보</a></li>
-                    <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="supportPolicy.html">지원정책</a></li>
-                    <li id="liStyle" title="박람회 및 채용정보" 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="./jsp/jobFair_default.jsp">박람회 및 채용정보</a></li>
+                    <li id="liStyle" title="직업정보 이동" style="margin-left: -45px;"><a id = "titleMenu"  href="../ProgramerInfo.html">직업정보</a></li>
+                    <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="jobEducation_default.jsp">지원교육정보</a></li>
+                    <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="../supportPolicy.html">지원정책</a></li>
+                    <li id="liStyle" title="박람회 및 채용정보" 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="jobFair_default.jsp">박람회 및 채용정보</a></li>
                     <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a id = "titleMenu"  href="community_list.jsp">커뮤니티</a></li>
                 </ul>
         </nav>
@@ -120,18 +120,19 @@
               %>
                 <tr style="border-bottom:1px solid #d3d3d3;">
                     <td style="text-align:center; padding-left:-5px;">21523</td>
-                    <td><a id = "defaultUp" href="postForm.html">네트워크개발자가 되고싶은데 네트워크 개념을 잘 모르겠어요.ㅠ</a></td>
+                    <td><a id = "defaultUp" href="../postForm.html">네트워크개발자가 되고싶은데 네트워크 개념을 잘 모르겠어요.ㅠ</a></td>
                     <td style="text-align:center;">노베이스</td>
                     <td style="text-align:center;">2019.07.15</td>
                     <td style="text-align:center;">10</td>
                     <td style="text-align:center;">7</td>
+                </tr>
             </table>
         </form>
         </section>
         <div style="margin-top:10px; margin-left:1245px;">
-           <input id = "btn" type="button" value="글쓰기" onclick="location.href='writeForm.html'"></td>
+           <input id = "btn" type="button" value="글쓰기" onclick=location.href="../writeForm.html"></td>
         </div>
-
+		<!-- 
         <section class = "positionBody">
                 <div style="margin-left: 35%;">
                     <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
@@ -143,9 +144,9 @@
                     </table>
                 </div>
         </section>
-
+		-->
         <table style="margin-left:954px; margin-top:10px;">
-            <tr>
+			<tr>
                 <td>
                     <select style="width:100px;height:30px ">
                         <option value="1">제목+본문</option>
