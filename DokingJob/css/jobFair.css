@@ -213,7 +213,7 @@ top: 0px;
 .card .content .title{
     transition: all 0.3s ease;
     height:50px; /*text-overflow 구현조건 3 - height, width(content p에 width선언)가 고정적*/
-    font-size:25px;
+    font-size:20px;
     font-weight: bold;
     color:#393c45;
     
@@ -221,8 +221,10 @@ top: 0px;
 
 .card .content .company{
     height:50px;
-    font-size:20px;
+    font-size:15px;
     color:#969699;
+    color:#0090FF;
+    font-weight: bold;
 }
 
 .card .content .place{
