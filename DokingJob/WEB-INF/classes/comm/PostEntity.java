@@ -6,11 +6,11 @@ public class PostEntity {
 	private String title; // cm_title
 	private String content; // cm_content
 	private String date; // cm_date
-	private String viewcnt; // cm_viewcnt
-	private String goodcnt; // cm_goodcnt
+	private int viewcnt; // cm_viewcnt
+	private int goodcnt; // cm_goodcnt
 	
-	public PostEntity(int id, String writer_id, String title, String content, String date, String viewcnt,
-			String goodcnt) {
+	public PostEntity(int id, String writer_id, String title, String content, String date, int viewcnt,
+			int goodcnt) {
 		this.id = id;
 		this.writer_id = writer_id;
 		this.title = title;
@@ -54,16 +54,16 @@ public class PostEntity {
 	public void setDate(String date) {
 		this.date = date;
 	}
-	public String getViewcnt() {
+	public int getViewcnt() {
 		return viewcnt;
 	}
-	public void setViewcnt(String viewcnt) {
+	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
-	public String getGoodcnt() {
+	public int getGoodcnt() {
 		return goodcnt;
 	}
-	public void setGoodcnt(String goodcnt) {
+	public void setGoodcnt(int goodcnt) {
 		this.goodcnt = goodcnt;
 	}
 	
