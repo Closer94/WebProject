@@ -19,11 +19,6 @@
 <%
 String id = request.getParameter("id");
 String password = request.getParameter("password");
-String passwordcheck = request.getParameter("passwordcheck");
-
-String year = request.getParameter("year");
-String month = request.getParameter("month");
-String day = request.getParameter("day");
 
 String nickname = request.getParameter("nickname");
 String email = request.getParameter("email");
@@ -31,9 +26,7 @@ String email = request.getParameter("email");
 String interest = request.getParameter("interest");
 String address = request.getParameter("address");
 
-String birthday = year+month+day;
 boolean emailcheck = true;
-
 
 Connection conn = db.SqlConnectionStart();
 Statement stm = null;
@@ -45,9 +38,8 @@ try {
 					"', '"+ password +
 					"', '"+nickname+
 					"', '"+interest+
-					"', '"+address+
 					"', '"+email+
-					"', '"+birthday+
+					"', '"+address+
 					"', "+emailcheck+");";
 	
 	stm.executeUpdate(query);
@@ -65,13 +57,9 @@ finally{
 
 %>
 
-<h3> 회원가입 되셨습니다 ! </h3>
+<h3> Success!! </h3>
 id : <%= id %><br>
 password : <%= password %><br>
-passwordcheck : <%= passwordcheck %><br>
-year : <%= year %><br>
-month : <%= month %><br>
-day : <%= day %><br>
 nickname : <%= nickname %><br>
 email : <%= email %><br>
 interest : <%= interest  %><br>

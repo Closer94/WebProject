@@ -3,9 +3,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="EUC-KR">
         <title>
-            ï¿½ï¿½Å·ï¿½ï¿½(DockingJob) - ï¿½Ì»ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï»ï¿½ï¿½ï¿½ï¿½ï¿½
+            µµÅ·Àâ(DockingJob) - ¹Ì»ý¿¡¼­ ¿Ï»ýÀ¸·Î
         </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
@@ -14,14 +14,14 @@
 		
         
         </style>
-        <script>
-            //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½
-            var stmnLEFT = 50; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-            var stmnGAP1 = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
-            var stmnGAP2 = 550; // ï¿½ï¿½Å©ï¿½Ñ½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
-            var stmnBASE = 150; // ï¿½ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡
-            var stmnActivateSpeed = 20; //ï¿½ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½Ú°ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î½ï¿½)
-            var stmnScrollSpeed = 10; //ï¿½ï¿½Å©ï¿½ï¿½ ï¿½Óµï¿½ (Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½)
+       <script>
+            //»çÀÌµå ¸Þ´º ¼Ò½º
+            var stmnLEFT = 50; // ¿À¸¥ÂÊ ¿©¹é
+            var stmnGAP1 = 0; // À§ÂÊ ¿©¹é
+            var stmnGAP2 = 550; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú À§ÂÊ°ú ¶³¾îÁö´Â °Å¸®
+            var stmnBASE = 150; // ½ºÅ©·Ñ ½ÃÀÛÀ§Ä¡
+            var stmnActivateSpeed = 20; //½ºÅ©·ÑÀ» ÀÎ½ÄÇÏ´Â µô·¹ÀÌ (¼ýÀÚ°¡ Å¬¼ö·Ï ´À¸®°Ô ÀÎ½Ä)
+            var stmnScrollSpeed = 10; //½ºÅ©·Ñ ¼Óµµ (Å¬¼ö·Ï ´À¸²)
             var stmnTimer;
 
             function RefreshStaticMenu() {
@@ -37,7 +37,7 @@
             stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
             }
             function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ê¿ï¿½ ï¿½ï¿½Ä¡. leftï¿½ï¿½ ï¿½Ù²ãµµ.
+            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³À½¿¡ ¿À¸¥ÂÊ¿¡ À§Ä¡. left·Î ¹Ù²ãµµ.
             document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
             RefreshStaticMenu();
             }
@@ -47,7 +47,7 @@
             function goBottom(){
                 document.documentElement.scrollTop = document.body.scrollHeight;
             }
-            //ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½ ï¿½Ò½ï¿½
+            //»çÀÌµå ¸Þ´º ¼Ò½º
 
             var count1=0;
             var checkMul1=0;
@@ -56,7 +56,7 @@
             function changeBackground1(obj){
                 if (count1 == 0){
                     if(checkMul2 == 1){
-                    alert('ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.');
+                    alert('ÇÏ³ª¸¸ ¼±ÅÃ°¡´ÉÇÕ´Ï´Ù.');
                     }
                     else{
                         obj.style.background = "red";
@@ -74,7 +74,7 @@
             function changeBackground2(obj){
                 if (count2 == 0){
                     if(checkMul1 == 1){
-                    alert('ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã°ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.');
+                    alert('ÇÏ³ª¸¸ ¼±ÅÃ°¡´ÉÇÕ´Ï´Ù.');
                     }
                     else{
                         obj.style.background = "red";
@@ -88,61 +88,68 @@
                     checkMul2=0;
                 }
             }
+            
+            function completeComment(){
+                alert('´ñ±ÛÀÌ µî·ÏµÇ¾ú½À´Ï´Ù.')
+            }
+            
         </script>
     </head>
     <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-    	<!-- ï¿½Ê¿ï¿½ java package import, ï¿½Ú¹Ùºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+    	<!-- java package import, -->
     	<%@page import ="java.util.ArrayList, comm.PostEntity"  %>
+    	<%@ page import = "java.sql.*" %>
     	<jsp:useBean id="communityDB" class="comm.CommunityDatabase" scope="page"/>
-    	<!-- ï¿½Ú¹Ùºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -->
+    	<jsp:useBean id="commentDB" class="jsp.db.DBConnection" scope="page"></jsp:useBean>
+    	<!-- -->
     	
-    	
-        <!--ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½-->
+        <!--»çÀÌµå ¸Þ´º-->
         <table id="STATICMENU">
-            <tr><td title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">ï¿½ï¿½</button></td></tr>
-            <tr><td title="ï¿½Ç¾Æ·ï¿½ï¿½ï¿½"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">ï¿½ï¿½</button></td></tr>
+            <tr><td title="¸ÇÀ§·Î"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">¡ã</button></td></tr>
+            <tr><td title="¸Ç¾Æ·¡·Î"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">¡å</button></td></tr>
         </table>
-        <!--ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Þ´ï¿½-->
+        <!--»çÀÌµå ¸Þ´º-->
         
         <header class = positionHead>
             <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" href="main.html" style="text-decoration:none;">ï¿½ï¿½Å·ï¿½ï¿½</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ÞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="main.html" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="jsp/logout.jsp" title="ï¿½Î±×¾Æ¿ï¿½ ï¿½Ï±ï¿½">ï¿½Î±×¾Æ¿ï¿½</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logout.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
         <nav class = positionHead>
             <ul id="ulStyle" >
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: -30px;"><a href="ProgramerInfo.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobEducation.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="supportPolicy.html">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¥</a></li>
-                <li id="liStyle" title="ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="jobFair.html">ï¿½Ú¶ï¿½È¸ ï¿½ï¿½ Ã¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</a></li>
-                <li id="liStyle" title="Ä¿ï¿½Â´ï¿½Æ¼ ï¿½Ìµï¿½" style="margin-left: 100px;"><a href="community_list.jsp">Ä¿ï¿½Â´ï¿½Æ¼</a></li>
+                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -30px;"><a href="../ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation_default.jsp">Áö¿ø±³À°Á¤º¸</a></li>
+                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="../supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
+                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobFair_default.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
+                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="community_list.jsp">Ä¿¹Â´ÏÆ¼</a></li>
             </ul>
         </nav>
         
         <div style="margin-left:290px; border: 1px solid white; width:937px; background: white">
         
-        <% // url requestï¿½ï¿½ post idï¿½ï¿½ È®ï¿½ï¿½
-    		String id = request.getParameter("id"); //urlï¿½ó¿¡¼ï¿½ [post?id=()]ï¿½ï¿½ ï¿½Ä½ï¿½ -> ï¿½ï¿½ï¿½ï¿½ id
-    		if(id!=null){ // idï¿½ï¿½ ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½Ö´Â°ï¿½ï¿½(= ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½)
-    			int postId = Integer.parseInt(id); // postIdï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ getPost(Postid)ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-    			PostEntity post = communityDB.getPost(postId); // ï¿½Ø´ï¿½ idï¿½ï¿½ ï¿½Ú¹Ùºï¿½ï¿½ï¿½ ï¿½Þ¼Òµå¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        <% // url request post id 
+    		String id = request.getParameter("id"); //url ___ [post id=()]__ ___-> ___ id
+    		if(id!=null){ // id ___________ (= ___)
+    			int postId = Integer.parseInt(id);
+    			PostEntity post = communityDB.getPost(postId); 
     	%>
         
         
-        
-        <!-- ï¿½ï¿½ post ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ -->
+        <!--  post  -->
             <table>
-                <tr><td style="font-size:30px; font-weight: bold; color:#3493ff;">Ä¿ï¿½Â´ï¿½Æ¼</td></tr>
+                <tr><td style="font-size:30px; font-weight: bold; color:#3493ff;">Ä¿¹Â´ÏÆ¼</td></tr>
                 <tr><td style="height:30px;">&nbsp;</td></tr>
                 <tr><td style="font-weight: bold; font-size:25px;"><%=post.getTitle() %></td></tr>
-                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;<%=post.getWriter_id() %><span style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <tr><td style="border-top:2px solid #2e4361; background:#f1f7ff; padding:10px 0px 10px 0px;">&nbsp;<%=post.getWriter_id() %><span style="font-size:13px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ï¿½ï¿½È¸ï¿½ï¿½: <%=post.getViewcnt() %></span>&nbsp;&nbsp;<span style="font-size:13px;"><%=post.getDate() %></span></td>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Á¶È¸¼ö: 12È¸<%=post.getViewcnt() %></span>&nbsp;&nbsp;<span style="font-size:13px;"><%=post.getDate() %></span></td>
                 </tr>
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>&nbsp;</td></tr>
@@ -155,53 +162,93 @@
                 <tr><td>&nbsp;</td></tr>
                 <tr><td>&nbsp;</td></tr>
             </table>
-       <!-- ï¿½ï¿½ post ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ -->
 
             <div style="margin-top:20px;margin-left:345px;">
-                <input type="button" id="btn" value="ï¿½ï¿½Ãµ" onclick="changeBackground1(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="ï¿½ï¿½ï¿½ï¿½Ãµ" onclick="changeBackground2(this)">
+                <input type="button" id="btn" value="ÃßÃµ" onclick="changeBackground1(this)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="ºñÃßÃµ" onclick="changeBackground2(this)">
             </div>
             <div style="height:40px;">&nbsp;</div>
+               
+		    <%
+				Connection conn = commentDB.SqlConnectionStart();
+				Statement stm = null;
+				ResultSet rs = null;
+				try {
+					stm = conn.createStatement();		
+					
+					String query1 = "select count(*) as total_cnt from comment where cm_id = '"+postId+"';";
+					
+					String count = "0";
+					rs = stm.executeQuery(query1);
+					if(rs.next())
+						count = rs.getString("total_cnt");
+		    %>
+                    
             <hr style="border: solid 0.5px gray; width:900px;">
-            <div style="font-size: 20px; margin:30px;">ï¿½ï¿½ï¿½ <span style="color:#04b4ae;">2</div>
+            <div style="font-size: 20px; margin:30px;">´ñ±Û <span style="color:#04b4ae;"><%= count %></div>
 
+			<form action="comment_write.jsp" method="post">
             <table style="margin:30px;">
                 <tr>
                     <td>
-                        <textarea cols="90" rows="5" onclick="this.value=''">ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½.</textarea>
+                        <textarea cols="90" name="comment_content" rows="5" onclick="this.value=''">´ñ±ÛÀ» ³²°ÜÁÖ¼¼¿ä.</textarea>
+                        
                     </td>
-                    <td><input type="submit" value="ï¿½ï¿½Û³ï¿½ï¿½ï¿½ï¿½" id="writeCommentBtn"></td>
+                    <td><input type="submit" value="´ñ±Û³²±â±â" onclick='completeComment()' id="writeCommentBtn"></td>
                 </tr>
+                <input type=text style='display:none;' name='postId' value=<%= postId%>>
             </table>
+            </form>
+            <%
 
-            <table style="margin:18px; width:900px;">
-                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td></tr>
-                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">ï¿½ï¿½ï¿½ï¿½ï¿½Î¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³×¿ï¿½.</td></tr>
-                <tr><td style="background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;">ï¿½ï¿½ï¿½Û½ï¿½ï¿½Ô»ï¿½ï¿½</td></tr>
-                <tr><td style="padding:10px 0 10px 10px; font-size:15px;">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</td></tr>
-            </table>
-            
-            
+				if(!count.equals("0")){
+					String query2 = "select * from comment where cm_id = "+postId+";";
+					rs = stm.executeQuery(query2);
+				
+					while(rs.next()){
+						String commnet_writer = rs.getString("comment_writer_id");
+						String comment_content = rs.getString("comment_content");
+					
+						out.print("<table style='margin:18px; width:900px;'>");
+						out.print("<tr><td style='background:#f1f1f1; font-size:13px; padding:10px 0 10px 0;'>"+commnet_writer+"</td></tr>");
+						out.print("<tr><td style='padding:10px 0 10px 10px; font-size:15px;'>"+comment_content+"</td></tr>");
+					}
+				}
+
+            %>
+				</table>
+            <%
+			}catch(Exception e) {
+				out.println(e.getMessage());
+			}
+			finally{
+				if(rs != null)			rs.close();
+				if(stm != null)			stm.close();
+				if(conn != null)		conn.close();
+			}
+            %>
+
         <% 
-    		} // end : id!=null // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ñ°ï¿½ï¿½
+    		} // end : id!=null 
     		
-    		else{ // ï¿½ï¿½ï¿½Î¿ï¿½ postï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½
+    		else{ // 
     	%>
     	
-    	<h1>ï¿½ï¿½Ã»ï¿½Ï½ï¿½ post IDï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½!</h1>
+    	<h1>post ID!?</h1>
     	
     	<%   		
-    		} // end if : id=null/ //ï¿½ï¿½ï¿½Î¿ï¿½ post ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+    		} // end if : id=null/
     	%>
-    	
         </div>
 
         <footer class="positionBody" >
             <hr>
             <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ï¿½ï¿½È£: (ï¿½ï¿½)ï¿½ï¿½Å·ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥: ï¿½Ì°ï¿½ï¿½ï¿½&nbsp;&nbsp;&nbsp;ï¿½Ö¼ï¿½: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½Ñ¸ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ 1 [24252]&nbsp;&nbsp;&nbsp;ï¿½ï¿½È­ï¿½ï¿½È£: 010-1234-5678&nbsp;&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Ú¹ï¿½È£: 312-15-00712&nbsp;&nbsp;&nbsp;ï¿½ï¿½Ç¥ï¿½ï¿½ï¿½ï¿½: kabsung3@naver.com<p>
+                <span style="margin-left:4%;">»óÈ£: (ÁÖ)µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇÐ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ÞÀÏ: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>
+        
+        
     </body>
 
 </html>
