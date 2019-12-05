@@ -175,6 +175,13 @@ top: 0px;
 .card:hover .content{
     transform:translate(0px,-70px);
     transition: all 0.3s ease;
+    background: white;
+}
+
+.card:hover .img-section{
+    -webkit-filter: blur(5px); /*이미지 블러처리*/
+    -moz-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
 .card .img-section{ /*5:4*/
@@ -198,13 +205,18 @@ top: 0px;
     margin:0px;
     padding:0px;
     width:90%;
+    text-overflow: ellipsis; /*text 영역이상 넘어가면 ...*/
+    white-space: nowrap; /*text-overflow 구현조건 1*/
+    overflow: hidden; /*text-overflow 구현조건 2*/
 }
 
 .card .content .title{
-    height:50px;
-    font-size:30px;
+    transition: all 0.3s ease;
+    height:50px; /*text-overflow 구현조건 3 - height, width(content p에 width선언)가 고정적*/
+    font-size:25px;
     font-weight: bold;
-    color:#393c45;	
+    color:#393c45;
+    
 }
 
 .card .content .company{
