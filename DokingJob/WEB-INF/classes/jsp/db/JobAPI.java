@@ -43,8 +43,23 @@ public class JobAPI {
 			System.out.println("가져온 <jobs> 데이터 개수 : " + pubdata.getNodeValue());
 			System.out.println("시작");
 
+			// card이미지 설정을 위한 변수목록
+			String image_name[] = {"card1.png", "card2.png", "card3.png", "card4.png", "card5.png", "card6.png", "card7.png", }; // 이미지파일이름
+			String image_path = "../image/"; // 이미지 경로
+			int count = 0; // 이미지 번호 7개 0~6 
+			
 			// 모든 <jobs> 가져오기
 			for (int i = 0; i < jobsNodes.getLength(); i++) {
+				
+				// card이미지 path 설정
+				String job_image_path = image_path + image_name[count++];// row 하나에 저장할 image_path
+				
+				if(count == image_name.length) { // count가 image_name의 길이와 같을 경우 0으로 초기화
+					count = 0;
+				}
+				
+				
+				
 				Jobfair job = new Jobfair(); // ArrayList<> jobs에 넣을 jobfair객체
 				Element jobNode = (Element) jobsNodes.item(i); // i번째 <jobs>
 				
@@ -69,9 +84,13 @@ public class JobAPI {
 				// job_region 구직회사지역
 				job.setJobRegion(area); // 매개변수 사용
 				// job_term 구직기간(시작기간~마감기간)
-				job.setJobTerm(opendate + "~" + closedate);
+				// job.setJobTerm(opendate + "~" + closedate);
+				job.setJobTerm(closedate); // 마감시간만
 				// job_img 구직이미지URL
-				job.setJobImg("demo.png");
+				job.setJobImg(job_image_path); // 설정한 이미지 path로 변경
+				
+				// card1.png, ~ card7.png
+				// ../image/card1.png
 				
 				CleanJobs.add(job);
 				System.out.println("add "+ i + " : " +job.toString());
