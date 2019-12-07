@@ -118,14 +118,6 @@
     			} // end if
                 
               %>
-                <tr style="border-bottom:1px solid #d3d3d3;">
-                    <td style="text-align:center; padding-left:-5px;">21523</td>
-                    <td><a id = "defaultUp" href="../postForm.html">네트워크개발자가 되고싶은데 네트워크 개념을 잘 모르겠어요.ㅠ</a></td>
-                    <td style="text-align:center;">노베이스</td>
-                    <td style="text-align:center;">2019.07.15</td>
-                    <td style="text-align:center;">10</td>
-                    <td style="text-align:center;">7</td>
-                </tr>
             </table>
         </form>
         </section>

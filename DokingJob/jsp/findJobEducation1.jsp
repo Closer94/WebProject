@@ -1,42 +1,17 @@
+<%@page import="jsp.db.DBConnection"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
    pageEncoding="utf-8"%>
+<%@ page import="java.sql.*"%>
+<%
+   request.setCharacterEncoding("utf-8");
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 
-<jsp:useBean id="db" class="jsp.db.DBConnection" />
-
-<%@ page import = "java.sql.*" %> 
-<% 
-request.setCharacterEncoding("EUC-KR");
-
-String id = request.getParameter("user_id");
-String password = request.getParameter("password");
-
-String url = "../logIn.html";
-
-String user_id = (String)session.getAttribute("user_id");
-if(user_id == null || user_id.equals(""))
-   response.sendRedirect(url);
-
-else{
-String user_interest_job = (String)session.getAttribute("user_interest");
-String user_region = (String)session.getAttribute("user_region");
-
-Connection conn = db.SqlConnectionStart();
-Statement stm = null;
-ResultSet rs = null;
-try {
-   stm = conn.createStatement();
-   
-   String query = "select * from education where edu_interest= '"+user_interest_job+"' and edu_region = '"+user_region+"';";
-   rs = stm.executeQuery(query);
-
-%>
-        <meta charset="utf-8">
-        <title>
-            도킹잡(DockingJob) - 미생에서 완생으로
-        </title>
+<title> 도킹잡(DockingJob) - 미생에서 완생으로 </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
@@ -66,14 +41,14 @@ try {
                 -webkit-transform: scale(1.1);
                 transform: scale(1.1);
                 text-decoration: underline;
-            }
+            } 
             #ulStyle{
                 margin-left: 100px;
                 padding: 10px;
                 width: 1300px;
                 height: 70px;
             }
-            #liStyle{
+            #liStyle{ 
                 font-family: 'Noto Sans KR', sans-serif;
                 font-weight: bold;
                 font-size: 25px;
@@ -85,33 +60,33 @@ try {
                 padding: 5px 10px;
                 text-align: center;
                 position: absolute;
-
+            
                 transform: translate( -50%, -50% );
                 font-size: 50px;
                 color: white;
                 font-family: 'Noto Sans KR', sans-serif;
             }
-
+               
             #btn{
                 background-color: #edf1f8;
                 width: 80px;
                 height: 40px;
                 border: 1px solid darkgray;
-                outline: none;
-
+                outline: none; 
+                
             }
             #btn:hover{
                 text-decoration:none;
                 background: gray;
-                color: white;
+                color: white;   
             }
 
             /*占쏙옙占싱듸옙 占쌨댐옙 占쌀쏙옙*/
-            #STATICMENU {
-            margin: 0pt;
-            padding: 0pt;
-            position: absolute;
-            right: 0px;
+            #STATICMENU { 
+            margin: 0pt; 
+            padding: 0pt;  
+            position: absolute; 
+            right: 0px; 
             top: 0px;
             }
             /*占쏙옙占싱듸옙 占쌨댐옙 占쌀쏙옙*/
@@ -154,8 +129,11 @@ try {
             }
             //사이드 메뉴 소스
         </script>
-    </head>
-    <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
+</head>
+<body>
+   <jsp:useBean id="db" class="jsp.db.DBConnection" scope="application" />
+   
+   <body style="background:#edf1f8;" onload="InitializeStaticMenu();">
         <!--사이드 메뉴-->
         <table id="STATICMENU">
             <tr><td title="맨위로"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">▲</button></td></tr>
@@ -167,27 +145,39 @@ try {
                 <tr>
                     <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="메인페이지로 가기" href="../main.html" style="text-decoration:none;">도킹잡</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="Logouut.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="마이페이지 이동">마이페이지</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logouut.jsp" title="로그아웃 하기">로그아웃</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         </header>
-        <nav class = positionHead>
+        <nav class = positionHead> 
             <ul id="ulStyle" >
                 <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="../ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
                 <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">박람회 및 채용정보</a></li>
                 <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community_list.jsp">커뮤니티</a></li>
             </ul>
     </nav>
-        <section class = positionBody>
-                <div style="margin-left:44%;">
-                <h1>전체 과정 안내</h1>
+        
+	<%
+	     String educationArea = request.getParameter("educationArea");
+      String educationType = request.getParameter("educationType");
+      String educationField = request.getParameter("educationField");
+      //String educationDate = request.getParameter("educationDate");
 
-                </div>
-                <form method="post" action="findJobEducation.jsp">
-                <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color:gainsboro;">
-                    <tr style="color:black;background:#72bee0;"">
+	out.print(educationArea);
+	out.print(educationType);
+	out.print(educationField);
+	//out.print(educationDate);
+	%>
+
+	<section class = positionBody>
+            <div style="margin-left:44%;">
+                <h1>전체 과정 안내</h1>
+            </div>
+            <form method="post" action="findJobEducation.jsp">
+                <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color: gainsboro;">
+                    <tr style="color: black; background: #72bee0;">
                         <th><select name="educationArea" style="width:100px;height:40px;">
                               <option value="1">지역</option>
                                 <option value="서울">서울</option>
@@ -216,46 +206,67 @@ try {
                         <th style="width: 200px; height: 40px; padding: 0%;">훈련기간</th>
                         <th style="width:100px"><input type="image" src="../image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
                     </tr>
-                    </form>
-                    <%
-                    while(rs.next()){ 
-                       String employ_url = rs.getString("edu_url");
-                       String region = rs.getString("edu_region");
-                       String type = rs.getString("edu_type");
-                       String interest = rs.getString("edu_interest");
-                       
-                       if(interest.equals("1"))
-                          interest = "웹";
-                       else
-                          interest = "앱";
+               </form>
+   <%
+      //String name = request.getParameter("name");
+      Connection conn = db.SqlConnectionStart(); 
+      Statement stmt = null;
+      ResultSet rs = null;
+     
+      try {
+	 stmt = conn.createStatement(); 
 
-                       String title = rs.getString("edu_title");
-                       String agency = rs.getString("edu_institute");
-                       //title = agency + "_" + title;
-                       String cost = rs.getString("edu_fee");
-                       
-                       if(cost.equals("0"))
-                          cost = "전액무료";
-                       else
-                           cost = String.format("%,d", Integer.parseInt(cost));
-                       
-                       String training_date = rs.getString("edu_term");
-                       String applicaiton_date = "<span style='background:red; padding:5px; height:30px; text-align: center; color:white;'>모집중</span>";
-                        
-                       out.print("<tr height='50'><td>"+region+"</td>");
-                       out.print("<td>"+type+"</td>");
-                       out.print("<td>"+interest+"</td>");
-                       out.print("<td><a href='"+employ_url+"'>"+title+"</td>");
-                       out.print("<td>"+cost+"</td>");
-                       out.print("<td>"+training_date+"</td>");
-                       out.print("<td>"+applicaiton_date+"</td></tr>");
-                       
-                    }
-                    %>
-                </table>
+         rs = stmt.executeQuery("select * from education");
 
+         if (!rs.next()) {
+            out.println("아무것도 없음");
+         } else {
+            rs.previous();
+         }
+
+         while (rs.next()) {
+            String edu_id = rs.getString("edu_id");
+            String type = rs.getString("edu_type");
+            String interest_job = rs.getString("edu_interest");
+               
+            String url = rs.getString("edu_url");
+            String title = rs.getString("edu_title");
+            String training_date = rs.getString("edu_term");
+            String region = rs.getString("edu_region");
+            String agency = rs.getString("edu_institute");
+            String cost = rs.getString("edu_fee");
+
+            if(interest_job.equals("1"))
+                 interest_job = "웹";
+             else
+                interest_job = "앱";
+                   
+            if(cost.equals("0"))
+                cost = "전액무료";
+            else
+                cost = String.format("%,d", Integer.parseInt(cost));
+                             
+   %> 
+               <tr height="50">
+                  <td><%= region %></td>
+                  <td><%= type %></td>
+                  <td><%= interest_job %></td>
+                  <td><a href="<%=url%>"><%=title %></a></td>
+                  <td><%=cost %></td>
+                  <td><%=training_date%></td>
+                  <td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">모집중</span></td>
+               </tr>
+   <%       
+         }
+      }
+      catch(Exception e){
+	out.println(e.getMessage());
+     }
+
+  %>
+   </table>
             </section>
-            <!--
+             <!--
             <section class = positionBody style="max-width:1200px">
                     <div style="margin-left: 35%;">
                         <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
@@ -275,15 +286,6 @@ try {
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
         </footer>
-    </body>
-    </html>
-<% }
-catch(Exception e) {
-   out.println(e.getMessage());
-}
-finally{
-   if(rs != null)         rs.close();
-   if(stm != null)         stm.close();
-   if(conn != null)      conn.close();
-}
-} %>
+
+</body>
+</html>

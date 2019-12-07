@@ -180,7 +180,7 @@
             <tr><td>&nbsp;</td></tr>
             <%
             String temp = "<tr><td style='text-align:center; background-color:#f9f9f9; padding:10px; border-bottom:1px solid #d3d3d3;'>닉네임</td>"+
-            "<td style='border-bottom:1px solid #d3d3d3;'><input type='text' name='nickname' id='nickname' value='"+name+"' style='width:100px; height:20px; margin-left:20px;padding-left:10px;'></td></tr>";
+            "<td style='border-bottom:1px solid #d3d3d3;'><input type='text' name='nickname' id='nickname' value='"+name+"' style='width:100px; height:20px; margin-left:20px;padding-left:10px; readonly'></td></tr>";
             out.println(temp);
             %>
             
@@ -356,7 +356,7 @@
             </tr>
         </table>
         <div style="margin-top:20px;margin-left:480px;">
-            <input type="button" id="btn" value="수정하기" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="취소">
+            <input type="submit" id="btn" value="수정하기" onclick='completeModify()'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" id="btn" value="취소">
         </div>
 		</form>
 		

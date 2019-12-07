@@ -1,267 +1,315 @@
 <%@page import="jsp.db.DBConnection"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+   pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>
 <%
-	request.setCharacterEncoding("euc-kr");
+   request.setCharacterEncoding("utf-8");
 %>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 
-<title> µµÅ·Àâ(DockingJob) - ¹Ì»ı¿¡¼­ ¿Ï»ıÀ¸·Î </title>
-        <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
+<title>ë„í‚¹ì¡(DockingJob) - ë¯¸ìƒì—ì„œ ì™„ìƒìœ¼ë¡œ</title>
+<link
+   href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean"
+   rel="stylesheet">
+<link
+   href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean"
+   rel="stylesheet">
+<link
+   href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean"
+   rel="stylesheet">
 
-        <style>
-            .positionHead{
-                max-width: 1200px;
-                min-width: 1200px;
-                margin:0 auto;
-                margin-top: -15px;
-                margin-left: 180px;
-            }
-            .positionBody{
-                max-width: 1200px;
-                margin:0 auto;
-                margin-top: 30px;
-            }
-            a {
-                display: inline-block;
-                transition: .3s;
-                -webkit-transform: scale(1);
-                transform: scale(1);
-                text-decoration: none;
-                color: #000000;
-            }
-            a:hover {
-                -webkit-transform: scale(1.1);
-                transform: scale(1.1);
-                text-decoration: underline;
-            } 
-            #ulStyle{
-                margin-left: 100px;
-                padding: 10px;
-                width: 1300px;
-                height: 70px;
-            }
-            #liStyle{ 
-                font-family: 'Noto Sans KR', sans-serif;
-                font-weight: bold;
-                font-size: 25px;
-                list-style:none;
-                float: left;
-                padding:0px;
-            }
-            .jb-text {
-                padding: 5px 10px;
-                text-align: center;
-                position: absolute;
-            
-                transform: translate( -50%, -50% );
-                font-size: 50px;
-                color: white;
-                font-family: 'Noto Sans KR', sans-serif;
-            }
-               
-            #btn{
-                background-color: #edf1f8;
-                width: 80px;
-                height: 40px;
-                border: 1px solid darkgray;
-                outline: none; 
-                
-            }
-            #btn:hover{
-                text-decoration:none;
-                background: gray;
-                color: white;   
-            }
+<style>
+.positionHead {
+   max-width: 1200px;
+   min-width: 1200px;
+   margin: 0 auto;
+   margin-top: -15px;
+   margin-left: 180px;
+}
 
-            /*ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ş´ï¿½ ï¿½Ò½ï¿½*/
-            #STATICMENU { 
-            margin: 0pt; 
-            padding: 0pt;  
-            position: absolute; 
-            right: 0px; 
-            top: 0px;
-            }
-            /*ï¿½ï¿½ï¿½Ìµï¿½ ï¿½Ş´ï¿½ ï¿½Ò½ï¿½*/
-            tr:nth-child(even) {
-                background : aliceblue;
-            }
-        </style>
-        <script>
-            //»çÀÌµå ¸Ş´º ¼Ò½º
-            var stmnLEFT = 50; // ¿À¸¥ÂÊ ¿©¹é
-            var stmnGAP1 = 0; // À§ÂÊ ¿©¹é
-            var stmnGAP2 = 550; // ½ºÅ©·Ñ½Ã ºê¶ó¿ìÀú À§ÂÊ°ú ¶³¾îÁö´Â °Å¸®
-            var stmnBASE = 150; // ½ºÅ©·Ñ ½ÃÀÛÀ§Ä¡
-            var stmnActivateSpeed = 20; //½ºÅ©·ÑÀ» ÀÎ½ÄÇÏ´Â µô·¹ÀÌ (¼ıÀÚ°¡ Å¬¼ö·Ï ´À¸®°Ô ÀÎ½Ä)
-            var stmnScrollSpeed = 10; //½ºÅ©·Ñ ¼Óµµ (Å¬¼ö·Ï ´À¸²)
-            var stmnTimer;
+.positionBody {
+   max-width: 1200px;
+   margin: 0 auto;
+   margin-top: 30px;
+}
 
-            function RefreshStaticMenu() {
-            var stmnStartPoint, stmnEndPoint;
-            stmnStartPoint = parseInt(document.getElementById('STATICMENU').style.top, 10);
-            stmnEndPoint = Math.max(document.documentElement.scrollTop, document.body.scrollTop) + stmnGAP2;
-            if (stmnEndPoint < stmnGAP1) stmnEndPoint = stmnGAP1;
-            if (stmnStartPoint != stmnEndPoint) {
-            stmnScrollAmount = Math.ceil( Math.abs( stmnEndPoint - stmnStartPoint ) / 15 );
-            document.getElementById('STATICMENU').style.top = parseInt(document.getElementById('STATICMENU').style.top, 10) + ( ( stmnEndPoint<stmnStartPoint ) ? -stmnScrollAmount : stmnScrollAmount ) + 'px';
-            stmnRefreshTimer = stmnScrollSpeed;
-            }
-            stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
-            }
-            function InitializeStaticMenu() {
-            document.getElementById('STATICMENU').style.right = stmnLEFT + 'px';  //Ã³À½¿¡ ¿À¸¥ÂÊ¿¡ À§Ä¡. left·Î ¹Ù²ãµµ.
-            document.getElementById('STATICMENU').style.top = document.body.scrollTop + stmnBASE + 'px';
-            RefreshStaticMenu();
-            }
-            function goTop(){
-                document.documentElement.scrollTop=0;
-            }
-            function goBottom(){
-                document.documentElement.scrollTop = document.body.scrollHeight;
-            }
-            //»çÀÌµå ¸Ş´º ¼Ò½º
-        </script>
+a {
+   display: inline-block;
+   transition: .3s;
+   -webkit-transform: scale(1);
+   transform: scale(1);
+   text-decoration: none;
+   color: #000000;
+}
+
+a:hover {
+   -webkit-transform: scale(1.1);
+   transform: scale(1.1);
+   text-decoration: underline;
+}
+
+#ulStyle {
+   margin-left: 100px;
+   padding: 10px;
+   width: 1300px;
+   height: 70px;
+}
+
+#liStyle {
+   font-family: 'Noto Sans KR', sans-serif;
+   font-weight: bold;
+   font-size: 25px;
+   list-style: none;
+   float: left;
+   padding: 0px;
+}
+
+.jb-text {
+   padding: 5px 10px;
+   text-align: center;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   font-size: 50px;
+   color: white;
+   font-family: 'Noto Sans KR', sans-serif;
+}
+
+#btn {
+   background-color: #edf1f8;
+   width: 80px;
+   height: 40px;
+   border: 1px solid darkgray;
+   outline: none;
+}
+
+#btn:hover {
+   text-decoration: none;
+   background: gray;
+   color: white;
+}
+
+/*å ì™ì˜™å ì‹±ë“¸ì˜™ å ìŒ¨ëŒì˜™ å ìŒ€ì™ì˜™*/
+#STATICMENU {
+   margin: 0pt;
+   padding: 0pt;
+   position: absolute;
+   right: 0px;
+   top: 0px;
+}
+/*å ì™ì˜™å ì‹±ë“¸ì˜™ å ìŒ¨ëŒì˜™ å ìŒ€ì™ì˜™*/
+tr:nth-child(even) {
+   background: aliceblue;
+}
+</style>
+<script>
+   //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤
+   var stmnLEFT = 50; // ì˜¤ë¥¸ìª½ ì—¬ë°±
+   var stmnGAP1 = 0; // ìœ„ìª½ ì—¬ë°±
+   var stmnGAP2 = 550; // ìŠ¤í¬ë¡¤ì‹œ ë¸Œë¼ìš°ì € ìœ„ìª½ê³¼ ë–¨ì–´ì§€ëŠ” ê±°ë¦¬
+   var stmnBASE = 150; // ìŠ¤í¬ë¡¤ ì‹œì‘ìœ„ì¹˜
+   var stmnActivateSpeed = 20; //ìŠ¤í¬ë¡¤ì„ ì¸ì‹í•˜ëŠ” ë”œë ˆì´ (ìˆ«ìê°€ í´ìˆ˜ë¡ ëŠë¦¬ê²Œ ì¸ì‹)
+   var stmnScrollSpeed = 10; //ìŠ¤í¬ë¡¤ ì†ë„ (í´ìˆ˜ë¡ ëŠë¦¼)
+   var stmnTimer;
+
+   function RefreshStaticMenu() {
+      var stmnStartPoint, stmnEndPoint;
+      stmnStartPoint = parseInt(
+            document.getElementById('STATICMENU').style.top, 10);
+      stmnEndPoint = Math.max(document.documentElement.scrollTop,
+            document.body.scrollTop)
+            + stmnGAP2;
+      if (stmnEndPoint < stmnGAP1)
+         stmnEndPoint = stmnGAP1;
+      if (stmnStartPoint != stmnEndPoint) {
+         stmnScrollAmount = Math.ceil(Math
+               .abs(stmnEndPoint - stmnStartPoint) / 15);
+         document.getElementById('STATICMENU').style.top = parseInt(document
+               .getElementById('STATICMENU').style.top, 10)
+               + ((stmnEndPoint < stmnStartPoint) ? -stmnScrollAmount
+                     : stmnScrollAmount) + 'px';
+         stmnRefreshTimer = stmnScrollSpeed;
+      }
+      stmnTimer = setTimeout("RefreshStaticMenu();", stmnActivateSpeed);
+   }
+   function InitializeStaticMenu() {
+      document.getElementById('STATICMENU').style.right = stmnLEFT + 'px'; //ì²˜ìŒì— ì˜¤ë¥¸ìª½ì— ìœ„ì¹˜. leftë¡œ ë°”ê¿”ë„.
+      document.getElementById('STATICMENU').style.top = document.body.scrollTop
+            + stmnBASE + 'px';
+      RefreshStaticMenu();
+   }
+   function goTop() {
+      document.documentElement.scrollTop = 0;
+   }
+   function goBottom() {
+      document.documentElement.scrollTop = document.body.scrollHeight;
+   }
+   //ì‚¬ì´ë“œ ë©”ë‰´ ì†ŒìŠ¤
+</script>
 </head>
 <body>
-	<jsp:useBean id="db" class="jsp.db.DBConnection" scope="application" />
-	
-	<body style="background:#edf1f8;" onload="InitializeStaticMenu();">
-        <!--»çÀÌµå ¸Ş´º-->
-        <table id="STATICMENU">
-            <tr><td title="¸ÇÀ§·Î"><button type="button" onclick="goTop()" style="width:40px; height:30px; background:white;margin:0px;">¡ã</button></td></tr>
-            <tr><td title="¸Ç¾Æ·¡·Î"><button type="button" onclick="goBottom()" style="width:40px; height:30px; background:white;margin:0px;">¡å</button></td></tr>
-        </table>
-        <!--»çÀÌµå ¸Ş´º-->
-        <header class = positionHead>
-            <table>
-                <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="¸ŞÀÎÆäÀÌÁö·Î °¡±â" href="../main.html" style="text-decoration:none;">µµÅ·Àâ</a></td>
-                    <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="¸¶ÀÌÆäÀÌÁö ÀÌµ¿">¸¶ÀÌÆäÀÌÁö</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logouut.jsp" title="·Î±×¾Æ¿ô ÇÏ±â">·Î±×¾Æ¿ô</a>&nbsp;&nbsp;</td>
-                </tr>
-            </table>
-        </header>
-        <nav class = positionHead> 
-            <ul id="ulStyle" >
-                <li id="liStyle" title="Á÷¾÷Á¤º¸ ÀÌµ¿" style="margin-left: -30px;"><a href="../ProgramerInfo.html">Á÷¾÷Á¤º¸</a></li>
-                <li id="liStyle" title="Áö¿ø±³À°Á¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobEducation_default.jsp">Áö¿ø±³À°Á¤º¸</a></li>
-                <li id="liStyle" title="Áö¿øÁ¤Ã¥ ÀÌµ¿" style="margin-left: 100px;"><a href="../supportPolicy.html">Áö¿øÁ¤Ã¥</a></li>
-                <li id="liStyle" title="¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸ ÀÌµ¿" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">¹Ú¶÷È¸ ¹× Ã¤¿ëÁ¤º¸</a></li>
-                <li id="liStyle" title="Ä¿¹Â´ÏÆ¼ ÀÌµ¿" style="margin-left: 100px;"><a href="community_list.jsp">Ä¿¹Â´ÏÆ¼</a></li>
-            </ul>
-    </nav>
-        <section class = positionBody>
-            <div style="margin-left:44%;">
-                <h1>ÀüÃ¼ °úÁ¤ ¾È³»</h1>
-            </div>
-				<form method="post" action="findJobEducation.jsp">
-                <table border="1" style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color: gainsboro;">
-                    <tr style="color: black; background: #72bee0;">
-                        <th><select name="educationArea" style="width:100px;height:40px;">
-                        		<option value="1">Áö¿ª</option>
-                                <option value="¼­¿ï">¼­¿ï</option>
-                                <option value="°æ±â">°æ±â</option>
-                                <option value="°­¿ø">°­¿ø</option>
-                                <option value="ÃæÃ»">ÃæÃ»</option>
-                                <option value="Àü¶ó">Àü¶ó</option>
-                                <option value="°æ»ó">°æ»ó</option>
-                                <option value="Á¦ÁÖ">Á¦ÁÖ</option>
-                        </select></th>
-                        <th><select name="educationType" style="width:100px; height:40px; padding:0%;">
-                            <option value="1">±³À°Á¾·ù</option>
-                            <option value="±¹ºñ±³À°">±¹ºñ±³À°</option>
-                            <option value="±â¾÷±³À°">±â¾÷±³À°</option>
-                        </select></th>
-                        <th><select name="educationField" style="width:150px; height:40px; padding:0%;">
-                           <option value="0">ºĞ¾ß</option>
-                            <option value="1">À¥</option>
-                            <option value="2">¾Û</option>
-                            <option value="3">³×Æ®¿öÅ©</option>
-                            <option value="4">º¸¾È</option>
-                            <option value="5">ºòµ¥ÀÌÅÍ</option>
-                        </select></th>
-                        <th style="width: 1000px;">ÇĞ¿ø¸í_°úÁ¤¸í</th>
-                        <th style="width: 150px;">¼ö°­·á</th>
-                        <th style="width: 200px; height: 40px; padding: 0%;">ÈÆ·Ã±â°£</th>
-                        <th style="width:100px"><input type="image" src="../image/findImage.jpg" style="margin-top:1px; margin-bottom:-1px;"></th>
-                    </tr>
-					</form>
-	<%
-		String name = request.getParameter("name");
-		Connection conn = db.SqlConnectionStart(); 
-		Statement stmt = null;
+   <jsp:useBean id="db" class="jsp.db.DBConnection" scope="page" />
+<body style="background: #edf1f8;" onload="InitializeStaticMenu();">
+   <!--ì‚¬ì´ë“œ ë©”ë‰´-->
+   <table id="STATICMENU">
+      <tr>
+         <td title="ë§¨ìœ„ë¡œ"><button type="button" onclick="goTop()"
+               style="width: 40px; height: 30px; background: white; margin: 0px;">â–²</button></td>
+      </tr>
+      <tr>
+         <td title="ë§¨ì•„ë˜ë¡œ"><button type="button" onclick="goBottom()"
+               style="width: 40px; height: 30px; background: white; margin: 0px;">â–¼</button></td>
+      </tr>
+   </table>
+   <!--ì‚¬ì´ë“œ ë©”ë‰´-->
+   <header class=positionHead>
+      <table>
+         <tr>
+            <td colspan="2"
+               style="width: 300px; height: 100px; font-size: 60px; font-family: 'Jua', sans-serif"><a
+               title="ë©”ì¸í˜ì´ì§€ë¡œ ê°€ê¸°" href="../main.html"
+               style="text-decoration: none;">ë„í‚¹ì¡</a></td>
+            <td width="600"></td>
+            <td
+               style="width: 250px; font-size: 15px; text-align: right; height: 80px; font-family: 'Noto Sans KR', sans-serif;"><a
+               id="up" href="modifyProfile.jsp" .html" title="ë§ˆì´í˜ì´ì§€ ì´ë™">ë§ˆì´í˜ì´ì§€</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a
+               id="up" href="logouut.jsp" title="ë¡œê·¸ì•„ì›ƒ í•˜ê¸°">ë¡œê·¸ì•„ì›ƒ</a>&nbsp;&nbsp;</td>
+         </tr>
+      </table>
+   </header>
+   <nav class=positionHead>
+      <ul id="ulStyle">
+         <li id="liStyle" title="ì§ì—…ì •ë³´ ì´ë™" style="margin-left: -30px;"><a
+            href="../ProgramerInfo.html">ì§ì—…ì •ë³´</a></li>
+         <li id="liStyle" title="ì§€ì›êµìœ¡ì •ë³´ ì´ë™" style="margin-left: 100px;"><a
+            href="jobEducation_default.jsp">ì§€ì›êµìœ¡ì •ë³´</a></li>
+         <li id="liStyle" title="ì§€ì›ì •ì±… ì´ë™" style="margin-left: 100px;"><a
+            href="../supportPolicy.html">ì§€ì›ì •ì±…</a></li>
+         <li id="liStyle" title="ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´ ì´ë™" style="margin-left: 100px;"><a
+            href="jobFair_default.jsp">ë°•ëŒíšŒ ë° ì±„ìš©ì •ë³´</a></li>
+         <li id="liStyle" title="ì»¤ë®¤ë‹ˆí‹° ì´ë™" style="margin-left: 100px;"><a
+            href="community_list.jsp">ì»¤ë®¤ë‹ˆí‹°</a></li>
+      </ul>
+   </nav>
+   <section class=positionBody>
+      <div style="margin-left: 44%;">
+<%
 
-		String educationArea = request.getParameter("educationArea");
-		String educationType = request.getParameter("educationType");
-		String educationField = request.getParameter("educationField");
-		String educationDate = request.getParameter("educationDate");
-		
-		try {
-			if (conn == null) {
-				throw new Exception("Error");
-			}
-			stmt = conn.createStatement(); 
+               String educationArea = request.getParameter("educationArea");
+               String educationType = request.getParameter("educationType");
+               String educationField = request.getParameter("educationField");
+               String educationDate = request.getParameter("educationDate");
+%>
+         <h1>ì „ì²´ ê³¼ì • ì•ˆë‚´</h1>
+      </div>
+      <form method="post" action="findJobEducation.jsp">
+         <table border="1"
+            style="margin-left: 17px; text-align: center; border-collapse: collapse; border-color: gainsboro;">
+            <tr style="color: black; background: #72bee0;">
+               <th><select name="educationArea"
+                  style="width: 100px; height: 40px;">
+                     <option value="1">ì§€ì—­</option>
+                     <option value="ì„œìš¸">ì„œìš¸</option>
+                     <option value="ê²½ê¸°">ê²½ê¸°</option>
+                     <option value="ê°•ì›">ê°•ì›</option>
+                     <option value="ì¶©ì²­">ì¶©ì²­</option>
+                     <option value="ì „ë¼">ì „ë¼</option>
+                     <option value="ê²½ìƒ">ê²½ìƒ</option>
+                     <option value="ì œì£¼">ì œì£¼</option>
+               </select></th>
+               <th><select name="educationType"
+                  style="width: 100px; height: 40px; padding: 0%;">
+                     <option value="1">êµìœ¡ì¢…ë¥˜</option>
+                     <option value="êµ­ë¹„êµìœ¡">êµ­ë¹„êµìœ¡</option>
+                     <option value="ê¸°ì—…êµìœ¡">ê¸°ì—…êµìœ¡</option>
+               </select></th>
+               <th><select name="educationField"
+                  style="width: 150px; height: 40px; padding: 0%;">
+                     <option value="0">ë¶„ì•¼</option>
+                     <option value="1">ì›¹</option>
+                     <option value="2">ì•±</option>
+                     <option value="3">ë„¤íŠ¸ì›Œí¬</option>
+                     <option value="4">ë³´ì•ˆ</option>
+                     <option value="5">ë¹…ë°ì´í„°</option>
+               </select></th>
+               <th style="width: 1000px;">í•™ì›ëª…_ê³¼ì •ëª…</th>
+               <th style="width: 150px;">ìˆ˜ê°•ë£Œ</th>
+               <th style="width: 200px; height: 40px; padding: 0%;">í›ˆë ¨ê¸°ê°„</th>
+               <th style="width: 100px"><input type="image"
+                  src="../image/findImage.jpg"
+                  style="margin-top: 1px; margin-bottom: -1px;"></th>
+            </tr>
+            </form>
+            <%
+               String name = request.getParameter("name");
+               Connection conn = db.SqlConnectionStart();
+               //Statement stmt = null;
 
-			ResultSet rs = stmt.executeQuery("select * from education");
+               //String educationArea = request.getParameter("educationArea");
+               //String educationType = request.getParameter("educationType");
+               //String educationField = request.getParameter("educationField");
+               //String educationDate = request.getParameter("educationDate");
+               try {
+                  if (conn == null) {
+                     throw new Exception("Error");
+                 }
+                  Statement stmt = conn.createStatement();
+                  ResultSet rs = stmt.executeQuery("select * from education");
+                  if (!rs.next()) {
+                     out.println("ì•„ë¬´ê²ƒë„ ì—†ìŒ");
+                  } else {
+                     rs.previous();
+                  }
 
-			if (!rs.next()) {
-				out.println("¾Æ¹«°Íµµ ¾øÀ½");
-			} else {
-				rs.previous();
-			}
+                  while (rs.next()){
+                     String edu_id = rs.getString("edu_id");
+                     String type = rs.getString("edu_type");
+                     String interest_job = rs.getString("edu_interest");
 
-			while (rs.next()) {
-				String edu_id = rs.getString("edu_id");
-				String type = rs.getString("edu_type");
-				String interest_job = rs.getString("edu_interest");
-            	
-				String url = rs.getString("edu_url");
-				String title = rs.getString("edu_title");
-				String training_date = rs.getString("edu_term");
-				String region = rs.getString("edu_region");
-				String agency = rs.getString("edu_institute");
-				String cost = rs.getString("edu_fee");
-				
-            	if (educationArea.equals(region) && educationType.equals(type) && educationField.equals(interest_job)) {
-                	if(interest_job.equals("1"))
-                		interest_job = "À¥";
-                	else
-                		interest_job = "¾Û";
-                	
-                	if(cost.equals("0"))
-                		cost = "Àü¾×¹«·á";
-                	else
-                		 cost = String.format("%,d", Integer.parseInt(cost));
-                	
-    				
-	%>	
-					<tr height="50">
-						<td><%= region %></td>
-						<td><%= type %></td>
-						<td><%= interest_job %></td>
-						<td><a href="<%=url%>"><%=title %></a></td>
-						<td><%=cost %></td>
-						<td><%=training_date%></td>
-						<td><span style="background:red; padding:5px; height:30px; text-align: center; color:white;">¸ğÁıÁß</span></td>						
-					</tr>		
-	<%					
-				}
-			}
-		} finally {
-		}
-	%>
-	</table>
-            </section>
-             <!--
+                     String url = rs.getString("edu_url");
+                     String title = rs.getString("edu_title");
+                     String training_date = rs.getString("edu_term");
+                     String region = rs.getString("edu_region");
+                     String agency = rs.getString("edu_institute");
+                     String cost = rs.getString("edu_fee");
+
+                     if (educationArea.equals(region) && educationType.equals(type) && educationField.equals(interest_job)) {
+                        if (interest_job.equals("1"))
+                           interest_job = "ì›¹";
+                        else
+                           interest_job = "ì•±";
+
+                        if (cost.equals("0"))
+                           cost = "ì „ì•¡ë¬´ë£Œ";
+                        else
+                           cost = String.format("%,d", Integer.parseInt(cost));
+		      
+            %>
+            <tr height="50">
+               <td><%=region%></td>
+               <td><%=type%></td>
+               <td><%=interest_job%></td>
+               <td><a href="<%=url%>"><%=title%></a></td>
+               <td><%=cost%></td>
+               <td><%=training_date%></td>
+               <td><span
+                  style="background: red; padding: 5px; height: 30px; text-align: center; color: white;">ëª¨ì§‘ì¤‘</span></td>
+            </tr>
+            <%
+  		   }
+                  }
+               } catch (Exception e) {
+                  e.printStackTrace();
+               } finally {
+               }
+            %>
+         </table>
+   </section>
+   <!--
             <section class = positionBody style="max-width:1200px">
                     <div style="margin-left: 35%;">
                         <table style="margin-left: 100px; text-align: center; border-collapse: collapse;border-color:darkgrey;">
@@ -274,13 +322,18 @@
                     </div>
             </section>
             -->
-        <footer class="positionBody" >
-            <hr>
-            <p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">»óÈ£: µµÅ·Àâ&nbsp;&nbsp;&nbsp;´ëÇ¥: ÀÌ°©¼º&nbsp;&nbsp;&nbsp;ÁÖ¼Ò: °­¿øµµ ÃáÃµ½Ã ÇÑ¸²´ëÇĞ±æ 1 [24252]&nbsp;&nbsp;&nbsp;ÀüÈ­¹øÈ£: 010-1234-5678&nbsp;&nbsp;&nbsp;»ç¾÷ÀÚ¹øÈ£: 312-15-00712&nbsp;&nbsp;&nbsp;´ëÇ¥¸ŞÀÏ: kabsung3@naver.com<p>
-                <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
+   <footer class="positionBody">
+      <hr>
+      <p style="font-size: 15px; color: gray;">
+         <span style="margin-left: 4%;">ìƒí˜¸: ë„í‚¹ì¡&nbsp;&nbsp;&nbsp;ëŒ€í‘œ:
+            ì´ê°‘ì„±&nbsp;&nbsp;&nbsp;ì£¼ì†Œ: ê°•ì›ë„ ì¶˜ì²œì‹œ í•œë¦¼ëŒ€í•™ê¸¸ 1
+            [24252]&nbsp;&nbsp;&nbsp;ì „í™”ë²ˆí˜¸: 010-1234-5678&nbsp;&nbsp;&nbsp;ì‚¬ì—…ìë²ˆí˜¸:
+            312-15-00712&nbsp;&nbsp;&nbsp;ëŒ€í‘œë©”ì¼: kabsung3@naver.com
+            <p>
+               <span style="margin-left: 35%; color: gray;">CORYRIGHT
+                  DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
-        </footer>
+   </footer>
 
 </body>
 </html>

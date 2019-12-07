@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
    <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("utf-8");
 %>
     
 <!DOCTYPE html>

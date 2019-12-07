@@ -58,7 +58,7 @@
 						if(conn != null)		conn.close();
 					}
 					
-					response.sendRedirect("community.html");
+					response.sendRedirect("community_list.jsp");
 					
 %>
 </body>

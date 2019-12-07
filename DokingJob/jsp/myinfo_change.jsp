@@ -12,7 +12,7 @@
 <%@ page import = "java.sql.*" %>
 
 <%
-	request.setCharacterEncoding("euc-kr");
+	request.setCharacterEncoding("EUC-KR");
 %>
 <%
 
@@ -45,13 +45,13 @@
 			if(password == null){
 				url = "modifyProfile.jsp";
 				
-				query = "update user set name = '"+name+
-						"', interest_job = '"+interest+
-						"', address = '"+region+
+				query = "update user set nickname = '"+name+
+						"', interest = '"+interest+
+						
 						"', email = '"+email1+"@"+email2+
 						"', email_check = '"+emailcheck+
 						"' where user_id = '"+user_id+"';";
-						
+				out.println(query);
 		        session.setAttribute("user_interest", interest);
 		        session.setAttribute("user_region", region);
 			}

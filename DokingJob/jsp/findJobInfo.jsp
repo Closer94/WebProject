@@ -1,9 +1,9 @@
 <%@page import="jsp.db.DBConnection"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+   pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>
 <%
-	request.setCharacterEncoding("euc-kr");
+   request.setCharacterEncoding("euc-kr");
 %>
 
 
@@ -11,34 +11,34 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-        <title> µµ≈∑¿‚(DockingJob) - πÃª˝ø°º≠ øœª˝¿∏∑Œ </title>
+        <title> ÎèÑÌÇπÏû°(DockingJob) - ÎØ∏ÏÉùÏóêÏÑú ÏôÑÏÉùÏúºÎ°ú </title>
         <link href="https://fonts.googleapis.com/css?family=Do+Hyeon|Noto+Sans+KR:100,300,400,500,700,900&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Jua&display=swap&subset=korean" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap&subset=korean" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../css/jobFair.css">
-        
+
 </head>
 <body style="background:#edf1f8;">
 
-	<%
-		request.setCharacterEncoding("euc-kr");
-	%>
-	<jsp:useBean id="db" class="jsp.db.DBConnection" scope="application" />
+   <%
+      request.setCharacterEncoding("euc-kr");
+   %>
+   <jsp:useBean id="db" class="jsp.db.DBConnection" scope="page" />
         <header class="positionHead">
              <table>
                 <tr>
-                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="∏ﬁ¿Œ∆‰¿Ã¡ˆ∑Œ ∞°±‚" href="../main.html" style="text-decoration:none;">µµ≈∑¿‚</a></td>
+                    <td colspan="2" style="width:300px;height:100px;font-size:60px;font-family: 'Jua', sans-serif"><a title="Î©îÏù∏ÌéòÏù¥ÏßÄÎ°ú Í∞ÄÍ∏∞" href="../main.html" style="text-decoration:none;">ÎèÑÌÇπÏû°</a></td>
                     <td width="600"></td>
-                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="∏∂¿Ã∆‰¿Ã¡ˆ ¿Ãµø">∏∂¿Ã∆‰¿Ã¡ˆ</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logouut.jsp" title="∑Œ±◊æ∆øÙ «œ±‚">∑Œ±◊æ∆øÙ</a>&nbsp;&nbsp;</td>
+                    <td style="width:250px;font-size:15px;text-align:right; height:80px;font-family:'Noto Sans KR', sans-serif;"><a id = "up" href="modifyProfile.jsp".html" title="ÎßàÏù¥ÌéòÏù¥ÏßÄ Ïù¥Îèô">ÎßàÏù¥ÌéòÏù¥ÏßÄ</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id = "up" href="logouut.jsp" title="Î°úÍ∑∏ÏïÑÏõÉ ÌïòÍ∏∞">Î°úÍ∑∏ÏïÑÏõÉ</a>&nbsp;&nbsp;</td>
                 </tr>
             </table>
         <nav>
             <ul id="ulStyle" >
-                <li id="liStyle" title="¡˜æ˜¡§∫∏ ¿Ãµø" style="margin-left: -30px;"><a href="../ProgramerInfo.html">¡˜æ˜¡§∫∏</a></li>
-                <li id="liStyle" title="¡ˆø¯±≥¿∞¡§∫∏ ¿Ãµø" style="margin-left: 100px;"><a href="jobEducation_default.jsp">¡ˆø¯±≥¿∞¡§∫∏</a></li>
-                <li id="liStyle" title="¡ˆø¯¡§√• ¿Ãµø" style="margin-left: 100px;"><a href="../supportPolicy.html">¡ˆø¯¡§√•</a></li>
-                <li id="liStyle" title="π⁄∂˜»∏ π◊ √§øÎ¡§∫∏ ¿Ãµø" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">π⁄∂˜»∏ π◊ √§øÎ¡§∫∏</a></li>
-                <li id="liStyle" title="ƒøπ¬¥œ∆º ¿Ãµø" style="margin-left: 100px;"><a href="community_list.jsp">ƒøπ¬¥œ∆º</a></li>
+                <li id="liStyle" title="ÏßÅÏóÖÏ†ïÎ≥¥ Ïù¥Îèô" style="margin-left: -30px;"><a href="../ProgramerInfo.html">ÏßÅÏóÖÏ†ïÎ≥¥</a></li>
+                <li id="liStyle" title="ÏßÄÏõêÍµêÏú°Ï†ïÎ≥¥ Ïù¥Îèô" style="margin-left: 100px;"><a href="jobEducation_default.jsp">ÏßÄÏõêÍµêÏú°Ï†ïÎ≥¥</a></li>
+                <li id="liStyle" title="ÏßÄÏõêÏ†ïÏ±Ö Ïù¥Îèô" style="margin-left: 100px;"><a href="../supportPolicy.html">ÏßÄÏõêÏ†ïÏ±Ö</a></li>
+                <li id="liStyle" title="Î∞ïÎûåÌöå Î∞è Ï±ÑÏö©Ï†ïÎ≥¥ Ïù¥Îèô" style="margin-left: 100px;"><a href="jobFair_default.jsp">Î∞ïÎûåÌöå Î∞è Ï±ÑÏö©Ï†ïÎ≥¥</a></li>
+                <li id="liStyle" title="Ïª§ÎÆ§ÎãàÌã∞ Ïù¥Îèô" style="margin-left: 100px;"><a href="community_list.jsp">Ïª§ÎÆ§ÎãàÌã∞</a></li>
             </ul>
         </nav>
         </header>
@@ -47,7 +47,7 @@
 
             <!--section title -->
             <div class="section-title-wrapper">
-                <p class="section-title"><span>æÓ∂≤ ººπÃ≥™</span>∞° ¡¡¿ª±Ó?</p>
+                <p class="section-title"><span>Ïñ¥Îñ§ ÏÑ∏ÎØ∏ÎÇò</span>Í∞Ä Ï¢ãÏùÑÍπå?</p>
                 <div class="logo">
                     <img src="../image/itkorea_logo.png" alt="itkorea_logo">
                     <img src="../image/naver_logo.png" alt="naver_logo">
@@ -68,17 +68,17 @@
                             <a href="http://ictconference.kr/ICTconference/2019ict/main/main.php"target="_blank"><img src="../image/jobFair04.png"></a>
                         </li>
                         <li>
-                            <a href="https://www.fkii.org/2014/evt/read.php?EM_Code=1356"target="_blank"><img src="../image/jobFair05.png"></a> <!--øÏºˆ sw º≥∏Ì»∏-->
-                            <a href="https://www.dqc.or.kr/grand_conference/event_overview/"target="_blank"><img src="../image/jobFair06.png"></a> <!-- µ•¿Ã≈Õ±◊∑£µÂ ƒ¡∆€∑±Ω∫ -->
-                            <a href=""target="https://events19.linuxfoundation.org/events/kubernetes-forum-seoul-2019/"><img src="../image/jobFair07.png"></a> <!-- ƒÌπˆ≥◊∆ºΩ∫ ∆˜∑≥ º≠øÔ, ∏Æ¥™Ω∫ -->
-                            <a href="https://resource.alibabacloud.com/event/detail?id=1187"target="_blank"><img src="../image/jobFair08.png"></a> <!--æÀ∏ÆπŸπŸ ƒ¡∆€∑±Ω∫-->
+                            <a href=""target="_blank"><img src="../image/jobFair05.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair06.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair07.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair08.png"></a>
                         </li>
                         <li>
-                            <a href="https://aisummit.co.kr/"target="_blank"><img src="../image/jobFair09.png"></a>  <!-- AI SUMMIT ƒ¡∆€∑±Ω∫ -->
-                            <a href="https://www.sharedit.co.kr/seminars/575"target="_blank"><img src="../image/jobFair10.png"></a> <!--π´∑·ººπÃ≥™, ¡ﬂº“±‚æ˜¿« ª˝ªÍº∫ «‚ªÛ -->
-                            <a href="https://www.sharedit.co.kr/seminars/564"target="_blank"><img src="../image/jobFair11.png"></a> <!-- ∏∂¿Ã≈©∑Œº“«¡∆Æ ∏µ®∏µ -->
-                            <a href="https://event-us.kr/digitalpreview/event/13111"target="_blank"><img src="../image/jobFair12.png"></a> <!-- µ¡ˆ≈– ∫Ò¡Ó¥œΩ∫ ººπÃ≥™-->
-                        </li>
+                            <a href=""target="_blank"><img src="../image/jobFair09.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair10.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair11.png"></a>
+                            <a href=""target="_blank"><img src="../image/jobFair12.png"></a>
+                        </li>  
                     </ul>
                     <a href="#" id="prev"><</a>
                     <a href="#" id="next">></a>
@@ -87,7 +87,7 @@
                 
                 <!--section title -->
             <div class="section-title-wrapper">
-                    <p class="section-title"><span>¥ÁΩ≈¿ª ¿ß«— </span> ±∏¡˜¡§∫∏</p>
+                    <p class="section-title"><span>ÎãπÏã†ÏùÑ ÏúÑÌïú </span> Íµ¨ÏßÅÏ†ïÎ≥¥</p>
                     <div class="logo">
                         <img src="../image/carrier_logo.png" alt="carrier_logo">
                     </div>
@@ -96,7 +96,7 @@
                 
                 <hr>
                 <!--choice -->
-				<form method="post" action="findJobInfo.jsp" class="choice">
+            <form method="post" action="findJobInfo.jsp" class="choice">
                     <!-- section -->
                     <!--checkbox -->
                     <input type="checkbox" name="interest" value="1" class="interest" id="interest_1">
@@ -108,7 +108,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>¿•</p>
+                                        <p>Ïõπ</p>
                                     </div>
                                 </div>
                             </div>
@@ -126,7 +126,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>æ€</p>
+                                        <p>Ïï±</p>
                                     </div>
                                 </div>
                             </div>
@@ -135,11 +135,11 @@
                     <!--checkbox -->
                     <!-- section -->
                     
-                    <span>¥ÁΩ≈¿ª ¿ß«— ±∏¡˜¡§∫∏</span>
+                    <span>ÎãπÏã†ÏùÑ ÏúÑÌïú Íµ¨ÏßÅÏ†ïÎ≥¥</span>
 
                     <!--section -->
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="º≠øÔ" class="region" id="region_1">
+                    <input type="checkbox" name="region" value="ÏÑúÏö∏" class="region" id="region_1">
                         <label for="region_1">
                             <div class="icon">
                                 <div class="box">
@@ -148,7 +148,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>º≠øÔ</p>
+                                        <p>ÏÑúÏö∏</p>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +157,7 @@
                     <!--checkbox -->
 
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="∞Ê±‚" class="region" id="region_2">
+                    <input type="checkbox" name="region" value="Í≤ΩÍ∏∞" class="region" id="region_2">
                         <label for="region_2">
                             <div class="icon">
                                 <div class="box">
@@ -166,7 +166,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>∞Ê±‚</p>
+                                        <p>Í≤ΩÍ∏∞</p>
                                     </div>
                                 </div>
                             </div>
@@ -175,7 +175,7 @@
                     <!--checkbox -->
 
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="√Ê√ª" class="region" id="region_3">
+                    <input type="checkbox" name="region" value="Ï∂©Ï≤≠" class="region" id="region_3">
                         <label for="region_3">
                             <div class="icon">
                                 <div class="box">
@@ -184,7 +184,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>√Ê√ª</p>
+                                        <p>Ï∂©Ï≤≠</p>
                                     </div>
                                 </div>
                             </div>
@@ -193,7 +193,7 @@
                     <!--checkbox -->
 
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="¿¸∂Û" class="region" id="region_4">
+                    <input type="checkbox" name="region" value="Ï†ÑÎùº" class="region" id="region_4">
                         <label for="region_4">
                             <div class="icon">
                                 <div class="box">
@@ -202,7 +202,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>¿¸∂Û</p>
+                                        <p>Ï†ÑÎùº</p>
                                     </div>
                                 </div>
                             </div>
@@ -211,7 +211,7 @@
                     <!--checkbox -->
 
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="∞ÊªÛ" class="region" id="region_5">
+                    <input type="checkbox" name="region" value="Í≤ΩÏÉÅ" class="region" id="region_5">
                         <label for="region_5">
                             <div class="icon">
                                 <div class="box">
@@ -220,7 +220,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>∞ÊªÛ</p>
+                                        <p>Í≤ΩÏÉÅ</p>
                                     </div>
                                 </div>
                             </div>
@@ -229,7 +229,7 @@
                     <!--checkbox -->
 
                     <!--checkbox -->
-                    <input type="checkbox" name="region" value="∞≠ø¯" class="region" id="region_6">
+                    <input type="checkbox" name="region" value="Í∞ïÏõê" class="region" id="region_6">
                         <label for="region_6">
                             <div class="icon">
                                 <div class="box">
@@ -238,7 +238,7 @@
                                         <circle cx="50%" cy="50%" r="40%"></circle>
                                     </svg>
                                     <div class="title">
-                                        <p>∞≠ø¯</p>
+                                        <p>Í∞ïÏõê</p>
                                     </div>
                                 </div>
                             </div>
@@ -246,92 +246,92 @@
                     </input>
                     <!--checkbox -->
 
-                    <span>¡ˆø™¿« ±∏¡˜¡§∫∏</span>
-                    <button type="submit" class="btn-go">∞Àªˆ</button>
+                    <span>ÏßÄÏó≠Ïùò Íµ¨ÏßÅÏ†ïÎ≥¥</span>
+                    <button type="submit" class="btn-go">Í≤ÄÏÉâ</button>
 
                 <!--choice -->
 </form>
                  
                 <hr>
-		<%
-			Connection conn = db.SqlConnectionStart();
-			Statement stmt = null;
+      <%
+         Connection conn = db.SqlConnectionStart();
+         Statement stmt = null;
 
-			String[] interest = request.getParameterValues("interest"); 
-			String[] employRegion = request.getParameterValues("region");
-			
-			String myInterest = "";
-			if(interest[0].equals("1"))
-				myInterest = "¿•";
-			else
-				myInterest = "æ€";
-				
-			String query = "select * from jobfair where job_interest = '"+myInterest+"' and job_region = '"+employRegion[0]+"' limit 10;";
-			
-			try {
-				if (conn == null) {
-					throw new Exception("Connecting Error");
-				}
-				stmt = conn.createStatement(); 
-				
-				
-				ResultSet rs = stmt.executeQuery(query);
-            	
-				
-				if (!rs.next()) {
-					out.println("Not thing exsis data");
-				} else {
-					rs.previous();
-				}
+         String[] interest = request.getParameterValues("interest"); 
+         String[] employRegion = request.getParameterValues("region");
+         
+         String myInterest = "";
+         if(interest[0].equals("1"))
+            myInterest = "Ïõπ";
+         else
+            myInterest = "Ïï±";
+            
+         String query = "select * from jobfair where job_interest = '"+myInterest+"' and job_region = '"+employRegion[0]+"' limit 10;";
+         
+         try {
+            if (conn == null) {
+               throw new Exception("Connecting Error");
+            }
+            stmt = conn.createStatement(); 
+            
+            
+            ResultSet rs = stmt.executeQuery(query);
+               
+            
+            if (!rs.next()) {
+               out.println("Not thing exsis data");
+            } else {
+               rs.previous();
+            }
 
-				while (rs.next()) {
-					
-					String url = rs.getString("job_url");
-					String title = rs.getString("job_title");
-					String region = rs.getString("job_region");
-				//	String open_date = rs.getString("open_date");
-				//	String start_date = rs.getString("start_date");
-				//	String end_date = rs.getString("end_date");
-					String agency = rs.getString("job_company");
-                	String img_url = rs.getString("job_img");
-					
-                //	String start_date_temp = start_date.substring(0, 10); 
-                //	String end_date_temp = end_date.substring(0, 10);
+            while (rs.next()) {
+               
+               String url = rs.getString("job_url");
+               String title = rs.getString("job_title");
+               String region = rs.getString("job_region");
+            //   String open_date = rs.getString("open_date");
+            //   String start_date = rs.getString("start_date");
+            //   String end_date = rs.getString("end_date");
+               String agency = rs.getString("job_company");
+                   String img_url = rs.getString("job_img");
+               
+                //   String start_date_temp = start_date.substring(0, 10); 
+                //   String end_date_temp = end_date.substring(0, 10);
     
-                	String applicaiton_date = rs.getString("job_term");
-                	
-                	if(title.length() > 14)
-    					title = title.substring(0, 14)+"...";
-						
-		%>
-		<div class="card">
-			<div class="img-section">
-				<img src='<%= img_url %>' alt="¿ÃπÃ¡ˆ">
-			</div>
-			<div class="content">
-				<p class="title">
-					<a href="<%=url%>"><%=title%></a>
-				</p>
-				<p class="company"><%=agency%></p>
-				<p class="place"><%=region%></p>
-				<p class="date"><%=applicaiton_date%></p>
-			</div>
-		</div>
+                   String applicaiton_date = rs.getString("job_term");
+                   
+                   if(title.length() > 14)
+                   title = title.substring(0, 14)+"...";
+                  
+      %>
+      <div class="card">
+         <div class="img-section">
+            <img src='<%= img_url %>' alt="Ïù¥ÎØ∏ÏßÄ">
+         </div>
+         <div class="content">
+            <p class="title">
+               <a href="<%=url%>"><%=title%></a>
+            </p>
+            <p class="company"><%=agency%></p>
+            <p class="place"><%=region%></p>
+            <p class="date"><%=applicaiton_date%></p>
+         </div>
+      </div>
 
 
-		<%
-			}
-			} finally {
-			}
-		%>
-	</section>
-	<footer class="positionBody">
-		<hr>
-		<p style="font-size:15px;color:gray;">
-                <span style="margin-left:4%;">ªÛ»£: µµ≈∑¿‚&nbsp;&nbsp;&nbsp;¥Î«•: ¿Ã∞©º∫&nbsp;&nbsp;&nbsp;¡÷º“: ∞≠ø¯µµ √·√µΩ√ «—∏≤¥Î«–±Ê 1 [24252]&nbsp;&nbsp;&nbsp;¿¸»≠π¯»£: 010-1234-5678&nbsp;&nbsp;&nbsp;ªÁæ˜¿⁄π¯»£: 312-15-00712&nbsp;&nbsp;&nbsp;¥Î«•∏ﬁ¿œ: kabsung3@naver.com<p>
+      <%
+         }
+         } finally {
+         }
+      %>
+   </section>
+   <footer class="positionBody">
+      <hr>
+      <p style="font-size:15px;color:gray;">
+                <span style="margin-left:4%;">ÏÉÅÌò∏: ÎèÑÌÇπÏû°&nbsp;&nbsp;&nbsp;ÎåÄÌëú: Ïù¥Í∞ëÏÑ±&nbsp;&nbsp;&nbsp;Ï£ºÏÜå: Í∞ïÏõêÎèÑ Ï∂òÏ≤úÏãú ÌïúÎ¶ºÎåÄÌïôÍ∏∏ 1 [24252]&nbsp;&nbsp;&nbsp;Ï†ÑÌôîÎ≤àÌò∏: 010-1234-5678&nbsp;&nbsp;&nbsp;ÏÇ¨ÏóÖÏûêÎ≤àÌò∏: 312-15-00712&nbsp;&nbsp;&nbsp;ÎåÄÌëúÎ©îÏùº: kabsung3@naver.com<p>
                 <span style="margin-left:35%; color:gray;">CORYRIGHT DOCKINGJOB 2019 ALL RIGHTS RESESRVED</span>
             </p>
-	</footer>
+   </footer>
 
 
 </body>
@@ -340,5 +340,5 @@
 <!-- slider -->
 <!-- jquery-->
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </html>

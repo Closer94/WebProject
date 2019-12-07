@@ -61,7 +61,7 @@ try {
                 <li id="liStyle" title="직업정보 이동" style="margin-left: -30px;"><a href="../ProgramerInfo.html">직업정보</a></li>
                 <li id="liStyle" title="지원교육정보 이동" style="margin-left: 100px;"><a href="jobEducation_default.jsp">지원교육정보</a></li>
                 <li id="liStyle" title="지원정책 이동" style="margin-left: 100px;"><a href="../supportPolicy.html">지원정책</a></li>
-                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_defualt.jsp">박람회 및 채용정보</a></li>
+                <li id="liStyle" title="박람회 및 채용정보 이동" style="margin-left: 100px;"><a href="jobFair_default.jsp">박람회 및 채용정보</a></li>
                 <li id="liStyle" title="커뮤니티 이동" style="margin-left: 100px;"><a href="community_list.jsp">커뮤니티</a></li>
             </ul>
         </nav>
@@ -305,7 +305,7 @@ try {
                         out.print("<img src='"+img_url+"' alt='이미지'>");
                         out.print("</div>");
                         out.print("<div class='content'>");
-                        out.print("<p class='title'><a href ="+employ_url+">"+title+"</p>");
+                        out.print("<p class='title'><a href ="+employ_url+">"+title+"</a></p>");
                     	out.print("<p class='company'>"+agency+"</p>");
                     	out.print("<p class='place'>"+region+"</p>");
                     	out.print("<p class='date'>"+applicaiton_date+"</p>");
